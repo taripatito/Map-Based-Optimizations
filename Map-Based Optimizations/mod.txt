@@ -1,0 +1,16 @@
+{
+	"name" : "Map-Based Optimizations",
+	"description" : "Improves and adds portals to maps to increase framerate",
+	"author" : "RedFlame",
+	"contact" : "Discord: RedFlame#3868",
+	"version" : "7",
+	"priority" : "1000",
+	"blt_version" : 2,
+	"color" : "0 0 1",
+	"hooks" : [
+		{
+			"hook_id" : "core/lib/utils/dev/editor/coreworlddefinition",
+			"script_path" : "coreworlddefinition.lua"
+		}
+	]
+}
