@@ -12,5 +12,13 @@
 			"hook_id" : "core/lib/utils/dev/editor/coreworlddefinition",
 			"script_path" : "coreworlddefinition.lua"
 		}
+	],
+	"updates" : [
+		{
+			"identifier" : "map_optimizations",
+			"host" : {
+				"meta" : "https://github.com/RedFlamer/Map-Based-Optimizations/releases/download/refs%2Fheads%2Fmaster/meta.json"
+			}
+		},
 	]
 }
