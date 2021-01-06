@@ -1,6 +1,7 @@
 [
     {
         "ident" : "map_optimizations",
-        "hash" : "%HASH%"
+        "hash" : "%HASH%",
+        "download_url" : "https://github.com/RedFlamer/Map-Based-Optimizations/releases/download/refs%2Fheads%2Fmain/Map-Based.Optimizations.zip"
     }
 ]
