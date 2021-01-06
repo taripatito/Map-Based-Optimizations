@@ -1,14 +1,14 @@
 name: Create PAYDAY mod release
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 jobs:
   build:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
     - name: Delete Existing Release
       uses: ame-yu/action-delete-latest-release@v2
       with:
