@@ -19,6 +19,6 @@
 			"host" : {
 				"meta" : "https://github.com/RedFlamer/Map-Based-Optimizations/releases/download/refs%2Fheads%2Fmaster/meta.json"
 			}
-		},
+		}
 	]
 }
