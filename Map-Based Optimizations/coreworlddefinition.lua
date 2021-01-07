@@ -3922,7 +3922,7 @@ elseif level == 'framing_frame_3' then
 					position = Vector3(-5402.05, 991.715, 3397.77),
 					rotation = Rotation(0, 0, 0),
 					type = box,
-					width = 3000,
+					width = 3600,
 				},
 				[2] = {
 					depth = 910,
