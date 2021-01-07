@@ -2721,7 +2721,8 @@ elseif level == 'framing_frame_1' or level == 'gallery' then
 			self._definition.portal.unit_groups.front_01.ids[101839] = true			
 			self._definition.portal.unit_groups.front_01.ids[102514] = true			
 			self._definition.portal.unit_groups.front_01.ids[102527] = true			
-			self._definition.portal.unit_groups.front_01.ids[102529] = true			
+			self._definition.portal.unit_groups.front_01.ids[102529] = true
+			self._definition.portal.unit_groups.front_01.ids[102530] = true			
 			self._definition.portal.unit_groups.front_01.ids[101832] = true			
 			self._definition.portal.unit_groups.front_01.ids[101841] = true				
 			-- Hall A
@@ -3809,19 +3810,19 @@ elseif level == 'framing_frame_3' then
 			shapes = {
 				[1] = {
 					depth = 1800,
-					height = 800,
+					height = 1300,
 					position = Vector3(-5091.73, 4044.63, 3388.52),
 					rotation = Rotation(0, 0, 0),
 					type = box,
 					width = 870,
 				},
 				[2] = {
-					depth = 1000,
-					height = 1000,
+					depth = 410,
+					height = 450,
 					position = Vector3(-4223.07, 5396.77, 3392.91),
 					rotation = Rotation(0, 0, 0),
 					type = box,
-					width = 1000,
+					width = 510,
 				},
 				[3] = {
 					depth = 3050,
