@@ -2113,6 +2113,14 @@ if level == 'big' then
 						rotation = Rotation(0, 0, 0),
 						type = box,
 						width = 8360,
+					},
+					[2] = {
+						depth = 3000,
+						height = 1000,
+						position = Vector3(-4520.880, -5178.432, -864.465),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 4000,
 					}
 				}
 			}
