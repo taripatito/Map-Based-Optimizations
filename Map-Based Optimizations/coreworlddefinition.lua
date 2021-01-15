@@ -9950,6 +9950,29 @@ elseif level == 'mia_1' then
 		[300680] = true,	
 	}
 	
+	local make_unit_orig = WorldDefinition.make_unit
+	function WorldDefinition:make_unit(data, ...)
+		local name = data.name
+
+			-- I hate that i have to do this manually for instances
+			-- At least if the unit id changes it'll work fine
+			if name == "units/payday2/equipment/gen_interactable_spawn_contraband_crate/gen_interactable_spawn_contraband_crate"
+			or name == "units/payday2/pickups/gen_pku_methlab_muriatic_acid/gen_pku_methlab_muriatic_acid"
+			or name == "units/payday2/pickups/gen_pku_methlab_caustic_soda/gen_pku_methlab_caustic_soda"
+			or name == "units/payday2/pickups/gen_pku_methlab_hydrogen_cloride/gen_pku_methlab_hydrogen_cloride"
+			or name == "units/payday2/equipment/hlm_interactable_bar_code_downtown/hlm_interactable_bar_code_downtown"
+			or name == "units/payday2/equipment/hlm_interactable_bar_code_foggy_bottom/hlm_interactable_bar_code_foggy_bottom"
+			or name == "units/payday2/equipment/hlm_interactable_bar_code_georgetown/hlm_interactable_bar_code_georgetown"
+			or name == "units/payday2/equipment/hlm_interactable_bar_code_shaw/hlm_interactable_bar_code_shaw"
+			or name == "units/payday2/equipment/hlm_interactable_bar_code_westend/hlm_interactable_bar_code_westend"
+			or name == "units/pd2_dlc1/equipment/gen_interactable_spawn_contraband_crate_2x1x1m/gen_interactable_spawn_contraband_crate_2x1x1m"
+			then
+				cunt[data.unit_id] = true
+			end
+
+		return make_unit_orig(self, data, ...)
+	end	
+	
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
