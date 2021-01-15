@@ -2,11 +2,11 @@ core:module('CoreWorldDefinition')
 
 local level = Global.level_data and Global.level_data.level_id
 local _create_statics_unit_orig = WorldDefinition._create_statics_unit
-local Iter_Compat = BLT.Mods:GetModByName("Iter")
+local Celer_Compat = BLT.Mods:GetModByName("Celer")
 
-if Iter_Compat then
-	_G.Iter.settings.map_change_bph = false
-	_G.Iter.settings.map_change_vit = false
+if Celer_Compat then
+	_G.Celer.settings.map_change_bph = false
+	_G.Celer.settings.map_change_vit = false
 end
 
 if level == 'big' then
