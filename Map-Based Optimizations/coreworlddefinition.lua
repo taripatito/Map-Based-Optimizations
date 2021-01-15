@@ -4794,7 +4794,15 @@ elseif level == 'bph' then
 						rotation = Rotation(0, 0, 0),
 						type = box,
 						width = 2300,
-					}			
+					},
+					[3] = {
+						depth = 2300,
+						height = 700,
+						position = Vector3(-3381.170, -15835.002, 57.927),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 500,
+					}
 				}
 			}
 		end
