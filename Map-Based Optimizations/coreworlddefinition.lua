@@ -6109,6 +6109,114 @@ elseif level == 'firestarter_1' then
 		return create_orig(self, layer, offset)
 	end
 	
+elseif level == 'firestarter_2' then	
+	local kitchen = {
+		[100003] = true,
+		[100009] = true,
+		[100010] = true,
+		[100011] = true,
+		[100016] = true,
+		[100017] = true,
+		[100037] = true,
+		[100056] = true,
+		[100057] = true,
+		[100069] = true,
+		[100076] = true,
+		[100078] = true,
+		[100080] = true,
+		[100090] = true,
+		[100104] = true,
+		[100105] = true,
+		[100106] = true,
+		[100110] = true,
+		[100122] = true,
+		[102304] = true,
+		[102314] = true,
+		[102315] = true,
+		[104024] = true,
+		[104068] = true,
+		[104123] = true,
+		[105747] = true,
+		[400025] = true,
+		[400026] = true,
+		[400027] = true,
+		[400028] = true,
+		[400106] = true,
+		[400108] = true,
+		[400140] = true,
+		[400157] = true,
+	}
+
+
+	local create_orig = WorldDefinition.create
+	function WorldDefinition:create(layer, offset)
+		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			self._definition.portal.unit_groups.server_room_02.ids[101490] = true
+			self._definition.portal.unit_groups.server_room_02.ids[101221] = true
+			self._definition.portal.unit_groups.server_room_02.ids[101850] = true
+			self._definition.portal.unit_groups.server_room_02.ids[101856] = true
+			self._definition.portal.unit_groups.server_room_02.ids[103280] = true
+			self._definition.portal.unit_groups.server_room_02.ids[103281] = true
+			self._definition.portal.unit_groups.server_room_02.ids[103278] = true
+			self._definition.portal.unit_groups.server_room_02.ids[103279] = true
+			self._definition.portal.unit_groups.server_room_02.ids[101243] = true
+			self._definition.portal.unit_groups.server_room_02.ids[101224] = true
+			self._definition.portal.unit_groups.server_room_02.ids[101387] = true
+			self._definition.portal.unit_groups.server_room_02.ids[103258] = true
+			self._definition.portal.unit_groups.server_room_02.ids[101222] = true
+			self._definition.portal.unit_groups.server_room_02.ids[103260] = true
+			self._definition.portal.unit_groups.server_room_02.ids[103696] = true
+			self._definition.portal.unit_groups.server_room_02.ids[102186] = true
+
+			self._definition.portal.unit_groups.small_office_01.ids[100800] = true
+			self._definition.portal.unit_groups.small_office_01.ids[100796] = true
+			self._definition.portal.unit_groups.small_office_01.ids[100743] = true
+			self._definition.portal.unit_groups.small_office_01.ids[100664] = true
+			self._definition.portal.unit_groups.small_office_01.ids[100724] = true
+			self._definition.portal.unit_groups.small_office_01.ids[400119] = true
+			self._definition.portal.unit_groups.small_office_01.ids[400121] = true
+			self._definition.portal.unit_groups.small_office_01.ids[100792] = true
+			self._definition.portal.unit_groups.small_office_01.ids[102014] = true
+			self._definition.portal.unit_groups.small_office_01.ids[102172] = true
+			self._definition.portal.unit_groups.small_office_01.ids[100663] = true
+			self._definition.portal.unit_groups.small_office_01.ids[101490] = true
+			self._definition.portal.unit_groups.small_office_01.ids[101490] = true
+			self._definition.portal.unit_groups.small_office_01.ids[101490] = true
+			
+			self._definition.portal.unit_groups.kitchen = {
+				ids = kitchen,
+				shapes = {
+					[1] = {
+						depth = 820,
+						height = 1000,
+						position = Vector3(-3241.69, -2016.47, -17.3058),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 3300,
+					},
+					[2] = {
+						depth = 2000,
+						height = 1000,
+						position = Vector3(-3241.76, -1198.13, -21.8836),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1500,
+					},
+					[3] = {
+						depth = 1710,
+						height = 1000,
+						position = Vector3(-1555.05, -3615.75, 391.776),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1900,
+					}
+				}	
+			}
+		end
+		
+		return create_orig(self, layer, offset)
+	end
+
 elseif level == 'framing_frame_1' or level == 'gallery' then
 
 	local create_orig = WorldDefinition.create
