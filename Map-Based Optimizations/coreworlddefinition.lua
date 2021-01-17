@@ -6179,9 +6179,6 @@ elseif level == 'firestarter_2' then
 			self._definition.portal.unit_groups.small_office_01.ids[102014] = true
 			self._definition.portal.unit_groups.small_office_01.ids[102172] = true
 			self._definition.portal.unit_groups.small_office_01.ids[100663] = true
-			self._definition.portal.unit_groups.small_office_01.ids[101490] = true
-			self._definition.portal.unit_groups.small_office_01.ids[101490] = true
-			self._definition.portal.unit_groups.small_office_01.ids[101490] = true
 			
 			self._definition.portal.unit_groups.kitchen = {
 				ids = kitchen,
