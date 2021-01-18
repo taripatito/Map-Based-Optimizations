@@ -19548,7 +19548,7 @@ elseif level == 'welcome_to_the_jungle_2' then
 					position = Vector3(-2404.82, -2471.36, 396.57),
 					rotation = Rotation(0, 0, 0),
 					type = box,
-					width = 400,
+					width = 1800,
 				},
 				[2] = {
 					depth = 2000,
