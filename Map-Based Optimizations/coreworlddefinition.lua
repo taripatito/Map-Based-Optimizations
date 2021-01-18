@@ -6,9 +6,14 @@ local Celer_Compat = BLT.Mods:GetModByName("Celer")
 if Celer_Compat then
 	_G.Celer.settings.map_change_bph = false
 	_G.Celer.settings.map_change_vit = false
+	_G.Celer.settings.map_change_sah = false
 end
 
 if level == 'big' then
+	if Celer_Compat then
+		return
+	end
+	
 	local big = {
 		[26] = true,
 		[28] = true,
