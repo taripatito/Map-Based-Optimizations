@@ -6213,6 +6213,14 @@ elseif level == 'firestarter_2' then
 						rotation = Rotation(0, 0, 0),
 						type = box,
 						width = 1900,
+					},
+					[4] = {
+						depth = 300,
+						height = 600,
+						position = Vector3(-1543.302, -1198.338, 393.817),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 400,
 					}
 				}	
 			}
