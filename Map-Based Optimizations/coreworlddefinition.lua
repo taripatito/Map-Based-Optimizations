@@ -11,7 +11,9 @@ end
 
 if level == 'big' then
 	if Celer_Compat then
-		return
+		if _G.Celer.settings.map_change_big then
+			return
+		end
 	end
 	
 	local big = {
