@@ -7277,7 +7277,6 @@ elseif level == 'framing_frame_3' then
 		[100794] = true,
 		[100858] = true,
 		[101031] = true,
-		[101032] = true,
 		[101033] = true,
 		[101035] = true,
 		[101049] = true,
@@ -7376,6 +7375,8 @@ elseif level == 'framing_frame_3' then
 		[400099] = true,
 		[400100] = true,
 		[400101] = true,
+		[400102] = true,
+		[400103] = true,
 		[400104] = true,
 		[400105] = true,
 		[400106] = true,
@@ -7390,6 +7391,7 @@ elseif level == 'framing_frame_3' then
 		[400128] = true,
 		[400129] = true,
 		[400131] = true,
+		[400133] = true,
 	}
 	local favourite = {
 		[12] = true,
