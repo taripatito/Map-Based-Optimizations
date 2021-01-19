@@ -19151,7 +19151,7 @@ elseif level == 'vit' then
 		return create_orig(self, layer, offset)
 	end
 elseif level == 'welcome_to_the_jungle_2' then
-	local we = {
+	local basement = {
 		[54] = true,
 		[63] = true,
 		[64] = true,
@@ -19379,7 +19379,61 @@ elseif level == 'welcome_to_the_jungle_2' then
 		[500085] = true,
 		[500086] = true,
 	}
-	local lost = {
+	local downstairs_kitchen = {
+		[100566] = true,
+		[100604] = true,
+		[101164] = true,
+		[101166] = true,
+		[101171] = true,
+		[101285] = true,
+		[102066] = true,
+		[102111] = true,
+		[102119] = true,
+		[102120] = true,
+		[102121] = true,
+		[102122] = true,
+		[102134] = true,
+		[102170] = true,
+		[102173] = true,
+		[102174] = true,
+		[103195] = true,
+		[103198] = true,
+		[103202] = true,
+		[103277] = true,
+		[103373] = true,
+		[103374] = true,
+		[103375] = true,
+		[103376] = true,
+		[103377] = true,
+		[103378] = true,
+		[103672] = true,
+		[104902] = true,
+		[104903] = true,
+		[500012] = true,
+		[500013] = true,
+		[500014] = true,
+		[500015] = true,
+		[500016] = true,
+		[500017] = true,
+		[500019] = true,
+		[500020] = true,
+		[500021] = true,
+		[500022] = true,
+		[500023] = true,
+		[500024] = true,
+		[500025] = true,
+		[500026] = true,
+		[500028] = true,
+		[500029] = true,
+		[500030] = true,
+		[500031] = true,
+		[500172] = true,
+		[500173] = true,
+		[500174] = true,
+		[500175] = true,
+		[500176] = true,
+	}
+	local upstairs_bathroom = {
 		[32] = true,
 		[100033] = true,
 		[100357] = true,
@@ -19438,7 +19492,7 @@ elseif level == 'welcome_to_the_jungle_2' then
 		[500158] = true,
 		[500159] = true,
 	}
-	local fusion = {
+	local upstairs_bedroom = {
 		[31] = true,
 		[100777] = true,
 		[100802] = true,
@@ -19514,12 +19568,118 @@ elseif level == 'welcome_to_the_jungle_2' then
 		[500168] = true,
 		[500169] = true,
 	}
+	local upstairs_front = {
+		[100166] = true,
+		[100757] = true,
+		[100849] = true,
+		[100988] = true,
+		[101236] = true,
+		[101241] = true,
+		[101254] = true,
+		[101255] = true,
+		[101256] = true,
+		[101257] = true,
+		[101258] = true,
+		[101259] = true,
+		[101278] = true,
+		[101326] = true,
+		[101365] = true,
+		[101578] = true,
+		[101602] = true,
+		[101623] = true,
+		[101654] = true,
+		[101667] = true,
+		[101671] = true,
+		[101710] = true,
+		[101840] = true,
+		[101926] = true,
+		[101927] = true,
+		[102289] = true,
+		[102291] = true,
+		[102337] = true,
+		[102339] = true,
+		[102341] = true,
+		[102343] = true,
+		[102356] = true,
+		[102360] = true,
+		[102363] = true,
+		[102364] = true,
+		[102367] = true,
+		[102495] = true,
+		[102538] = true,
+		[102568] = true,
+		[102884] = true,
+		[102885] = true,
+		[102985] = true,
+		[102990] = true,
+		[103033] = true,
+		[103535] = true,
+		[103608] = true,
+		[103658] = true,
+		[103659] = true,
+		[103660] = true,
+		[103661] = true,
+		[103669] = true,
+		[103754] = true,
+		[103805] = true,
+		[103806] = true,
+		[103807] = true,
+		[103808] = true,
+		[103809] = true,
+		[103814] = true,
+		[103816] = true,
+		[103817] = true,
+		[103818] = true,
+		[103820] = true,
+		[103822] = true,
+		[103823] = true,
+		[103824] = true,
+		[103825] = true,
+		[103957] = true,
+		[103959] = true,
+		[103960] = true,
+		[103961] = true,
+		[104029] = true,
+		[104041] = true,
+		[104601] = true,
+		[104602] = true,
+		[104611] = true,
+		[104612] = true,
+		[105142] = true,
+		[105143] = true,
+		[105144] = true,
+		[105145] = true,
+		[500100] = true,
+		[500101] = true,
+		[500102] = true,
+		[500103] = true,
+		[500104] = true,
+		[500105] = true,
+		[500106] = true,
+		[500107] = true,
+		[500108] = true,
+		[500109] = true,
+		[500110] = true,
+		[500114] = true,
+		[500115] = true,
+		[500116] = true,
+		[500117] = true,
+		[500118] = true,
+		[500119] = true,
+		[500120] = true,
+		[500121] = true,
+		[500122] = true,
+		[500123] = true,
+		[500124] = true,
+		[500125] = true,
+		[500126] = true,
+	}
 
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		self._definition.portal.unit_groups = {}
 		self._definition.portal.unit_groups.basement = {
-			ids = we,
+			ids = basement,
 			shapes = {
 				[1] = {
 					depth = 1300,
@@ -19539,8 +19699,45 @@ elseif level == 'welcome_to_the_jungle_2' then
 				}
 			}
 		}
+		self._definition.portal.unit_groups.downstairs_kitchen = {
+			ids = downstairs_kitchen,
+			shapes = {
+				[1] = {
+					depth = 2000,
+					height = 2000,
+					position = Vector3(-8535.98, -4393.45, -951.026),
+					rotation = Rotation(0, 0, 0),
+					type = box,
+					width = 13000,
+				},
+				[2] = {
+					depth = 1000,
+					height = 1320,
+					position = Vector3(-2406.22, -2395.6, -952.735),
+					rotation = Rotation(0, 0, 0),
+					type = box,
+					width = 6000,
+				},
+				[3] = {
+					depth = 700,
+					height = 1000,
+					position = Vector3(-2941.77, -1397.5, -5.51524),
+					rotation = Rotation(0, 0, 0),
+					type = box,
+					width = 1000,
+				},
+				[4] = {
+					depth = 800,
+					height = 1000,
+					position = Vector3(-2943.1, -703.26, -10.5345),
+					rotation = Rotation(0, 0, 0),
+					type = box,
+					width = 520,
+				}
+			}
+		}
 		self._definition.portal.unit_groups.upstairs_bathroom = {
-			ids = lost,
+			ids = upstairs_bathroom,
 			shapes = {
 				[1] = {
 					depth = 860,
@@ -19548,7 +19745,7 @@ elseif level == 'welcome_to_the_jungle_2' then
 					position = Vector3(-2404.82, -2471.36, 396.57),
 					rotation = Rotation(0, 0, 0),
 					type = box,
-					width = 1800,
+					width = 1840,
 				},
 				[2] = {
 					depth = 2000,
@@ -19569,7 +19766,7 @@ elseif level == 'welcome_to_the_jungle_2' then
 			}
 		}
 		self._definition.portal.unit_groups.upstairs_bedroom = {
-			ids = fusion,
+			ids = upstairs_bedroom,
 			shapes = {
 				[1] = {
 					depth = 1200,
@@ -19594,6 +19791,43 @@ elseif level == 'welcome_to_the_jungle_2' then
 					rotation = Rotation(0, 0, 0),
 					type = box,
 					width = 15000,
+				}
+			}
+		}
+		self._definition.portal.unit_groups.upstairs_front = {
+			ids = upstairs_front,
+			shapes = {
+				[1] = {
+					depth = 1100,
+					height = 400,
+					position = Vector3(-2403.96, -18.3058, 394.171),
+					rotation = Rotation(0, 0, 0),
+					type = box,
+					width = 3300,
+				},
+				[2] = {
+					depth = 600,
+					height = 1000,
+					position = Vector3(-1577.81, -552.943, 397.066),
+					rotation = Rotation(0, 0, 0),
+					type = box,
+					width = 2500,
+				},
+				[3] = {
+					depth = 10000,
+					height = 2000,
+					position = Vector3(-10564.4, 378.906, -846.978),
+					rotation = Rotation(0, 0, 0),
+					type = box,
+					width = 13000,
+				},
+				[4] = {
+					depth = 600,
+					height = 400,
+					position = Vector3(-2384.79, -581.485, 394.968),
+					rotation = Rotation(0, 0, 0),
+					type = box,
+					width = 800,
 				}
 			}
 		}
