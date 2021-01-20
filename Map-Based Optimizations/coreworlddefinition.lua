@@ -7878,7 +7878,6 @@ elseif level == 'framing_frame_3' then
 		[102254] = true,
 		[102366] = true,
 		[102404] = true,
-		[102510] = true,
 		[102797] = true,
 		[102920] = true,
 		[102923] = true,
@@ -8125,6 +8124,14 @@ elseif level == 'framing_frame_3' then
 					rotation = Rotation(0, 0, 0),
 					type = box,
 					width = 4000,
+				},
+				[3] = {
+					depth = 370,
+					height = 360,
+					position = Vector3(-3502.889, 2246.198, 2997.391),
+					rotation = Rotation(0, 0, 0),
+					type = box,
+					width = 1200,
 				}
 			}
 		}
