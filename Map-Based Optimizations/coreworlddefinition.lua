@@ -7657,10 +7657,10 @@ elseif level == 'firestarter_2' then
 					[4] = {
 						depth = 300,
 						height = 600,
-						position = Vector3(-1543.302, -1198.338, 393.817),
+						position = Vector3(-1746.302, -1198.338, 393.817),
 						rotation = Rotation(0, 0, 0),
 						type = box,
-						width = 400,
+						width = 600,
 					}
 				}	
 			}
