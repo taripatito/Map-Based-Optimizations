@@ -309,41 +309,43 @@ if level == 'arm_und' then
 	
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
-		self._definition.portal.unit_groups = {}
-		self._definition.portal.unit_groups.sideroom_left = {
-			ids = sideroom_left,
-			shapes = {
-				[1] = {
-					depth = 1000,
-					height = 1000,
-					position = Vector3(-2177.25, -1646.09, 292.9),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2300,
-				},
-				[2] = {
-					depth = 3000,
-					height = 1000,
-					position = Vector3(-5536.04, -3079.54, 247.845),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 4000,
+		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			self._definition.portal.unit_groups = {}
+			self._definition.portal.unit_groups.sideroom_left = {
+				ids = sideroom_left,
+				shapes = {
+					[1] = {
+						depth = 1000,
+						height = 1000,
+						position = Vector3(-2177.25, -1646.09, 292.9),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2300,
+					},
+					[2] = {
+						depth = 3000,
+						height = 1000,
+						position = Vector3(-5536.04, -3079.54, 247.845),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 4000,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.sideroom_right = {
-			ids = sideroom_right,
-			shapes = {
-				[1] = {
-					depth = 1700,
-					height = 1000,
-					position = Vector3(597.458, 1720.1, 293.021),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2700,
+			self._definition.portal.unit_groups.sideroom_right = {
+				ids = sideroom_right,
+				shapes = {
+					[1] = {
+						depth = 1700,
+						height = 1000,
+						position = Vector3(597.458, 1720.1, 293.021),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2700,
+					}
 				}
 			}
-		}
+		end
 
 		return create_orig(self, layer, offset)
 	end
@@ -5173,6 +5175,132 @@ elseif level == 'brb' then
 	end
 
 elseif level == 'election_day_3' or level == 'election_day_3_skip1' or level == 'election_day_3_skip2' then
+	local mall = {
+		[101076] = true,
+		[101077] = true,
+		[101082] = true,
+		[101111] = true,
+		[101112] = true,
+		[101114] = true,
+		[101168] = true,
+		[101451] = true,
+		[101452] = true,
+		[102786] = true,
+		[102788] = true,
+		[103144] = true,
+		[103147] = true,
+		[103154] = true,
+		[103161] = true,
+		[103165] = true,
+		[103451] = true,
+		[103453] = true,
+		[103713] = true,
+		[103715] = true,
+		[103716] = true,
+		[103717] = true,
+		[103718] = true,
+		[103719] = true,
+		[103720] = true,
+		[103814] = true,
+		[103870] = true,
+		[103871] = true,
+		[103872] = true,
+		[103873] = true,
+		[600008] = true,
+		[600010] = true,
+		[600011] = true,
+		[600012] = true,
+		[600018] = true,
+		[600023] = true,
+		[600035] = true,
+		[600041] = true,
+		[600042] = true,
+		[600043] = true,
+		[600048] = true,
+		[600052] = true,
+		[600053] = true,
+		[600054] = true,
+		[600055] = true,
+		[600056] = true,
+		[600060] = true,
+		[600068] = true,
+		[600073] = true,
+		[600076] = true,
+		[600091] = true,
+		[600101] = true,
+		[600104] = true,
+		[600106] = true,
+		[600107] = true,
+		[600112] = true,
+		[600126] = true,
+		[600127] = true,
+		[600128] = true,
+		[600130] = true,
+		[600131] = true,
+		[600134] = true,
+		[600143] = true,
+		[600145] = true,
+		[600146] = true,
+		[600151] = true,
+		[600169] = true,
+		[600181] = true,
+		[600182] = true,
+		[600184] = true,
+		[600187] = true,
+		[600207] = true,
+		[600223] = true,
+		[600226] = true,
+		[600227] = true,
+		[600228] = true,
+		[600233] = true,
+		[600234] = true,
+		[600235] = true,
+		[600238] = true,
+		[600239] = true,
+		[600267] = true,
+		[600271] = true,
+		[600308] = true,
+		[600324] = true,
+		[600325] = true,
+		[600326] = true,
+		[600331] = true,
+		[600333] = true,
+		[600336] = true,
+		[600337] = true,
+		[600341] = true,
+		[600343] = true,
+		[600349] = true,
+		[600351] = true,
+		[600352] = true,
+		[600357] = true,
+		[600359] = true,
+		[600360] = true,
+		[600363] = true,
+		[600367] = true,
+		[600372] = true,
+		[600374] = true,
+		[600377] = true,
+		[600383] = true,
+		[600453] = true,
+		[600461] = true,
+		[600467] = true,
+		[600472] = true,
+		[600475] = true,
+		[600481] = true,
+		[600482] = true,
+		[600483] = true,
+		[600484] = true,
+		[600487] = true,
+		[600488] = true,
+		[600495] = true,
+		[600948] = true,
+		[600963] = true,
+		[600966] = true,
+		[600968] = true,
+		[600970] = true,
+		[601010] = true,
+		[601012] = true,
+	}
 	local office = {
 		[72] = true,
 		[105] = true,
@@ -5330,43 +5458,357 @@ elseif level == 'election_day_3' or level == 'election_day_3_skip1' or level == 
 
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
-		self._definition.portal.unit_groups.office = {
-			ids = office,
-			shapes = {
-				[1] = {
-					depth = 2030,
-					height = 400,
-					position = Vector3(1872.55, -1604.11, -3.88013),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1500,
-				},
-				[2] = {
-					depth = 1300,
-					height = 400,
-					position = Vector3(848.106, -818.891, -3.16287),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1030,
-				},
-				[3] = {
-					depth = 1000,
-					height = 400,
-					position = Vector3(-13.161, -46.813, -24.0805),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1000,
-				},
-				[4] = {
-					depth = 1700,
-					height = 600,
-					position = Vector3(-2115.63, -1967.94, -5.98357),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 4000,
+		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			self._definition.portal.unit_groups.bdrop_left.ids[100123] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100129] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100531] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100638] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100657] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100658] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100661] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100726] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100728] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100733] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100740] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100742] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100743] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100744] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100745] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100746] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100749] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100753] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100754] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100756] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100760] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100762] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100765] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100766] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100767] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100769] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100772] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100774] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100775] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100776] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100777] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100779] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100782] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100784] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100787] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100789] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100792] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100793] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100794] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100797] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100800] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[100803] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101075] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101436] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101437] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101455] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101458] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101463] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101465] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101467] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101468] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101477] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101478] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101479] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101480] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101481] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101569] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101570] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101571] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101572] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101573] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101574] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101575] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101641] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101771] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101772] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101773] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101774] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101776] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101777] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101778] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101779] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101780] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101781] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101782] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101783] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101784] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101786] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101787] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101788] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101789] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101790] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101791] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101792] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101793] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101796] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101797] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101799] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101800] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101803] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101884] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101886] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101952] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101953] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101954] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101955] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101971] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[101972] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[102076] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[102077] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103838] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103839] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103840] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103841] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103842] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103843] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103844] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103845] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103846] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103847] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103856] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103857] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103858] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103859] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103860] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103861] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103865] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103869] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103876] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103877] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103878] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103879] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103880] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103884] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103885] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103888] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103889] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103890] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103891] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103892] = true
+			self._definition.portal.unit_groups.bdrop_left.ids[103893] = true
+
+			-- Pop-in
+			self._definition.portal.unit_groups.bdrop_left.ids[101988] = false
+			self._definition.portal.unit_groups.bdrop_left.ids[101989] = false
+			self._definition.portal.unit_groups.bdrop_left.ids[101990] = false
+			self._definition.portal.unit_groups.bdrop_left.ids[101994] = false
+			self._definition.portal.unit_groups.bdrop_left.ids[103452] = false
+			self._definition.portal.unit_groups.bdrop_left.ids[103455] = false
+
+			self._definition.portal.unit_groups.bdrop_right.ids[100149] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100159] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100172] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100198] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100245] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100269] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100337] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100533] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100547] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100548] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100598] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100599] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100603] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100606] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100621] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100622] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100628] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100629] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100630] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100641] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100642] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100644] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100645] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100646] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100647] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100648] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100649] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100650] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100651] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100652] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100653] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100654] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100655] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100656] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100670] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100674] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100678] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100681] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100684] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100692] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100693] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100714] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100715] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100718] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100721] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100798] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100799] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100804] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100814] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[100816] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[101242] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[101243] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102221] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102826] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102827] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102828] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102829] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102830] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102831] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102832] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102833] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102834] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102835] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102836] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102837] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102838] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102839] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102840] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102841] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102846] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102847] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102848] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102917] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[102919] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103723] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103724] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103726] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103732] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103733] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103736] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103737] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103738] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103739] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103749] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103753] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103754] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103755] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103759] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103760] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103764] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103765] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103766] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103767] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103768] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103769] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103770] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103771] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103772] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103773] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103774] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103775] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103776] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103777] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103778] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103779] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103780] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103781] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103782] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103783] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103785] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103786] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103787] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103788] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103789] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103790] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103791] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103792] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103793] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103794] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103795] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103796] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103797] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103798] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103799] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103800] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103801] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103896] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103897] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103898] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103899] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103901] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103905] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103906] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103907] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103910] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103911] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103912] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103913] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103914] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103915] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103916] = true
+			self._definition.portal.unit_groups.bdrop_right.ids[103917] = true
+
+			self._definition.portal.unit_groups.mall = {
+				ids = mall,
+				shapes = {
+					[1] = {
+						depth = 11000,
+						height = 1000,
+						position = Vector3(-2975.71, -6893.92, -0.641129),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 3400,
+					},
+					[2] = {
+						depth = 2300,
+						height = 1000,
+						position = Vector3(423.074, 1812.47, -3.50116),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2000,
+					},
+					[3] = {
+						depth = 2000,
+						height = 1000,
+						position = Vector3(422.823, -6889.7, -17.6278),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1000,
+					}
 				}
 			}
-		}
+			self._definition.portal.unit_groups.office = {
+				ids = office,
+				shapes = {
+					[1] = {
+						depth = 2030,
+						height = 400,
+						position = Vector3(1872.55, -1604.11, -3.88013),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1500,
+					},
+					[2] = {
+						depth = 1300,
+						height = 400,
+						position = Vector3(848.106, -818.891, -3.16287),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1030,
+					},
+					[3] = {
+						depth = 1000,
+						height = 400,
+						position = Vector3(-13.161, -46.813, -24.0805),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1000,
+					},
+					[4] = {
+						depth = 1700,
+						height = 600,
+						position = Vector3(-2115.63, -1967.94, -5.98357),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 4000,
+					}
+				}
+			}
+		end
 
 		return create_orig(self, layer, offset)
 	end
@@ -5987,41 +6429,44 @@ elseif level == 'fex' then
 
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
-		self._definition.portal.unit_groups.basement = nil 
-		self._definition.portal.unit_groups.boat_entrance = {
-			ids = boat_entrance,
-			shapes = {
-				[1] = {
-					depth = 3300,
-					height = 1400,
-					position = Vector3(-5177.72, 2336.82, -1544.61),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2700,
+		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			self._definition.portal.unit_groups.basement = nil -- Optimization Improvements
+			self._definition.portal.unit_groups.cellar = nil -- Celer
+			self._definition.portal.unit_groups.boat_entrance = {
+				ids = boat_entrance,
+				shapes = {
+					[1] = {
+						depth = 3300,
+						height = 1400,
+						position = Vector3(-5177.72, 2336.82, -1544.61),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2700,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.wine_cellar = {
-			ids = wine_cellar,
-			shapes = {
-				[1] = {
-					depth = 3430,
-					height = 1100,
-					position = Vector3(-4394.37, -1080.79, -725.006),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1930,
-				},
-				[2] = {
-					depth = 1600,
-					height = 400,
-					position = Vector3(-2476.49, 1970.54, -5.449),
-					rotation = Rotation(-90, 0, 0),
-					type = box,
-					width = 2200,
-				}		
+			self._definition.portal.unit_groups.wine_cellar = {
+				ids = wine_cellar,
+				shapes = {
+					[1] = {
+						depth = 3430,
+						height = 1100,
+						position = Vector3(-4394.37, -1080.79, -725.006),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1930,
+					},
+					[2] = {
+						depth = 1600,
+						height = 400,
+						position = Vector3(-2476.49, 1970.54, -5.449),
+						rotation = Rotation(-90, 0, 0),
+						type = box,
+						width = 2200,
+					}		
+				}
 			}
-		}
+		end
 
 		return create_orig(self, layer, offset)
 	end
@@ -6944,168 +7389,170 @@ elseif level == 'firestarter_1' then
 
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
-		self._definition.portal.unit_groups = {}
-		self._definition.portal.unit_groups.hangar_1 = {
-			ids = hangar_1,
-			shapes = {
-				[1] = {
-					depth = 1630,
-					height = 900,
-					position = Vector3(-3214.92, -901.442, -3.97501),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1800,
-				},
-				[2] = {
-					depth = 7400,
-					height = 2000,
-					position = Vector3(-1433.91, -1883.97, -10.3337),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 6000,
-				},
-				[3] = {
-					depth = 1000,
-					height = 2000,
-					position = Vector3(-1434.14, 5515.92, -4.94373),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1450,
+		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			self._definition.portal.unit_groups = {}
+			self._definition.portal.unit_groups.hangar_1 = {
+				ids = hangar_1,
+				shapes = {
+					[1] = {
+						depth = 1630,
+						height = 900,
+						position = Vector3(-3214.92, -901.442, -3.97501),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1800,
+					},
+					[2] = {
+						depth = 7400,
+						height = 2000,
+						position = Vector3(-1433.91, -1883.97, -10.3337),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 6000,
+					},
+					[3] = {
+						depth = 1000,
+						height = 2000,
+						position = Vector3(-1434.14, 5515.92, -4.94373),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1450,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.hangar_2 = {
-			ids = hangar_2,
-			shapes = {
-				[1] = {
-					depth = 1600,
-					height = 900,
-					position = Vector3(-3215.36, 1103.86, -4.30821),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1900,
-				},
-				[2] = {
-					depth = 7400,
-					height = 2000,
-					position = Vector3(-1433.91, -1883.97, -10.3337),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 6000,
-				},
-				[3] = {
-					depth = 1000,
-					height = 2000,
-					position = Vector3(-1434.14, 5515.92, -4.94373),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1450,
+			self._definition.portal.unit_groups.hangar_2 = {
+				ids = hangar_2,
+				shapes = {
+					[1] = {
+						depth = 1600,
+						height = 900,
+						position = Vector3(-3215.36, 1103.86, -4.30821),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1900,
+					},
+					[2] = {
+						depth = 7400,
+						height = 2000,
+						position = Vector3(-1433.91, -1883.97, -10.3337),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 6000,
+					},
+					[3] = {
+						depth = 1000,
+						height = 2000,
+						position = Vector3(-1434.14, 5515.92, -4.94373),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1450,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.hangar_3 = {
-			ids = hangar_3,
-			shapes = {
-				[1] = {
-					depth = 1870,
-					height = 1000,
-					position = Vector3(-400.597, 3643.12, -1.51169),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1620,
-				},
-				[2] = {
-					depth = 5600,
-					height = 2000,
-					position = Vector3(-3225.91, -1883.97, -201.334),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 8000,
-				},
-				[3] = {
-					depth = 1300,
-					height = 2000,
-					position = Vector3(-3643.04, 2427.81, -202.291),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 430,
+			self._definition.portal.unit_groups.hangar_3 = {
+				ids = hangar_3,
+				shapes = {
+					[1] = {
+						depth = 1870,
+						height = 1000,
+						position = Vector3(-400.597, 3643.12, -1.51169),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1620,
+					},
+					[2] = {
+						depth = 5600,
+						height = 2000,
+						position = Vector3(-3225.91, -1883.97, -201.334),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 8000,
+					},
+					[3] = {
+						depth = 1300,
+						height = 2000,
+						position = Vector3(-3643.04, 2427.81, -202.291),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 430,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.hangar_4 = {
-			ids = hangar_4,
-			shapes = {
-				[1] = {
-					depth = 1890,
-					height = 1000,
-					position = Vector3(1598.99, 3636.85, -2.45358),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1610,
-				},
-				[2] = {
-					depth = 5600,
-					height = 2000,
-					position = Vector3(-3225.91, -1883.97, -201.334),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 8000,
-				},
-				[3] = {
-					depth = 1300,
-					height = 2000,
-					position = Vector3(-3643.04, 2427.81, -202.291),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 430,
+			self._definition.portal.unit_groups.hangar_4 = {
+				ids = hangar_4,
+				shapes = {
+					[1] = {
+						depth = 1890,
+						height = 1000,
+						position = Vector3(1598.99, 3636.85, -2.45358),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1610,
+					},
+					[2] = {
+						depth = 5600,
+						height = 2000,
+						position = Vector3(-3225.91, -1883.97, -201.334),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 8000,
+					},
+					[3] = {
+						depth = 1300,
+						height = 2000,
+						position = Vector3(-3643.04, 2427.81, -202.291),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 430,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.hangar_12_alley = {
-			ids = hangar_12_alley,
-			shapes = {
-				[1] = {
-					depth = 8800,
-					height = 2000,
-					position = Vector3(-6126.69, -945.026, -205.373),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2920,
-				},
-				[2] = {
-					depth = 350,
-					height = 1000,
-					position = Vector3(-3207.22, 729.364, -206.651),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1820,
-				},
-				[3] = {
-					depth = 4000,
-					height = 2000,
-					position = Vector3(-3208.63, 2728.27, -222.102),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1800,
-				},
-				[4] = {
-					depth = 3760,
-					height = 1000,
-					position = Vector3(-3193.95, -1027.27, 616.512),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1500,
-				},
-				[5] = {
-					depth = 1000,
-					height = 2000,
-					position = Vector3(-3656.94, -1934.38, -11.5992),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1100,
+			self._definition.portal.unit_groups.hangar_12_alley = {
+				ids = hangar_12_alley,
+				shapes = {
+					[1] = {
+						depth = 8800,
+						height = 2000,
+						position = Vector3(-6126.69, -945.026, -205.373),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2920,
+					},
+					[2] = {
+						depth = 350,
+						height = 1000,
+						position = Vector3(-3207.22, 729.364, -206.651),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1820,
+					},
+					[3] = {
+						depth = 4000,
+						height = 2000,
+						position = Vector3(-3208.63, 2728.27, -222.102),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1800,
+					},
+					[4] = {
+						depth = 3760,
+						height = 1000,
+						position = Vector3(-3193.95, -1027.27, 616.512),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1500,
+					},
+					[5] = {
+						depth = 1000,
+						height = 2000,
+						position = Vector3(-3656.94, -1934.38, -11.5992),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1100,
+					}
 				}
 			}
-		}
+		end
 
 		return create_orig(self, layer, offset)
 	end
@@ -8559,239 +9006,241 @@ elseif level == 'framing_frame_3' then
 
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
-		self._definition.portal.unit_groups = {}
-		self._definition.portal.unit_groups.balcony = {
-			ids = this,
-			shapes = {
-				[1] = {
-					depth = 1800,
-					height = 1300,
-					position = Vector3(-5091.73, 4044.63, 3388.52),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 870,
-				},
-				[2] = {
-					depth = 410,
-					height = 450,
-					position = Vector3(-4223.07, 5396.77, 3392.91),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 510,
-				},
-				[3] = {
-					depth = 3050,
-					height = 600,
-					position = Vector3(-5405.21, 996.406, 3769.22),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2820,
+		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			self._definition.portal.unit_groups = {}
+			self._definition.portal.unit_groups.balcony = {
+				ids = this,
+				shapes = {
+					[1] = {
+						depth = 1800,
+						height = 1300,
+						position = Vector3(-5091.73, 4044.63, 3388.52),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 870,
+					},
+					[2] = {
+						depth = 410,
+						height = 450,
+						position = Vector3(-4223.07, 5396.77, 3392.91),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 510,
+					},
+					[3] = {
+						depth = 3050,
+						height = 600,
+						position = Vector3(-5405.21, 996.406, 3769.22),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2820,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.bedroom = {
-			ids = is,
-			shapes = {
-				[1] = {
-					depth = 1930,
-					height = 360,
-					position = Vector3(-5024.44, 3805.26, 2992.83),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 810,
-				},
-				[2] = {
-					depth = 2700,
-					height = 370,
-					position = Vector3(-4215.68, 2623.59, 2966.35),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2000,
+			self._definition.portal.unit_groups.bedroom = {
+				ids = is,
+				shapes = {
+					[1] = {
+						depth = 1930,
+						height = 360,
+						position = Vector3(-5024.44, 3805.26, 2992.83),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 810,
+					},
+					[2] = {
+						depth = 2700,
+						height = 370,
+						position = Vector3(-4215.68, 2623.59, 2966.35),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2000,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.ground_floor = {
-			ids = my,
-			shapes = {
-				[1] = {
-					depth = 4000,
-					height = 800,
-					position = Vector3(-5594.15, 786.756, 2584.19),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 3200,
-				},
-				[2] = {
-					depth = 520,
-					height = 400,
-					position = Vector3(-4201.79, 4784.3, 2951.13),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 420,
+			self._definition.portal.unit_groups.ground_floor = {
+				ids = my,
+				shapes = {
+					[1] = {
+						depth = 4000,
+						height = 800,
+						position = Vector3(-5594.15, 786.756, 2584.19),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 3200,
+					},
+					[2] = {
+						depth = 520,
+						height = 400,
+						position = Vector3(-4201.79, 4784.3, 2951.13),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 420,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.living_room = {
-			ids = most,
-			shapes = {
-				[1] = {
-					depth = 2240,
-					height = 2000,
-					position = Vector3(-5649.79, 763.101, 2993.01),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 4000
-				},
-				[2] = {
-					depth = 3500,
-					height = 370,
-					position = Vector3(-5649.77, 1861.33, 2989.36),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 4000,
-				},
-				[3] = {
-					depth = 2900,
-					height = 2000,
-					position = Vector3(-2273.33, -1860.1, 3072.08),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2400,
-				},
-				[4] = {
-					depth = 1500,
-					height = 410,
-					position = Vector3(-4976.423, 2690.111, 2590.105),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 800,
+			self._definition.portal.unit_groups.living_room = {
+				ids = most,
+				shapes = {
+					[1] = {
+						depth = 2240,
+						height = 2000,
+						position = Vector3(-5649.79, 763.101, 2993.01),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 4000
+					},
+					[2] = {
+						depth = 3500,
+						height = 370,
+						position = Vector3(-5649.77, 1861.33, 2989.36),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 4000,
+					},
+					[3] = {
+						depth = 2900,
+						height = 2000,
+						position = Vector3(-2273.33, -1860.1, 3072.08),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2400,
+					},
+					[4] = {
+						depth = 1500,
+						height = 410,
+						position = Vector3(-4976.423, 2690.111, 2590.105),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 800,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.office = {
-			ids = favourite,
-			shapes = {
-				[1] = {
-					depth = 1700,
-					height = 700,
-					position = Vector3(-5078.76, 4124.72, 3397.42),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 860,
-				},
-				[2] = {
-					depth = 410,
-					height = 440,
-					position = Vector3(-4223.03, 5399.2, 3394.32),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 510,
-				},
-				[3] = {
-					depth = 3130,
-					height = 600,
-					position = Vector3(-5404, 998.628, 3757.85),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2810,
-				},
-				[4] = {
-					depth = 3130,
-					height = 370,
-					position = Vector3(-5425.54, 997.153, 3394.93),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1900,
+			self._definition.portal.unit_groups.office = {
+				ids = favourite,
+				shapes = {
+					[1] = {
+						depth = 1700,
+						height = 700,
+						position = Vector3(-5078.76, 4124.72, 3397.42),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 860,
+					},
+					[2] = {
+						depth = 410,
+						height = 440,
+						position = Vector3(-4223.03, 5399.2, 3394.32),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 510,
+					},
+					[3] = {
+						depth = 3130,
+						height = 600,
+						position = Vector3(-5404, 998.628, 3757.85),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2810,
+					},
+					[4] = {
+						depth = 3130,
+						height = 370,
+						position = Vector3(-5425.54, 997.153, 3394.93),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1900,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.roof = {
-			ids = map,
-			shapes = {
-				[1] = {
-					depth = 3300,
-					height = 2000,
-					position = Vector3(-5408.68, 991.961, 3743.21),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 4000,
-				},
-				[2] = {
-					depth = 3000,
-					height = 2000,
-					position = Vector3(-5408.35, 4290.33, 4095.4),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 4000,
-				},
-				[3] = {
-					depth = 2900,
-					height = 2000,
-					position = Vector3(-2273.34, -1860.1, 3072.08),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2400,
+			self._definition.portal.unit_groups.roof = {
+				ids = map,
+				shapes = {
+					[1] = {
+						depth = 3300,
+						height = 2000,
+						position = Vector3(-5408.68, 991.961, 3743.21),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 4000,
+					},
+					[2] = {
+						depth = 3000,
+						height = 2000,
+						position = Vector3(-5408.35, 4290.33, 4095.4),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 4000,
+					},
+					[3] = {
+						depth = 2900,
+						height = 2000,
+						position = Vector3(-2273.34, -1860.1, 3072.08),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2400,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.second_floor = {
-			ids = cause,
-			shapes = {
-				[1] = {
-					depth = 4800,
-					height = 1400,
-					position = Vector3(-5402.05, 991.715, 3397.77),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 3600,
-				},
-				[2] = {
-					depth = 620,
-					height = 200,
-					position = Vector3(-4202.08, 4694.55, 3210.57),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 420,
-				},
-				[3] = {
-					depth = 870,
-					height = 1000,
-					position = Vector3(-5381.6, 2618.96, 2999.5),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 370,
+			self._definition.portal.unit_groups.second_floor = {
+				ids = cause,
+				shapes = {
+					[1] = {
+						depth = 4800,
+						height = 1400,
+						position = Vector3(-5402.05, 991.715, 3397.77),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 3600,
+					},
+					[2] = {
+						depth = 620,
+						height = 200,
+						position = Vector3(-4202.08, 4694.55, 3210.57),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 420,
+					},
+					[3] = {
+						depth = 870,
+						height = 1000,
+						position = Vector3(-5381.6, 2618.96, 2999.5),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 370,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.second_floor_balcony = {
-			ids = its_great,
-			shapes = {
-				[1] = {
-					depth = 4200,
-					height = 2000,
-					position = Vector3(-5647.29, -1951.49, 2979.95),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 7000,
-				},
-				[2] = {
-					depth = 2000,
-					height = 400,
-					position = Vector3(-5648.4, 2246.33, 3391.98),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 4000,
-				},
-				[3] = {
-					depth = 370,
-					height = 360,
-					position = Vector3(-3502.889, 2246.198, 2997.391),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1200,
+			self._definition.portal.unit_groups.second_floor_balcony = {
+				ids = its_great,
+				shapes = {
+					[1] = {
+						depth = 4200,
+						height = 2000,
+						position = Vector3(-5647.29, -1951.49, 2979.95),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 7000,
+					},
+					[2] = {
+						depth = 2000,
+						height = 400,
+						position = Vector3(-5648.4, 2246.33, 3391.98),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 4000,
+					},
+					[3] = {
+						depth = 370,
+						height = 360,
+						position = Vector3(-3502.889, 2246.198, 2997.391),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1200,
+					}
 				}
 			}
-		}
+		end
 
 		return create_orig(self, layer, offset)
 	end
@@ -10620,237 +11069,239 @@ elseif level == 'friend' then
 
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
-		self._definition.portal.unit_groups = {}
-		self._definition.portal.unit_groups.bony_tontana = {
-			ids = bony_tontana,
-			shapes = {
-				[1] = {
-					depth = 2200,
-					height = 1000,
-					position = Vector3(108.045, -2186.1, 443.888),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2100,
-				},
-				[2] = {
-					depth = 3000,
-					height = 1000,
-					position = Vector3(-2831.14, -2279.67, 44.272),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 3000,
+		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			self._definition.portal.unit_groups = {}
+			self._definition.portal.unit_groups.bony_tontana = {
+				ids = bony_tontana,
+				shapes = {
+					[1] = {
+						depth = 2200,
+						height = 1000,
+						position = Vector3(108.045, -2186.1, 443.888),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2100,
+					},
+					[2] = {
+						depth = 3000,
+						height = 1000,
+						position = Vector3(-2831.14, -2279.67, 44.272),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 3000,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.inside_mansion = {
-			ids = mony_tontana,
-			shapes = {
-				[1] = {
-					depth = 2760,
-					height = 1300,
-					position = Vector3(-2916.98, -4654.16, -112.668),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 3800,
-				},
-				[2] = {
-					depth = 1000,
-					height = 1000,
-					position = Vector3(-1495.69, -5047.02, -56.2296),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1230,
-				},
-				[3] = {
-					depth = 1000,
-					height = 1000,
-					position = Vector3(-2844.84, -1901.32, 44.4107),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 730,
+			self._definition.portal.unit_groups.inside_mansion = {
+				ids = mony_tontana,
+				shapes = {
+					[1] = {
+						depth = 2760,
+						height = 1300,
+						position = Vector3(-2916.98, -4654.16, -112.668),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 3800,
+					},
+					[2] = {
+						depth = 1000,
+						height = 1000,
+						position = Vector3(-1495.69, -5047.02, -56.2296),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1230,
+					},
+					[3] = {
+						depth = 1000,
+						height = 1000,
+						position = Vector3(-2844.84, -1901.32, 44.4107),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 730,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.outside_mansion_back = {
-			ids = phony_tontana,
-			shapes = {
-				[1] = {
-					depth = 3300,
-					height = 1000,
-					position = Vector3(-7623.66, -3901.03, -566.919),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 4780,
-				},
-				[2] = {
-					depth = 1700,
-					height = 1000,
-					position = Vector3(-3116.18, -3907.27, -72.4352),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1650,
-				},
-				[3] = {
-					depth = 800,
-					height = 1000,
-					position = Vector3(-2846.05, -2281.6, -53.1116),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 440,
-				},
-				[4] = {
-					depth = 3000,
-					height = 1000,
-					position = Vector3(-3988.03, -607.283, -282.823),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 3000,
-				},
-				[5] = {
-					depth = 2600,
-					height = 1000,
-					position = Vector3(-2443.76, -6501.69, -63.821),
-					rotation = Rotation(45, 0, 0),
-					type = box,
-					width = 2000,
+			self._definition.portal.unit_groups.outside_mansion_back = {
+				ids = phony_tontana,
+				shapes = {
+					[1] = {
+						depth = 3300,
+						height = 1000,
+						position = Vector3(-7623.66, -3901.03, -566.919),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 4780,
+					},
+					[2] = {
+						depth = 1700,
+						height = 1000,
+						position = Vector3(-3116.18, -3907.27, -72.4352),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1650,
+					},
+					[3] = {
+						depth = 800,
+						height = 1000,
+						position = Vector3(-2846.05, -2281.6, -53.1116),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 440,
+					},
+					[4] = {
+						depth = 3000,
+						height = 1000,
+						position = Vector3(-3988.03, -607.283, -282.823),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 3000,
+					},
+					[5] = {
+						depth = 2600,
+						height = 1000,
+						position = Vector3(-2443.76, -6501.69, -63.821),
+						rotation = Rotation(45, 0, 0),
+						type = box,
+						width = 2000,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.outside_mansion_front = {
-			ids = rony_tontana,
-			shapes = {
-				[1] = {
-					depth = 5600,
-					height = 2000,
-					position = Vector3(2095.011, -6248.533, -853.615),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 8000,
-				},
-				[2] = {
-					depth = 4400,
-					height = 1300,
-					position = Vector3(842.869, -6245.05, -153.868),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1260,
-				},
-				[3] = {
-					depth = 6000,
-					height = 1000,
-					position = Vector3(465.838, -1895.71, -209.249),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 4000,
-				},
-				[4] = {
-					depth = 2100,
-					height = 2000,
-					position = Vector3(-3592.29, -6256.71, -170.45),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 4500,
-				},
-				[5] = {
-					depth = 2300,
-					height = 1000,
-					position = Vector3(262.539, -4160.59, -57.3764),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1000,
-				},
-				[6] = {
-					depth = 2400,
-					height = 1000,
-					position = Vector3(-1717.02, -4162.17, 439.705),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2000,
+			self._definition.portal.unit_groups.outside_mansion_front = {
+				ids = rony_tontana,
+				shapes = {
+					[1] = {
+						depth = 5600,
+						height = 2000,
+						position = Vector3(2095.011, -6248.533, -853.615),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 8000,
+					},
+					[2] = {
+						depth = 4400,
+						height = 1300,
+						position = Vector3(842.869, -6245.05, -153.868),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1260,
+					},
+					[3] = {
+						depth = 6000,
+						height = 1000,
+						position = Vector3(465.838, -1895.71, -209.249),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 4000,
+					},
+					[4] = {
+						depth = 2100,
+						height = 2000,
+						position = Vector3(-3592.29, -6256.71, -170.45),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 4500,
+					},
+					[5] = {
+						depth = 2300,
+						height = 1000,
+						position = Vector3(262.539, -4160.59, -57.3764),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1000,
+					},
+					[6] = {
+						depth = 2400,
+						height = 1000,
+						position = Vector3(-1717.02, -4162.17, 439.705),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2000,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.outside_mansion_right = {
-			ids = montana_tony,
-			shapes = {
-				[1] = {
-					depth = 10000,
-					height = 1000,
-					position = Vector3(-3977.25, -269.176, -223.206),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 8400,
-				},
-				[2] = {
-					depth = 7000,
-					height = 2000,
-					position = Vector3(951.815, -6241.84, -921.707),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 9000,
-				},
-				[3] = {
-					depth = 6000,
-					height = 2000,
-					position = Vector3(-7689.37, -5841.17, -319.577),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 5500,
-				},
-				[4] = {
-					depth = 2500,
-					height = 1200,
-					position = Vector3(-2192.43, -2282.33, -62.9136),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 5400,
+			self._definition.portal.unit_groups.outside_mansion_right = {
+				ids = montana_tony,
+				shapes = {
+					[1] = {
+						depth = 10000,
+						height = 1000,
+						position = Vector3(-3977.25, -269.176, -223.206),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 8400,
+					},
+					[2] = {
+						depth = 7000,
+						height = 2000,
+						position = Vector3(951.815, -6241.84, -921.707),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 9000,
+					},
+					[3] = {
+						depth = 6000,
+						height = 2000,
+						position = Vector3(-7689.37, -5841.17, -319.577),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 5500,
+					},
+					[4] = {
+						depth = 2500,
+						height = 1200,
+						position = Vector3(-2192.43, -2282.33, -62.9136),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 5400,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.start = {
-			ids = eight_pounds_of_coke,
-			shapes = {
-				[1] = {
-					depth = 3500,
-					height = 1300,
-					position = Vector3(4105.45, -4875.84, -875.349),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 6000,
-				},
-				[2] = {
-					depth = 10000,
-					height = 2000,
-					position = Vector3(415.552, -6229.38, -209.705),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 10000,
-				},
-				[3] = {
-					depth = 1650,
-					height = 1000,
-					position = Vector3(-3526.43, -6277.64, -55.069),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 10000,
-				},
-				[4] = {
-					depth = 2800,
-					height = 1000,
-					position = Vector3(-3141.02, -4634.56, 443.807),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 4000,
-				},
-				[5] = {
-					depth = 7000,
-					height = 1000,
-					position = Vector3(-2113.95, 212.508, -184.052),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 7000,
+			self._definition.portal.unit_groups.start = {
+				ids = eight_pounds_of_coke,
+				shapes = {
+					[1] = {
+						depth = 3500,
+						height = 1300,
+						position = Vector3(4105.45, -4875.84, -875.349),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 6000,
+					},
+					[2] = {
+						depth = 10000,
+						height = 2000,
+						position = Vector3(415.552, -6229.38, -209.705),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 10000,
+					},
+					[3] = {
+						depth = 1650,
+						height = 1000,
+						position = Vector3(-3526.43, -6277.64, -55.069),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 10000,
+					},
+					[4] = {
+						depth = 2800,
+						height = 1000,
+						position = Vector3(-3141.02, -4634.56, 443.807),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 4000,
+					},
+					[5] = {
+						depth = 7000,
+						height = 1000,
+						position = Vector3(-2113.95, 212.508, -184.052),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 7000,
+					}
 				}
 			}
-		}
+		end
 
 		return create_orig(self, layer, offset)
 	end
@@ -12926,57 +13377,59 @@ elseif level == 'nightclub' then
 
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
-		self._definition.portal.unit_groups = {}
-		self._definition.portal.unit_groups.fight_club = {
-			ids = fight_club,
-			shapes = {
-				[1] = {
-					depth = 1400,
-					height = 400,
-					position = Vector3(1273.78, -8225.89, -432.068),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1000
-				},
-				[2] = {
-					depth = 200,
-					height = 620,
-					position = Vector3(2196.61, -8032.92, -345.361),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 600,
+		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			self._definition.portal.unit_groups = {}
+			self._definition.portal.unit_groups.fight_club = {
+				ids = fight_club,
+				shapes = {
+					[1] = {
+						depth = 1400,
+						height = 400,
+						position = Vector3(1273.78, -8225.89, -432.068),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1000
+					},
+					[2] = {
+						depth = 200,
+						height = 620,
+						position = Vector3(2196.61, -8032.92, -345.361),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 600,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.outside_bar = {
-			ids = outside_bar,
-			shapes = {
-				[1] = {
-					depth = 3000,
-					height = 2000,
-					position = Vector3(-1767.03, -4403.48, -9.43408),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 6000,
-				},
-				[2] = {
-					depth = 1000,
-					height = 1000,
-					position = Vector3(-176.326, -5019.9, 417.944),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1700,
-				},
-				[3] = {
-					depth = 1100,
-					height = 1000,
-					position = Vector3(-157.23, -5490.2, 15.2744),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 500,
+			self._definition.portal.unit_groups.outside_bar = {
+				ids = outside_bar,
+				shapes = {
+					[1] = {
+						depth = 3000,
+						height = 2000,
+						position = Vector3(-1767.03, -4403.48, -9.43408),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 6000,
+					},
+					[2] = {
+						depth = 1000,
+						height = 1000,
+						position = Vector3(-176.326, -5019.9, 417.944),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1700,
+					},
+					[3] = {
+						depth = 1100,
+						height = 1000,
+						position = Vector3(-157.23, -5490.2, 15.2744),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 500,
+					}
 				}
 			}
-		}
+		end
 
 		return create_orig(self, layer, offset)
 	end
@@ -14430,74 +14883,76 @@ elseif level == 'nmh' then
 
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
-		self._definition.portal.unit_groups.ICU_mission_area.ids = ICU_mission_area
-		self._definition.portal.unit_groups.cafeteria.ids = cafeteria
-		self._definition.portal.unit_groups.cafeteria_hallway_2_last_rooms.ids = cafeteria_hallway_2_last_rooms
-		self._definition.portal.unit_groups.managment_ICU.ids = managment_ICU
-		self._definition.portal.unit_groups.roof.ids = roof
-		self._definition.portal.unit_groups.cafeteria_hallway_2_last_rooms.shapes[4] = {
-			depth = 400,
-			height = 320,
-			position = Vector3(3465.914, 101.040, -2.357),
-			rotation = Rotation(0, 0, 0),
-			type = box,
-			width = 1000,
-		}
-		self._definition.portal.unit_groups.lobby = {
-			ids = lobby,
-			shapes = {
-				[1] = {
-					depth = 2400,
-					height = 500,
-					position = Vector3(-395.085, -1513.96, -9.3074),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 5000
-				},
-				[2] = {
-					depth = 2140,
-					height = 500,
-					position = Vector3(-342.776, 885.056, -7.94815),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2300
-				},
-				[3] = {
-					depth = 700,
-					height = 500,
-					position = Vector3(-2859.18, 330.107, -10.5037),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2500
+		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			self._definition.portal.unit_groups.ICU_mission_area.ids = ICU_mission_area
+			self._definition.portal.unit_groups.cafeteria.ids = cafeteria
+			self._definition.portal.unit_groups.cafeteria_hallway_2_last_rooms.ids = cafeteria_hallway_2_last_rooms
+			self._definition.portal.unit_groups.managment_ICU.ids = managment_ICU
+			self._definition.portal.unit_groups.roof.ids = roof
+			self._definition.portal.unit_groups.cafeteria_hallway_2_last_rooms.shapes[4] = {
+				depth = 400,
+				height = 320,
+				position = Vector3(3465.914, 101.040, -2.357),
+				rotation = Rotation(0, 0, 0),
+				type = box,
+				width = 1000,
+			}
+			self._definition.portal.unit_groups.lobby = {
+				ids = lobby,
+				shapes = {
+					[1] = {
+						depth = 2400,
+						height = 500,
+						position = Vector3(-395.085, -1513.96, -9.3074),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 5000
+					},
+					[2] = {
+						depth = 2140,
+						height = 500,
+						position = Vector3(-342.776, 885.056, -7.94815),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2300
+					},
+					[3] = {
+						depth = 700,
+						height = 500,
+						position = Vector3(-2859.18, 330.107, -10.5037),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2500
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.office = {
-			ids = office,
-			shapes = {
-				[1] = {
-					depth = 3000,
-					height = 400,
-					position = Vector3(-513.976, -1508.66, -7.85608),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1100
+			self._definition.portal.unit_groups.office = {
+				ids = office,
+				shapes = {
+					[1] = {
+						depth = 3000,
+						height = 400,
+						position = Vector3(-513.976, -1508.66, -7.85608),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1100
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.morgue = {
-			ids = morgue,
-			shapes = {
-				[1] = {
-					depth = 1800,
-					height = 500,
-					position = Vector3(-3500.8, 1825.45, -744.46),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 4600
+			self._definition.portal.unit_groups.morgue = {
+				ids = morgue,
+				shapes = {
+					[1] = {
+						depth = 1800,
+						height = 500,
+						position = Vector3(-3500.8, 1825.45, -744.46),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 4600
+					}
 				}
 			}
-		}
+		end
 
 		return create_orig(self, layer, offset)
 	end
@@ -15146,38 +15601,39 @@ elseif level == 'pex' then
 		[900643] = true,
 	}
 
-
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
-		self._definition.portal.unit_groups.second_floor = {
-			ids = second_floor,
-			shapes = {
-				[1] = {
-					depth = 2400,
-					height = 1000,
-					position = Vector3(-3511.61, 698.109, 498.47),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 5000
-				},
-				[2] = {
-					depth = 1000,
-					height = 1000,
-					position = Vector3(-653.832, 2053.51, 80.7954),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1800
-				},
-				[3] = {
-					depth = 1000,
-					height = 1000,
-					position = Vector3(-3078.31, 1919.25, 88.4077),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 600
+		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			self._definition.portal.unit_groups.second_floor = {
+				ids = second_floor,
+				shapes = {
+					[1] = {
+						depth = 2400,
+						height = 1000,
+						position = Vector3(-3511.61, 698.109, 498.47),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 5000
+					},
+					[2] = {
+						depth = 1000,
+						height = 1000,
+						position = Vector3(-653.832, 2053.51, 80.7954),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1800
+					},
+					[3] = {
+						depth = 1000,
+						height = 1000,
+						position = Vector3(-3078.31, 1919.25, 88.4077),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 600
+					}
 				}
 			}
-		}
+		end
 
 		return create_orig(self, layer, offset)
 	end
@@ -22123,191 +22579,193 @@ elseif level == 'vit' then
 
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
-		self._definition.portal.unit_groups = {}
-		self._definition.portal.unit_groups.inside_first_floor = {
-			ids = i,
-			shapes = {
-				[1] = {
-					depth = 3000,
-					height = 1000,
-					position = Vector3(-2674.89, 2335.36, 380.061),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 4100,
-				},
-				[2] = {
-					depth = 1140,
-					height = 1100,
-					position = Vector3(-1103.08, 1198.31, -9.83673),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2300,
+		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			self._definition.portal.unit_groups = {}
+			self._definition.portal.unit_groups.inside_first_floor = {
+				ids = i,
+				shapes = {
+					[1] = {
+						depth = 3000,
+						height = 1000,
+						position = Vector3(-2674.89, 2335.36, 380.061),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 4100,
+					},
+					[2] = {
+						depth = 1140,
+						height = 1100,
+						position = Vector3(-1103.08, 1198.31, -9.83673),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2300,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.inside_ground_floor = {
-			ids = spent,
-			shapes = {
-				[1] = {
-					depth = 3200,
-					height = 380,
-					position = Vector3(-2637.19, 1867.39, -3.87022),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 6070,
-				},
-				[2] = {
-					depth = 1280,
-					height = 430,
-					position = Vector3(-4980.02, 2928.59, -5.77638),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2360,
-				},
-				[3] = {
-					depth = 1000,
-					height = 1000,
-					position = Vector3(-1326.89, 4059.61, 371.15),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 650,
-				},
-				[4] = {
-					depth = 1300,
-					height = 600,
-					position = Vector3(898.851, 4062.39, 369.592),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1000,
+			self._definition.portal.unit_groups.inside_ground_floor = {
+				ids = spent,
+				shapes = {
+					[1] = {
+						depth = 3200,
+						height = 380,
+						position = Vector3(-2637.19, 1867.39, -3.87022),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 6070,
+					},
+					[2] = {
+						depth = 1280,
+						height = 430,
+						position = Vector3(-4980.02, 2928.59, -5.77638),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2360,
+					},
+					[3] = {
+						depth = 1000,
+						height = 1000,
+						position = Vector3(-1326.89, 4059.61, 371.15),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 650,
+					},
+					[4] = {
+						depth = 1300,
+						height = 600,
+						position = Vector3(898.851, 4062.39, 369.592),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1000,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.outside = {
-			ids = four,
-			shapes = {
-				[1] = {
-					depth = 11150,
-					height = 1000,
-					position = Vector3(-4640.58, -7623.87, -7.13254),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 7000,
-				},
-				[2] = {
-					depth = 20000,
-					height = 5000,
-					position = Vector3(-9198.51, -20746.5, -486.204),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 20000,
+			self._definition.portal.unit_groups.outside = {
+				ids = four,
+				shapes = {
+					[1] = {
+						depth = 11150,
+						height = 1000,
+						position = Vector3(-4640.58, -7623.87, -7.13254),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 7000,
+					},
+					[2] = {
+						depth = 20000,
+						height = 5000,
+						position = Vector3(-9198.51, -20746.5, -486.204),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 20000,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.outside_2 = {
-			ids = fucking,
-			shapes = {
-				[1] = {
-					depth = 17000,
-					height = 5000,
-					position = Vector3(-3316.28, -14716.3, -39.4418),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 10000,
+			self._definition.portal.unit_groups.outside_2 = {
+				ids = fucking,
+				shapes = {
+					[1] = {
+						depth = 17000,
+						height = 5000,
+						position = Vector3(-3316.28, -14716.3, -39.4418),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 10000,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.outside_architecture_props = {
-			ids = hours,
-			shapes = {
-				[1] = {
-					depth = 40000,
-					height = 5000,
-					position = Vector3(-15882, -16201.1, -83.5605),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 40000,
+			self._definition.portal.unit_groups.outside_architecture_props = {
+				ids = hours,
+				shapes = {
+					[1] = {
+						depth = 40000,
+						height = 5000,
+						position = Vector3(-15882, -16201.1, -83.5605),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 40000,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.peoc = {
-			ids = on,
-			shapes = {
-				[1] = {
-					depth = 5900,
-					height = 1200,
-					position = Vector3(6353.99, 2598.69, -2046.75),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 4300,
-				},
-				[2] = {
-					depth = 1000,
-					height = 1960,
-					position = Vector3(2798.83, 4006.5, -1536.04),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 3600,
+			self._definition.portal.unit_groups.peoc = {
+				ids = on,
+				shapes = {
+					[1] = {
+						depth = 5900,
+						height = 1200,
+						position = Vector3(6353.99, 2598.69, -2046.75),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 4300,
+					},
+					[2] = {
+						depth = 1000,
+						height = 1960,
+						position = Vector3(2798.83, 4006.5, -1536.04),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 3600,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.west_wing = {
-			ids = this,
-			shapes = {
-				[1] = {
-					depth = 3600,
-					height = 700,
-					position = Vector3(-11008, -325.33, -3.87015),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 3800,
-				},
-				[2] = {
-					depth = 4300,
-					height = 600,
-					position = Vector3(-4639.704, -1108.184, -9.782),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 3700,
+			self._definition.portal.unit_groups.west_wing = {
+				ids = this,
+				shapes = {
+					[1] = {
+						depth = 3600,
+						height = 700,
+						position = Vector3(-11008, -325.33, -3.87015),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 3800,
+					},
+					[2] = {
+						depth = 4300,
+						height = 600,
+						position = Vector3(-4639.704, -1108.184, -9.782),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 3700,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.west_wing_transition = {
-			ids = shit,
-			shapes = {
-				[1] = {
-					depth = 950,
-					height = 500,
-					position = Vector3(-8384.77, 3262.36, -5.84399),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 5740,
-				},
-				[2] = {
-					depth = 620,
-					height = 360,
-					position = Vector3(-2647.16, 3392.2, -1.1841),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1000,
-				},
-				[3] = {
-					depth = 4280,
-					height = 500,
-					position = Vector3(-4622.82, -1005.9, -13.7982),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 3000,
-				},
-				[4] = {
-					depth = 1000,
-					height = 400,
-					position = Vector3(-8648.4, 2586.78, 61.0612),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1300,
-				}				
+			self._definition.portal.unit_groups.west_wing_transition = {
+				ids = shit,
+				shapes = {
+					[1] = {
+						depth = 950,
+						height = 500,
+						position = Vector3(-8384.77, 3262.36, -5.84399),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 5740,
+					},
+					[2] = {
+						depth = 620,
+						height = 360,
+						position = Vector3(-2647.16, 3392.2, -1.1841),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1000,
+					},
+					[3] = {
+						depth = 4280,
+						height = 500,
+						position = Vector3(-4622.82, -1005.9, -13.7982),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 3000,
+					},
+					[4] = {
+						depth = 1000,
+						height = 400,
+						position = Vector3(-8648.4, 2586.78, 61.0612),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1300,
+					}				
+				}
 			}
-		}
+		end
 
 		return create_orig(self, layer, offset)
 	end
@@ -22838,160 +23296,162 @@ elseif level == 'welcome_to_the_jungle_2' then
 
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
-		self._definition.portal.unit_groups = {}
-		self._definition.portal.unit_groups.basement = {
-			ids = basement,
-			shapes = {
-				[1] = {
-					depth = 1300,
-					height = 320,
-					position = Vector3(-1930.72, -2434.83, -411.785),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2400,
-				},
-				[2] = {
-					depth = 730,
-					height = 400,
-					position = Vector3(-907.016, -2013.74, -96.5655),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 220,
+		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			self._definition.portal.unit_groups = {}
+			self._definition.portal.unit_groups.basement = {
+				ids = basement,
+				shapes = {
+					[1] = {
+						depth = 1300,
+						height = 320,
+						position = Vector3(-1930.72, -2434.83, -411.785),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2400,
+					},
+					[2] = {
+						depth = 730,
+						height = 400,
+						position = Vector3(-907.016, -2013.74, -96.5655),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 220,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.downstairs_kitchen = {
-			ids = downstairs_kitchen,
-			shapes = {
-				[1] = {
-					depth = 2000,
-					height = 2000,
-					position = Vector3(-8535.98, -4393.45, -951.026),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 13000,
-				},
-				[2] = {
-					depth = 1000,
-					height = 1320,
-					position = Vector3(-2406.22, -2395.6, -952.735),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 6000,
-				},
-				[3] = {
-					depth = 700,
-					height = 1000,
-					position = Vector3(-2941.77, -1397.5, -5.51524),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1000,
-				},
-				[4] = {
-					depth = 800,
-					height = 1000,
-					position = Vector3(-2943.1, -703.26, -10.5345),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 520,
+			self._definition.portal.unit_groups.downstairs_kitchen = {
+				ids = downstairs_kitchen,
+				shapes = {
+					[1] = {
+						depth = 2000,
+						height = 2000,
+						position = Vector3(-8535.98, -4393.45, -951.026),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 13000,
+					},
+					[2] = {
+						depth = 1000,
+						height = 1320,
+						position = Vector3(-2406.22, -2395.6, -952.735),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 6000,
+					},
+					[3] = {
+						depth = 700,
+						height = 1000,
+						position = Vector3(-2941.77, -1397.5, -5.51524),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1000,
+					},
+					[4] = {
+						depth = 800,
+						height = 1000,
+						position = Vector3(-2943.1, -703.26, -10.5345),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 520,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.upstairs_bathroom = {
-			ids = upstairs_bathroom,
-			shapes = {
-				[1] = {
-					depth = 860,
-					height = 330,
-					position = Vector3(-2404.82, -2471.36, 396.57),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1840,
-				},
-				[2] = {
-					depth = 2000,
-					height = 2000,
-					position = Vector3(-7798.68, -4354.33, -583.797),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 15000,
-				},
-				[3] = {
-					depth = 1650,
-					height = 1000,
-					position = Vector3(-2454.37, -1613.39, -40.9863),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2000,
+			self._definition.portal.unit_groups.upstairs_bathroom = {
+				ids = upstairs_bathroom,
+				shapes = {
+					[1] = {
+						depth = 860,
+						height = 330,
+						position = Vector3(-2404.82, -2471.36, 396.57),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1840,
+					},
+					[2] = {
+						depth = 2000,
+						height = 2000,
+						position = Vector3(-7798.68, -4354.33, -583.797),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 15000,
+					},
+					[3] = {
+						depth = 1650,
+						height = 1000,
+						position = Vector3(-2454.37, -1613.39, -40.9863),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2000,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.upstairs_bedroom = {
-			ids = upstairs_bedroom,
-			shapes = {
-				[1] = {
-					depth = 1200,
-					height = 370,
-					position = Vector3(-2414.72, -2473.54, 397.631),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 1820,
-				},
-				[2] = {
-					depth = 2300,
-					height = 1000,
-					position = Vector3(-606.082, -1803.42, -7.15143),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2100,
-				},
-				[3] = {
-					depth = 2000,
-					height = 2000,
-					position = Vector3(-7540.59, -4341.77, -697.694),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 15000,
+			self._definition.portal.unit_groups.upstairs_bedroom = {
+				ids = upstairs_bedroom,
+				shapes = {
+					[1] = {
+						depth = 1200,
+						height = 370,
+						position = Vector3(-2414.72, -2473.54, 397.631),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 1820,
+					},
+					[2] = {
+						depth = 2300,
+						height = 1000,
+						position = Vector3(-606.082, -1803.42, -7.15143),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2100,
+					},
+					[3] = {
+						depth = 2000,
+						height = 2000,
+						position = Vector3(-7540.59, -4341.77, -697.694),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 15000,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.upstairs_front = {
-			ids = upstairs_front,
-			shapes = {
-				[1] = {
-					depth = 1100,
-					height = 400,
-					position = Vector3(-2403.96, -18.3058, 394.171),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 3300,
-				},
-				[2] = {
-					depth = 600,
-					height = 1000,
-					position = Vector3(-1577.81, -552.943, 397.066),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2500,
-				},
-				[3] = {
-					depth = 10000,
-					height = 2000,
-					position = Vector3(-10564.4, 378.906, -846.978),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 13000,
-				},
-				[4] = {
-					depth = 600,
-					height = 400,
-					position = Vector3(-2384.79, -581.485, 394.968),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 800,
+			self._definition.portal.unit_groups.upstairs_front = {
+				ids = upstairs_front,
+				shapes = {
+					[1] = {
+						depth = 1100,
+						height = 400,
+						position = Vector3(-2403.96, -18.3058, 394.171),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 3300,
+					},
+					[2] = {
+						depth = 600,
+						height = 1000,
+						position = Vector3(-1577.81, -552.943, 397.066),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2500,
+					},
+					[3] = {
+						depth = 10000,
+						height = 2000,
+						position = Vector3(-10564.4, 378.906, -846.978),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 13000,
+					},
+					[4] = {
+						depth = 600,
+						height = 400,
+						position = Vector3(-2384.79, -581.485, 394.968),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 800,
+					}
 				}
 			}
-		}
+		end
 
 		return create_orig(self, layer, offset)
 	end
@@ -23368,186 +23828,188 @@ elseif level == 'wwh' then
 	
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
-		self._definition.portal.unit_groups = {}
-		self._definition.portal.unit_groups.boat_area = {
-			ids = boat_area,
-			shapes = {
-				[1] = {
-					depth = 6000,
-					height = 2000,
-					position = Vector3(975.321, 614.75, 921.687),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 5900,
-				},
-				[2] = {
-					depth = 1700,
-					height = 2000,
-					position = Vector3(4390.12, -64.4158, 1142.23),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2000,
+		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			self._definition.portal.unit_groups = {}
+			self._definition.portal.unit_groups.boat_area = {
+				ids = boat_area,
+				shapes = {
+					[1] = {
+						depth = 6000,
+						height = 2000,
+						position = Vector3(975.321, 614.75, 921.687),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 5900,
+					},
+					[2] = {
+						depth = 1700,
+						height = 2000,
+						position = Vector3(4390.12, -64.4158, 1142.23),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2000,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.captain_1 = {
-			ids = captain_1,
-			shapes = {
-				[1] = {
-					depth = 500,
-					height = 440,
-					position = Vector3(2618.99, 2471.21, 948.552),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 700,
-				},
-				[2] = {
-					depth = 5000,
-					height = 2000,
-					position = Vector3(-105.3, 1599.58, 909.922),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2800,
+			self._definition.portal.unit_groups.captain_1 = {
+				ids = captain_1,
+				shapes = {
+					[1] = {
+						depth = 500,
+						height = 440,
+						position = Vector3(2618.99, 2471.21, 948.552),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 700,
+					},
+					[2] = {
+						depth = 5000,
+						height = 2000,
+						position = Vector3(-105.3, 1599.58, 909.922),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2800,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.captain_2 = {
-			ids = captain_2,
-			shapes = {
-				[1] = {
-					depth = 800,
-					height = 400,
-					position = Vector3(3419.27, 1405.66, 1146.48),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 960,
-				},
-				[2] = {
-					depth = 4000,
-					height = 2000,
-					position = Vector3(1810.79, -2458.15, 978.22),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 5000,
-				},
-				[3] = {
-					depth = 2000,
-					height = 2000,
-					position = Vector3(3995.33, 2191.63, 926.774),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 3000,
-				},
-				[4] = {
-					depth = 3000,
-					height = 2000,
-					position = Vector3(3175.89, 3514.71, 934.53),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 3000,
+			self._definition.portal.unit_groups.captain_2 = {
+				ids = captain_2,
+				shapes = {
+					[1] = {
+						depth = 800,
+						height = 400,
+						position = Vector3(3419.27, 1405.66, 1146.48),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 960,
+					},
+					[2] = {
+						depth = 4000,
+						height = 2000,
+						position = Vector3(1810.79, -2458.15, 978.22),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 5000,
+					},
+					[3] = {
+						depth = 2000,
+						height = 2000,
+						position = Vector3(3995.33, 2191.63, 926.774),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 3000,
+					},
+					[4] = {
+						depth = 3000,
+						height = 2000,
+						position = Vector3(3175.89, 3514.71, 934.53),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 3000,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.small_room = {
-			ids = small_room,
-			shapes = {
-				[1] = {
-					depth = 680,
-					height = 300,
-					position = Vector3(3320.99, 2468.23, 943.989),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 670,
-				},
-				[2] = {
-					depth = 4000,
-					height = 2000,
-					position = Vector3(645.118, 2949.16, 942.922),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 6000,
-				},
-				[3] = {
-					depth = 700,
-					height = 2000,
-					position = Vector3(3990.27, 2255.88, 935.116),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2500,
+			self._definition.portal.unit_groups.small_room = {
+				ids = small_room,
+				shapes = {
+					[1] = {
+						depth = 680,
+						height = 300,
+						position = Vector3(3320.99, 2468.23, 943.989),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 670,
+					},
+					[2] = {
+						depth = 4000,
+						height = 2000,
+						position = Vector3(645.118, 2949.16, 942.922),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 6000,
+					},
+					[3] = {
+						depth = 700,
+						height = 2000,
+						position = Vector3(3990.27, 2255.88, 935.116),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2500,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.small_room_2 = {
-			ids = small_room_2,
-			shapes = {
-				[1] = {
-					depth = 7000,
-					height = 2000,
-					position = Vector3(5226, -278.781, 910.026),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2000,
-				},
-				[2] = {
-					depth = 4000,
-					height = 2000,
-					position = Vector3(922.319, 3162.06, 923.764),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 5000,
-				},
-				[3] = {
-					depth = 1000,
-					height = 2000,
-					position = Vector3(3520.38, 2175.16, 942.653),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 2000,
-				},
-				[4] = {
-					depth = 5000,
-					height = 2000,
-					position = Vector3(6093.89, 1271.54, 1030.45),
-					rotation = Rotation(120, 0, 0),
-					type = box,
-					width = 1700,
+			self._definition.portal.unit_groups.small_room_2 = {
+				ids = small_room_2,
+				shapes = {
+					[1] = {
+						depth = 7000,
+						height = 2000,
+						position = Vector3(5226, -278.781, 910.026),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2000,
+					},
+					[2] = {
+						depth = 4000,
+						height = 2000,
+						position = Vector3(922.319, 3162.06, 923.764),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 5000,
+					},
+					[3] = {
+						depth = 1000,
+						height = 2000,
+						position = Vector3(3520.38, 2175.16, 942.653),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 2000,
+					},
+					[4] = {
+						depth = 5000,
+						height = 2000,
+						position = Vector3(6093.89, 1271.54, 1030.45),
+						rotation = Rotation(120, 0, 0),
+						type = box,
+						width = 1700,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.start_area = {
-			ids = start_area,
-			shapes = {
-				[1] = {
-					depth = 4750,
-					height = 2000,
-					position = Vector3(1785.35, -2284.9, 984.912),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 5000,
-				},
-				[2] = {
-					depth = 1500,
-					height = 2000,
-					position = Vector3(4468.09, 2461.21, 935.513),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 3000,
+			self._definition.portal.unit_groups.start_area = {
+				ids = start_area,
+				shapes = {
+					[1] = {
+						depth = 4750,
+						height = 2000,
+						position = Vector3(1785.35, -2284.9, 984.912),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 5000,
+					},
+					[2] = {
+						depth = 1500,
+						height = 2000,
+						position = Vector3(4468.09, 2461.21, 935.513),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 3000,
+					}
 				}
 			}
-		}
-		self._definition.portal.unit_groups.start_train = {
-			ids = start_train,
-			shapes = {
-				[1] = {
-					depth = 3000,
-					height = 1000,
-					position = Vector3(1811.52, -2260.5, 1125.46),
-					rotation = Rotation(0, 0, 0),
-					type = box,
-					width = 5000,
+			self._definition.portal.unit_groups.start_train = {
+				ids = start_train,
+				shapes = {
+					[1] = {
+						depth = 3000,
+						height = 1000,
+						position = Vector3(1811.52, -2260.5, 1125.46),
+						rotation = Rotation(0, 0, 0),
+						type = box,
+						width = 5000,
+					}
 				}
 			}
-		}
+		end
 
 		return create_orig(self, layer, offset)
 	end
