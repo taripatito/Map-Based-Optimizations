@@ -1,7 +1,6 @@
 core:module('CoreWorldDefinition')
 
 local level = Global.level_data and Global.level_data.level_id
-local Celer_Compat = BLT.Mods:GetModByName("Celer")
 
 if _G.Celer and _G.Celer.settings then
 	_G.Celer.settings.map_change_bph = false
@@ -351,7 +350,7 @@ if level == 'arm_und' then
 	end
 
 elseif level == 'big' then
-	if Celer_Compat then
+	if _G.Celer and _G.Celer.settings then
 		if _G.Celer.settings.map_change_big then
 			return
 		end
@@ -11332,6 +11331,9 @@ elseif level == 'friend' then
 		return create_orig(self, layer, offset)
 	end
 	
+elseif level == 'kosugi' then
+	-- It's finished but i can't be arsed to port it over.
+
 elseif level == 'mia_1' then
 	local russian = {
 		[100000] = true,
@@ -13461,6 +13463,12 @@ elseif level == 'nightclub' then
 	end
 	
 elseif level == 'nmh' then
+	if _G.Celer and _G.Celer.settings then
+		if _G.Celer.settings.map_change_nmh then
+			return
+		end
+	end
+	
 	local ICU_mission_area = {
 		[100009] = true,
 		[100010] = true,
@@ -14334,6 +14342,7 @@ elseif level == 'nmh' then
 		[300361] = true,
 	}
 	local managment_ICU = {
+		[100010] = true,
 		[100143] = true,
 		[100145] = true,
 		[100427] = true,
@@ -14350,6 +14359,7 @@ elseif level == 'nmh' then
 		[101752] = true,
 		[101862] = true,
 		[101864] = true,
+		[101874] = true,
 		[101875] = true,
 		[101882] = true,
 		[101884] = true,
@@ -14360,8 +14370,10 @@ elseif level == 'nmh' then
 		[101914] = true,
 		[101917] = true,
 		[101918] = true,
+		[101919] = true,
 		[101921] = true,
 		[101922] = true,
+		[101924] = true,
 		[101925] = true,
 		[101927] = true,
 		[101929] = true,
@@ -14391,6 +14403,7 @@ elseif level == 'nmh' then
 		[101975] = true,
 		[101978] = true,
 		[101980] = true,
+		[101982] = true,
 		[101983] = true,
 		[101990] = true,
 		[101991] = true,
@@ -14404,7 +14417,9 @@ elseif level == 'nmh' then
 		[102011] = true,
 		[102014] = true,
 		[102015] = true,
+		[102016] = true,
 		[102020] = true,
+		[102023] = true,
 		[102024] = true,
 		[102028] = true,
 		[102030] = true,
@@ -14514,6 +14529,7 @@ elseif level == 'nmh' then
 		[102290] = true,
 		[102291] = true,
 		[102292] = true,
+		[102305] = true,
 		[102567] = true,
 		[102581] = true,
 		[102600] = true,
@@ -14588,6 +14604,7 @@ elseif level == 'nmh' then
 		[103593] = true,
 		[103594] = true,
 		[103595] = true,
+		[103601] = true,
 		[103609] = true,
 		[103615] = true,
 		[103616] = true,
@@ -14685,7 +14702,6 @@ elseif level == 'nmh' then
 		[102152] = true,
 		[102166] = true,
 		[102185] = true,
-		[102187] = true,
 		[102189] = true,
 		[102190] = true,
 		[102196] = true,
@@ -14708,6 +14724,7 @@ elseif level == 'nmh' then
 		[104834] = true,
 		[104835] = true,
 		[105098] = true,
+		[200145] = true,
 		[300179] = true,
 		[300261] = true,
 		[300263] = true,
@@ -14970,7 +14987,7 @@ elseif level == 'nmh' then
 				shapes = {
 					[1] = {
 						depth = 1800,
-						height = 500,
+						height = 730,
 						position = Vector3(-3500.8, 1825.45, -744.46),
 						rotation = Rotation(0, 0, 0),
 						type = box,
@@ -21860,6 +21877,7 @@ elseif level == 'vit' then
 		[103748] = true,
 		[103749] = true,
 		[103750] = true,
+		[103783] = true,
 		[103902] = true,
 		[103903] = true,
 		[103904] = true,
@@ -21967,6 +21985,17 @@ elseif level == 'vit' then
 		[900025] = true,
 		[900026] = true,
 		[900027] = true,
+		[900028] = true,
+		[900029] = true,
+		[900030] = true,
+		[900031] = true,
+		[900032] = true,
+		[900033] = true,
+		[900034] = true,
+		[900035] = true,
+		[900036] = true,
+		[900037] = true,
+		[900038] = true,
 		[900377] = true,
 		[900378] = true,
 		[900381] = true,
