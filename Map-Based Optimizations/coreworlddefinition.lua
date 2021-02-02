@@ -13776,7 +13776,7 @@ elseif level == 'kosugi' then
 						position = Vector3(327.977, -4804.82, 537.808),
 						rotation = Rotation(0, 0, 0),
 						type = box,
-						width = 6100,
+						width = 6500,
 					},
 					[2] = {
 						depth = 3700,
