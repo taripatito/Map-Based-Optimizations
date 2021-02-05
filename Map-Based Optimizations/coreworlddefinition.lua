@@ -26345,7 +26345,7 @@ elseif level == 'vit' then
 		}
 
 		-- TdlQ you are literally a genius why didn't i do this
-		--[[if not excluded[unit_id] and x >= -100000 and x <= 100000 and y >= -100000 and y <= 100000 and z >= -100 and z <= 100000 then
+		if not excluded[unit_id] and x >= -100000 and x <= 100000 and y >= -100000 and y <= 100000 and z >= -100 and z <= 100000 then
 			if not i[unit_id]
 			and not spent[unit_id]
 			and not four[unit_id]
@@ -26356,7 +26356,7 @@ elseif level == 'vit' then
 			then
 				hours[unit_id] = true
 			end
-		end--]]
+		end
 
 		return make_unit_orig(self, data, ...)
 	end
