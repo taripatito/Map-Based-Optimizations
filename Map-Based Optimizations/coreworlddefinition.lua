@@ -10411,24 +10411,24 @@ elseif level == 'framing_frame_3' then
 	function WorldDefinition:make_unit(data, ...)
 		local name = data.name
 		
-			if name == "units/payday2/equipment/gen_interactable_laptop/gen_interactable_laptop"
-			or name == "units/payday2/props/gen_interactable_prop_ipad/gen_interactable_prop_ipad"
-			or name == "units/payday2/props/gen_interactable_prop_iphone/gen_interactable_prop_iphone"
-			or name == "units/world/architecture/secret_stash/props/secret_stash_equipment_server_rack_pickup"
-			or name == "units/pd2_dlc_tng/equipment/gen_interactable_key_case/gen_interactable_case_red"
-			or name == "units/world/architecture/secret_stash/props/secret_stash_hack_keyboard_interaction"
-			or name == "units/payday2/pickups/gen_pku_keycard/gen_pku_keycard"
-			then
-				this[data.unit_id] = nil
-				is[data.unit_id] = nil
-				my[data.unit_id] = nil
-				most[data.unit_id] = nil
-				favourite[data.unit_id] = nil
-				map[data.unit_id] = nil
-				cause[data.unit_id] = nil
-				its_great[data.unit_id] = nil
-			end
-			-- Easier than updating the lists to remove the objects that shouldn't be portalled due to having contours
+		if name == "units/payday2/equipment/gen_interactable_laptop/gen_interactable_laptop"
+		or name == "units/payday2/props/gen_interactable_prop_ipad/gen_interactable_prop_ipad"
+		or name == "units/payday2/props/gen_interactable_prop_iphone/gen_interactable_prop_iphone"
+		or name == "units/world/architecture/secret_stash/props/secret_stash_equipment_server_rack_pickup"
+		or name == "units/pd2_dlc_tng/equipment/gen_interactable_key_case/gen_interactable_case_red"
+		or name == "units/world/architecture/secret_stash/props/secret_stash_hack_keyboard_interaction"
+		or name == "units/payday2/pickups/gen_pku_keycard/gen_pku_keycard"
+		then
+			this[data.unit_id] = nil
+			is[data.unit_id] = nil
+			my[data.unit_id] = nil
+			most[data.unit_id] = nil
+			favourite[data.unit_id] = nil
+			map[data.unit_id] = nil
+			cause[data.unit_id] = nil
+			its_great[data.unit_id] = nil
+		end
+		-- Easier than updating the lists to remove the objects that shouldn't be portalled due to having contours
 
 		return make_unit_orig(self, data, ...)
 	end	
@@ -23026,7 +23026,6 @@ elseif level == 'tag' then
 		return create_orig(self, layer, offset)
 	end
 elseif level == 'vit' then
-
 	local i = {
 		[89] = true,
 		[100031] = true,
@@ -26345,7 +26344,7 @@ elseif level == 'vit' then
 		}
 
 		-- TdlQ you are literally a genius why didn't i do this
-		if not excluded[unit_id] and x >= -100000 and x <= 100000 and y >= -100000 and y <= 100000 and z >= -100 and z <= 100000 then
+		if not excluded[unit_id] and (unit_id <= 146000 or unit_id >= 200000) and x >= -100000 and x <= 100000 and y >= -100000 and y <= 100000 and z >= -100 and z <= 100000 then
 			if not i[unit_id]
 			and not spent[unit_id]
 			and not four[unit_id]
