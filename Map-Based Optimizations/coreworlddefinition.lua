@@ -2,12 +2,6 @@ core:module('CoreWorldDefinition')
 
 local level = Global.level_data and Global.level_data.level_id
 
-if _G.Celer and _G.Celer.settings then
-	_G.Celer.settings.map_change_bph = false
-	_G.Celer.settings.map_change_vit = false
-	_G.Celer.settings.map_change_sah = false
-end
-
 if level == 'arm_und' then
 	local sideroom_left = {
 		[100990] = true,
@@ -2493,6 +2487,12 @@ elseif level == 'big' then
 	end
 
 elseif level == 'bph' then
+	if _G.Celer and _G.Celer.settings then
+		if _G.Celer.settings.map_change_bph then
+			return
+		end
+	end
+	
 	local fuck = {
 		[14] = true,
 		[15] = true,
@@ -19670,6 +19670,11 @@ elseif level == 'pex' then
 	end
 	
 elseif level == 'sah' then
+	if _G.Celer and _G.Celer.settings then
+		if _G.Celer.settings.map_change_sah then
+			return
+		end
+	end
 	-- Thankfully this shit is automated and easy :)
 	local twat = {
 		[38] = true,
@@ -23026,6 +23031,12 @@ elseif level == 'tag' then
 		return create_orig(self, layer, offset)
 	end
 elseif level == 'vit' then
+	if _G.Celer and _G.Celer.settings then
+		if _G.Celer.settings.map_change_vit then
+			return
+		end
+	end
+	
 	local i = {
 		[89] = true,
 		[100031] = true,
