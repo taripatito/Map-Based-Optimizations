@@ -2,7 +2,9 @@ core:module('CoreWorldDefinition')
 
 local level = Global.level_data and Global.level_data.level_id
 
-if level == 'arm_und' then
+if _G.Celer and _G.Celer.settings and _G.Celer.settings['map_change_' .. level] then
+
+elseif level == 'arm_und' then
 	local sideroom_left = {
 		[100990] = true,
 		[100996] = true,
@@ -344,12 +346,6 @@ if level == 'arm_und' then
 	end
 
 elseif level == 'big' then
-	if _G.Celer and _G.Celer.settings then
-		if _G.Celer.settings.map_change_big then
-			return
-		end
-	end
-	
 	local big = {
 		[26] = true,
 		[28] = true,
@@ -2487,12 +2483,6 @@ elseif level == 'big' then
 	end
 
 elseif level == 'bph' then
-	if _G.Celer and _G.Celer.settings then
-		if _G.Celer.settings.map_change_bph then
-			return
-		end
-	end
-	
 	local fuck = {
 		[14] = true,
 		[15] = true,
@@ -5812,13 +5802,7 @@ elseif level == 'election_day_3' or level == 'election_day_3_skip1' or level == 
 		return create_orig(self, layer, offset)
 	end
 	
-elseif level == 'fex' then
-	if _G.Celer and _G.Celer.settings then
-		if _G.Celer.settings.map_change_fex then
-			return
-		end
-	end
-	
+elseif level == 'fex' then	
 	local boat_entrance = {
 		[11] = true,
 		[12] = true,
@@ -17451,12 +17435,6 @@ elseif level == 'nightclub' then
 	end
 	
 elseif level == 'nmh' then
-	if _G.Celer and _G.Celer.settings then
-		if _G.Celer.settings.map_change_nmh then
-			return
-		end
-	end
-	
 	local ICU_mission_area = {
 		[100009] = true,
 		[100010] = true,
@@ -19670,11 +19648,6 @@ elseif level == 'pex' then
 	end
 	
 elseif level == 'sah' then
-	if _G.Celer and _G.Celer.settings then
-		if _G.Celer.settings.map_change_sah then
-			return
-		end
-	end
 	-- Thankfully this shit is automated and easy :)
 	local twat = {
 		[38] = true,
@@ -23031,12 +23004,6 @@ elseif level == 'tag' then
 		return create_orig(self, layer, offset)
 	end
 elseif level == 'vit' then
-	if _G.Celer and _G.Celer.settings then
-		if _G.Celer.settings.map_change_vit then
-			return
-		end
-	end
-	
 	local i = {
 		[89] = true,
 		[100031] = true,
@@ -24616,7 +24583,139 @@ elseif level == 'vit' then
 		[901181] = true,
 		[901290] = true,
 	}
-	local hours = {}
+	local hours = {
+		[103217] = true,
+		[103218] = true,
+		[103219] = true,
+		[103220] = true,
+		[103221] = true,
+		[500002] = true,
+		[500003] = true,
+		[500004] = true,
+		[500009] = true,
+		[500034] = true,
+		[500044] = true,
+		[500047] = true,
+		[500049] = true,
+		[500050] = true,
+		[500051] = true,
+		[500053] = true,
+		[500060] = true,
+		[500063] = true,
+		[500065] = true,
+		[500069] = true,
+		[500072] = true,
+		[500073] = true,
+		[500074] = true,
+		[500075] = true,
+		[500078] = true,
+		[500079] = true,
+		[500080] = true,
+		[500086] = true,
+		[500090] = true,
+		[500095] = true,
+		[500102] = true,
+		[500104] = true,
+		[500105] = true,
+		[500106] = true,
+		[500107] = true,
+		[500108] = true,
+		[500109] = true,
+		[500110] = true,
+		[500111] = true,
+		[500118] = true,
+		[500131] = true,
+		[500183] = true,
+		[500193] = true,
+		[500195] = true,
+		[500198] = true,
+		[500200] = true,
+		[500202] = true,
+		[500210] = true,
+		[500238] = true,
+		[500239] = true,
+		[500240] = true,
+		[500243] = true,
+		[500266] = true,
+		[500273] = true,
+		[500275] = true,
+		[500276] = true,
+		[500295] = true,
+		[500298] = true,
+		[500310] = true,
+		[500313] = true,
+		[500356] = true,
+		[500361] = true,
+		[500362] = true,
+		[500376] = true,
+		[500385] = true,
+		[500400] = true,
+		[500402] = true,
+		[500415] = true,
+		[500416] = true,
+		[500423] = true,
+		[500424] = true,
+		[500425] = true,
+		[500426] = true,
+		[500430] = true,
+		[500486] = true,
+		[500489] = true,
+		[500495] = true,
+		[500496] = true,
+		[500498] = true,
+		[500499] = true,
+		[500500] = true,
+		[500553] = true,
+		[600126] = true,
+		[900336] = true,
+		[900382] = true,
+		[900481] = true,
+		[900552] = true,
+		[900555] = true,
+		[900556] = true,
+		[900566] = true,
+		[900567] = true,
+		[900568] = true,
+		[900569] = true,
+		[900570] = true,
+		[900571] = true,
+		[900575] = true,
+		[900576] = true,
+		[900577] = true,
+		[900578] = true,
+		[900579] = true,
+		[900580] = true,
+		[900581] = true,
+		[900582] = true,
+		[900583] = true,
+		[900584] = true,
+		[900604] = true,
+		[900605] = true,
+		[900606] = true,
+		[900616] = true,
+		[900617] = true,
+		[900618] = true,
+		[900619] = true,
+		[900620] = true,
+		[900621] = true,
+		[900622] = true,
+		[900623] = true,
+		[900625] = true,
+		[900626] = true,
+		[900627] = true,
+		[900628] = true,
+		[900639] = true,
+		[900640] = true,
+		[900641] = true,
+		[900642] = true,
+		[900643] = true,
+		[900644] = true,
+		[900900] = true,
+		[900901] = true,
+		[900902] = true,
+		[900903] = true,
+		[901344] = true,
+	}
 	local on = {
 		[30] = true,
 		[31] = true,
@@ -26337,42 +26436,6 @@ elseif level == 'vit' then
 		[901343] = true,
 	}
 
-	local make_unit_orig = WorldDefinition.make_unit
-	function WorldDefinition:make_unit(data, ...)
-		local unit_id = data.unit_id
-		local pos = data.position
-		local x, y, z = pos.x, pos.y, pos.z
-		local excluded = {
-			[100254] = true,
-			[100360] = true,
-			[100361] = true,
-			[100362] = true,
-			[100607] = true,
-			[100608] = true,
-			[101145] = true,
-			[101146] = true,
-			[101231] = true,
-			[101500] = true,
-			[900263] = true,
-		}
-
-		-- TdlQ you are literally a genius why didn't i do this
-		if not excluded[unit_id] and (unit_id <= 146000 or unit_id >= 200000) and x >= -100000 and x <= 100000 and y >= -100000 and y <= 100000 and z >= -100 and z <= 100000 then
-			if not i[unit_id]
-			and not spent[unit_id]
-			and not four[unit_id]
-			and not fucking[unit_id]
-			and not on[unit_id]
-			and not this[unit_id]
-			and not shit[unit_id]
-			then
-				hours[unit_id] = true
-			end
-		end
-
-		return make_unit_orig(self, data, ...)
-	end
-
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
@@ -26479,14 +26542,6 @@ elseif level == 'vit' then
 						rotation = Rotation(0, 0, 0),
 						type = box,
 						width = 40000,
-					},
-					[2] = {
-						depth = 1200,
-						height = 1200,
-						position = Vector3(2936.83, 3794.56, -999.490),
-						rotation = Rotation(0, 0, 0),
-						type = box,
-						width = 3700,
 					}
 				}
 			}
