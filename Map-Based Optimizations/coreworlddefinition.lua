@@ -1,8 +1,8 @@
 core:module('CoreWorldDefinition')
 
-local level = Global.level_data and Global.level_data.level_id
+local level = Global.level_data and Global.level_data.level_id or ''
 
-if _G.Celer and _G.Celer.settings and _G.Celer.settings['map_change_' .. level] then
+if level ~= 'firestarter_1' and _G.Celer and _G.Celer.settings and _G.Celer.settings['map_change_' .. level] then
 
 elseif level == 'arm_und' then
 	local sideroom_left = {
@@ -5146,6 +5146,17 @@ elseif level == 'bph' then
 		return create_orig(self, layer, offset)
 	end
 
+elseif level == 'branchbank' or level == 'branchbank_cash' or level == 'branchbank_deposit' or level == 'branchbank_gold' or level == 'branchbank_gold_prof' or level == 'branchbank_prof' then
+
+	local create_orig = WorldDefinition.create
+	function WorldDefinition:create(layer, offset)
+		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			self._definition.portal.unit_groups.back_hall.shapes[1].width = 2300
+		end
+
+		return create_orig(self, layer, offset)
+	end
+	
 elseif level == 'brb' then
 
 	local make_unit_orig = WorldDefinition.make_unit
@@ -5174,6 +5185,9 @@ elseif level == 'election_day_3' or level == 'election_day_3_skip1' or level == 
 		[101168] = true,
 		[101451] = true,
 		[101452] = true,
+		[101513] = true,
+		[101526] = true,
+		[101530] = true,
 		[102786] = true,
 		[102788] = true,
 		[103144] = true,
@@ -5183,6 +5197,7 @@ elseif level == 'election_day_3' or level == 'election_day_3_skip1' or level == 
 		[103165] = true,
 		[103451] = true,
 		[103453] = true,
+		[103686] = true,
 		[103713] = true,
 		[103715] = true,
 		[103716] = true,
@@ -5195,6 +5210,16 @@ elseif level == 'election_day_3' or level == 'election_day_3_skip1' or level == 
 		[103871] = true,
 		[103872] = true,
 		[103873] = true,
+		[103874] = true,
+		[103875] = true,
+		[103962] = true,
+		[103963] = true,
+		[103964] = true,
+		[103965] = true,
+		[103966] = true,
+		[103967] = true,
+		[103968] = true,
+		[103969] = true,
 		[600008] = true,
 		[600010] = true,
 		[600011] = true,
@@ -7817,7 +7842,6 @@ elseif level == 'framing_frame_1' or level == 'gallery' then
 		[100177] = true,
 		[100178] = true,
 		[100180] = true,
-		[100182] = true,
 		[100184] = true,
 		[100189] = true,
 		[100190] = true,
@@ -7828,7 +7852,6 @@ elseif level == 'framing_frame_1' or level == 'gallery' then
 		[100204] = true,
 		[100205] = true,
 		[100207] = true,
-		[100208] = true,
 		[100213] = true,
 		[100214] = true,
 		[100215] = true,
@@ -8036,7 +8059,6 @@ elseif level == 'framing_frame_1' or level == 'gallery' then
 		[100177] = true,
 		[100178] = true,
 		[100180] = true,
-		[100182] = true,
 		[100184] = true,
 		[100189] = true,
 		[100190] = true,
@@ -9185,7 +9207,6 @@ elseif level == 'framing_frame_2' then
 			self._definition.portal.unit_groups.end_01.ids[102781] = true
 			self._definition.portal.unit_groups.end_01.ids[102798] = true
 			self._definition.portal.unit_groups.end_01.ids[101211] = true
-			self._definition.portal.unit_groups.end_01.ids[102976] = true
 			self._definition.portal.unit_groups.end_01.ids[103199] = true
 			self._definition.portal.unit_groups.end_01.ids[103200] = true
 			self._definition.portal.unit_groups.end_01.ids[103201] = true		
@@ -17116,14 +17137,6 @@ elseif level == 'mia_1' then
 			-- I hate that i have to do this manually for instances
 			-- At least if the unit id changes it'll work fine
 			if name == "units/payday2/equipment/gen_interactable_spawn_contraband_crate/gen_interactable_spawn_contraband_crate"
-			or name == "units/payday2/pickups/gen_pku_methlab_muriatic_acid/gen_pku_methlab_muriatic_acid"
-			or name == "units/payday2/pickups/gen_pku_methlab_caustic_soda/gen_pku_methlab_caustic_soda"
-			or name == "units/payday2/pickups/gen_pku_methlab_hydrogen_cloride/gen_pku_methlab_hydrogen_cloride"
-			or name == "units/payday2/equipment/hlm_interactable_bar_code_downtown/hlm_interactable_bar_code_downtown"
-			or name == "units/payday2/equipment/hlm_interactable_bar_code_foggy_bottom/hlm_interactable_bar_code_foggy_bottom"
-			or name == "units/payday2/equipment/hlm_interactable_bar_code_georgetown/hlm_interactable_bar_code_georgetown"
-			or name == "units/payday2/equipment/hlm_interactable_bar_code_shaw/hlm_interactable_bar_code_shaw"
-			or name == "units/payday2/equipment/hlm_interactable_bar_code_westend/hlm_interactable_bar_code_westend"
 			or name == "units/pd2_dlc1/equipment/gen_interactable_spawn_contraband_crate_2x1x1m/gen_interactable_spawn_contraband_crate_2x1x1m"
 			then
 				cunt[data.unit_id] = true
