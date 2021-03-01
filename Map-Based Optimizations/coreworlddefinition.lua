@@ -1,3 +1,8 @@
+-- i'm seriously considering cancelling my current plans for optimizing maps due to a loss of motivation and some recent issues with a few members of the community
+-- if anyone is willing to take over the maintenance of the mod and future additions to the mod contact me through discord and i'll tell you how to translate portals from your optimized maps to lua
+-- it's a difficult decision but this mod is simply too time intensive for my current circumstances, i don't feel the effort i'm putting in is worth it for the end results, i will continue to maintain it until further notice
+-- RedFlame#3868
+
 core:module('CoreWorldDefinition')
 
 local level = Global.level_data and Global.level_data.level_id or ''
@@ -305,6 +310,8 @@ elseif level == 'arm_und' then
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			-- if you think i made this mod for people with low end pcs, i don't actually give a single crap
+			-- i made this shit so i could get 144 fps on a good pc
 			self._definition.portal.unit_groups = {}
 			self._definition.portal.unit_groups.sideroom_left = {
 				ids = sideroom_left,
@@ -2434,6 +2441,7 @@ elseif level == 'big' then
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			-- sperm bank is a shit meme and you know it
 			self._definition.portal.unit_groups = {}		
 			self._definition.portal.unit_groups.back = {
 				ids = big,
@@ -3147,6 +3155,7 @@ elseif level == 'bph' then
 		[103058] = true,
 		[300117] = true,
 		[300122] = true,
+		[300125] = true,
 		[300126] = true,
 		[300127] = true,
 		[300128] = true,
@@ -3155,6 +3164,8 @@ elseif level == 'bph' then
 		[300452] = true,
 		[300465] = true,
 		[300467] = true,
+		[300576] = true,
+		[300577] = true,
 		[300578] = true,
 		[300705] = true,
 		[300706] = true,
@@ -3183,8 +3194,31 @@ elseif level == 'bph' then
 		[600300] = true,
 		[600301] = true,
 		[600302] = true,
+		[600316] = true,
 		[600317] = true,
+		[600318] = true,
 		[600319] = true,
+		[600320] = true,
+		[600321] = true,
+		[600322] = true,
+		[600323] = true,
+		[600324] = true,
+		[600325] = true,
+		[600326] = true,
+		[600327] = true,
+		[600328] = true,
+		[600329] = true,
+		[600330] = true,
+		[600331] = true,
+		[600332] = true,
+		[600333] = true,
+		[600334] = true,
+		[600335] = true,
+		[600336] = true,
+		[600337] = true,
+		[600338] = true,
+		[600339] = true,
+		[600340] = true,
 		[600499] = true,
 		[600502] = true,
 		[600503] = true,
@@ -3521,6 +3555,8 @@ elseif level == 'bph' then
 		[204] = true,
 		[100062] = true,
 		[100187] = true,
+		[100961] = true,
+		[100964] = true,
 		[101035] = true,
 		[101036] = true,
 		[101054] = true,
@@ -3537,6 +3573,10 @@ elseif level == 'bph' then
 		[101722] = true,
 		[101723] = true,
 		[101724] = true,
+		[101816] = true,
+		[101817] = true,
+		[101818] = true,
+		[101819] = true,
 		[102131] = true,
 		[102156] = true,
 		[102159] = true,
@@ -3668,20 +3708,301 @@ elseif level == 'bph' then
 		[300813] = true,
 		[300814] = true,
 		[300815] = true,
+		[500000] = true,
+		[500002] = true,
+		[500003] = true,
+		[500004] = true,
+		[500005] = true,
+		[500006] = true,
+		[500007] = true,
+		[500008] = true,
+		[500009] = true,
+		[500010] = true,
+		[500011] = true,
+		[500012] = true,
+		[500013] = true,
+		[500014] = true,
+		[500015] = true,
+		[500016] = true,
+		[500017] = true,
+		[500018] = true,
+		[500020] = true,
+		[500021] = true,
+		[500022] = true,
+		[500024] = true,
+		[500025] = true,
+		[500026] = true,
+		[500027] = true,
+		[500028] = true,
+		[500029] = true,
+		[500030] = true,
+		[500031] = true,
+		[500032] = true,
+		[500033] = true,
+		[500034] = true,
+		[500035] = true,
+		[500036] = true,
+		[500037] = true,
+		[500038] = true,
+		[500039] = true,
+		[500040] = true,
+		[500041] = true,
+		[500042] = true,
+		[500043] = true,
+		[500044] = true,
+		[500045] = true,
+		[500046] = true,
+		[500047] = true,
+		[500048] = true,
+		[500049] = true,
+		[500056] = true,
+		[500057] = true,
+		[500058] = true,
+		[500059] = true,
+		[500060] = true,
+		[500061] = true,
+		[500062] = true,
+		[500063] = true,
+		[500064] = true,
+		[500065] = true,
+		[500066] = true,
+		[500067] = true,
+		[500068] = true,
+		[500069] = true,
+		[500070] = true,
+		[500071] = true,
+		[500072] = true,
+		[500073] = true,
+		[500074] = true,
+		[500075] = true,
+		[500076] = true,
+		[500077] = true,
+		[500078] = true,
+		[500079] = true,
+		[500080] = true,
+		[500081] = true,
+		[500082] = true,
+		[500083] = true,
+		[500084] = true,
+		[500085] = true,
+		[500112] = true,
+		[500113] = true,
+		[500114] = true,
+		[500115] = true,
+		[500116] = true,
+		[500117] = true,
+		[500118] = true,
+		[500119] = true,
+		[500120] = true,
+		[500121] = true,
+		[500122] = true,
+		[500123] = true,
+		[500124] = true,
+		[500130] = true,
+		[500131] = true,
+		[500132] = true,
+		[500133] = true,
+		[500134] = true,
+		[500135] = true,
+		[500136] = true,
+		[500138] = true,
+		[500139] = true,
+		[500140] = true,
+		[500141] = true,
+		[500142] = true,
+		[500143] = true,
+		[500148] = true,
 		[500149] = true,
+		[500150] = true,
+		[500151] = true,
+		[500161] = true,
+		[500162] = true,
+		[500163] = true,
+		[500164] = true,
+		[500165] = true,
+		[500166] = true,
+		[500167] = true,
+		[500169] = true,
+		[500170] = true,
+		[500171] = true,
+		[500172] = true,
+		[500173] = true,
+		[500174] = true,
+		[500175] = true,
+		[500176] = true,
+		[500177] = true,
+		[500178] = true,
+		[500179] = true,
+		[500180] = true,
+		[500181] = true,
+		[500182] = true,
+		[500183] = true,
+		[500184] = true,
+		[500185] = true,
+		[500186] = true,
+		[500187] = true,
+		[500188] = true,
+		[500189] = true,
+		[500190] = true,
+		[500191] = true,
+		[500192] = true,
+		[500193] = true,
+		[500194] = true,
+		[500195] = true,
+		[500196] = true,
+		[500197] = true,
+		[500198] = true,
+		[500199] = true,
+		[500200] = true,
+		[500201] = true,
+		[500202] = true,
+		[500203] = true,
+		[500204] = true,
+		[500205] = true,
+		[500206] = true,
+		[500207] = true,
+		[500208] = true,
+		[500209] = true,
+		[500210] = true,
+		[500211] = true,
+		[500212] = true,
+		[500213] = true,
+		[500214] = true,
+		[500215] = true,
+		[500216] = true,
+		[500217] = true,
+		[500218] = true,
+		[500219] = true,
+		[500220] = true,
+		[500221] = true,
+		[500222] = true,
+		[500223] = true,
+		[500224] = true,
+		[500225] = true,
+		[500226] = true,
+		[500227] = true,
+		[500228] = true,
+		[500229] = true,
+		[500230] = true,
 		[500231] = true,
+		[500232] = true,
+		[500234] = true,
+		[500235] = true,
+		[500236] = true,
+		[500237] = true,
+		[500238] = true,
+		[500239] = true,
+		[500240] = true,
+		[500241] = true,
+		[500242] = true,
+		[500243] = true,
+		[500244] = true,
+		[500245] = true,
+		[500246] = true,
+		[500248] = true,
+		[500249] = true,
+		[500250] = true,
+		[500251] = true,
+		[500252] = true,
+		[500253] = true,
+		[500254] = true,
+		[500255] = true,
+		[500256] = true,
+		[500257] = true,
+		[500258] = true,
+		[500259] = true,
+		[500260] = true,
+		[500262] = true,
 		[500263] = true,
+		[500264] = true,
+		[500265] = true,
+		[500266] = true,
+		[500271] = true,
+		[500272] = true,
+		[500273] = true,
+		[500277] = true,
+		[500278] = true,
+		[500279] = true,
+		[500280] = true,
+		[500282] = true,
+		[500283] = true,
+		[500284] = true,
+		[500285] = true,
+		[500286] = true,
+		[500287] = true,
+		[500288] = true,
+		[500289] = true,
+		[500290] = true,
+		[500291] = true,
+		[500293] = true,
+		[500294] = true,
+		[500295] = true,
+		[500296] = true,
+		[500297] = true,
+		[500298] = true,
+		[500299] = true,
+		[500300] = true,
+		[500301] = true,
+		[500302] = true,
 		[500303] = true,
+		[500304] = true,
+		[500305] = true,
+		[500306] = true,
 		[500307] = true,
+		[500308] = true,
+		[500309] = true,
+		[500310] = true,
+		[500311] = true,
+		[500312] = true,
+		[500313] = true,
+		[500314] = true,
+		[500315] = true,
+		[500316] = true,
+		[500317] = true,
+		[500318] = true,
+		[500319] = true,
+		[500320] = true,
+		[500321] = true,
+		[500322] = true,
+		[500323] = true,
+		[500324] = true,
+		[500325] = true,
+		[500326] = true,
+		[500327] = true,
+		[500328] = true,
+		[500329] = true,
+		[500330] = true,
+		[500331] = true,
+		[500332] = true,
+		[500333] = true,
+		[500334] = true,
+		[500335] = true,
+		[500336] = true,
+		[500337] = true,
+		[500338] = true,
+		[500339] = true,
 		[500340] = true,
+		[500341] = true,
+		[500342] = true,
+		[500343] = true,
+		[500344] = true,
+		[500345] = true,
+		[500346] = true,
+		[500347] = true,
+		[500348] = true,
 		[500349] = true,
+		[500350] = true,
+		[500351] = true,
+		[500352] = true,
 		[500353] = true,
 		[500354] = true,
+		[500355] = true,
 		[500356] = true,
 		[500357] = true,
 		[500358] = true,
 		[500359] = true,
 		[500360] = true,
+		[500361] = true,
 		[500362] = true,
 		[500363] = true,
 		[500364] = true,
@@ -3690,6 +4011,8 @@ elseif level == 'bph' then
 		[500367] = true,
 		[500368] = true,
 		[500369] = true,
+		[500370] = true,
+		[500371] = true,
 		[500372] = true,
 		[500373] = true,
 		[500374] = true,
@@ -3736,7 +4059,17 @@ elseif level == 'bph' then
 		[500419] = true,
 		[500437] = true,
 		[500438] = true,
+		[500440] = true,
+		[500441] = true,
+		[500442] = true,
+		[500443] = true,
+		[500444] = true,
+		[500451] = true,
+		[500460] = true,
+		[500461] = true,
+		[500463] = true,
 		[500468] = true,
+		[500469] = true,
 		[500470] = true,
 		[500471] = true,
 		[500472] = true,
@@ -3747,6 +4080,19 @@ elseif level == 'bph' then
 		[500477] = true,
 		[500478] = true,
 		[500479] = true,
+		[500480] = true,
+		[500481] = true,
+		[500482] = true,
+		[500483] = true,
+		[500484] = true,
+		[500485] = true,
+		[500486] = true,
+		[500487] = true,
+		[500488] = true,
+		[500489] = true,
+		[500490] = true,
+		[500491] = true,
+		[500492] = true,
 		[500495] = true,
 		[500496] = true,
 		[500497] = true,
@@ -3792,6 +4138,14 @@ elseif level == 'bph' then
 		[500537] = true,
 		[500538] = true,
 		[500539] = true,
+		[500541] = true,
+		[500548] = true,
+		[500549] = true,
+		[500550] = true,
+		[500551] = true,
+		[500552] = true,
+		[500553] = true,
+		[500554] = true,
 		[500558] = true,
 		[500559] = true,
 		[500560] = true,
@@ -3801,6 +4155,16 @@ elseif level == 'bph' then
 		[500564] = true,
 		[500565] = true,
 		[500566] = true,
+		[500578] = true,
+		[500581] = true,
+		[500583] = true,
+		[500591] = true,
+		[500592] = true,
+		[500594] = true,
+		[500595] = true,
+		[500596] = true,
+		[500597] = true,
+		[500598] = true,
 		[500607] = true,
 		[500608] = true,
 		[500620] = true,
@@ -3983,9 +4347,15 @@ elseif level == 'bph' then
 		[600313] = true,
 		[600314] = true,
 		[600315] = true,
+		[600539] = true,
+		[600540] = true,
+		[600541] = true,
+		[600543] = true,
+		[600544] = true,
 		[600636] = true,
 		[600925] = true,
 		[601070] = true,
+		[601338] = true,
 		[601353] = true,
 		[601354] = true,
 		[601355] = true,
@@ -4014,11 +4384,18 @@ elseif level == 'bph' then
 		[800005] = true,
 		[800006] = true,
 		[800007] = true,
+		[800008] = true,
+		[800009] = true,
+		[800010] = true,
+		[800011] = true,
 		[800169] = true,
 		[800170] = true,
+		[800171] = true,
 		[800172] = true,
 		[800173] = true,
 		[800174] = true,
+		[800176] = true,
+		[800177] = true,
 		[800178] = true,
 		[800180] = true,
 		[800181] = true,
@@ -4071,9 +4448,32 @@ elseif level == 'bph' then
 		[800237] = true,
 		[800238] = true,
 		[800239] = true,
+		[800240] = true,
 		[800241] = true,
+		[800242] = true,
+		[800243] = true,
+		[800244] = true,
+		[800245] = true,
+		[800246] = true,
 		[800247] = true,
 		[800248] = true,
+		[800249] = true,
+		[800251] = true,
+		[800252] = true,
+		[800253] = true,
+		[800254] = true,
+		[800255] = true,
+		[800256] = true,
+		[800257] = true,
+		[800258] = true,
+		[800259] = true,
+		[800260] = true,
+		[800261] = true,
+		[800262] = true,
+		[800263] = true,
+		[800264] = true,
+		[800265] = true,
+		[800266] = true,
 		[800267] = true,
 		[800268] = true,
 		[800269] = true,
@@ -4087,6 +4487,7 @@ elseif level == 'bph' then
 		[800277] = true,
 		[800278] = true,
 		[800279] = true,
+		[800280] = true,
 		[800281] = true,
 		[800282] = true,
 		[800283] = true,
@@ -4153,6 +4554,11 @@ elseif level == 'bph' then
 		[800345] = true,
 		[800346] = true,
 		[800347] = true,
+		[800349] = true,
+		[800350] = true,
+		[800351] = true,
+		[800352] = true,
+		[800353] = true,
 		[900000] = true,
 		[900001] = true,
 		[900002] = true,
@@ -4721,7 +5127,6 @@ elseif level == 'bph' then
 		[300198] = true,
 		[300199] = true,
 		[300523] = true,
-		[500451] = true,
 		[600047] = true,
 		[600353] = true,
 		[600542] = true,
@@ -4905,6 +5310,35 @@ elseif level == 'bph' then
 		[601350] = true,
 		[601351] = true,
 	}
+	local go_die_in_a_fire = {
+		[500050] = true,
+		[500051] = true,
+		[500052] = true,
+		[500053] = true,
+		[500054] = true,
+		[500055] = true,
+		[500125] = true,
+		[500126] = true,
+		[500127] = true,
+		[500128] = true,
+		[500129] = true,
+		[500137] = true,
+		[500247] = true,
+		[500292] = true,
+	}
+
+	local make_unit_orig = WorldDefinition.make_unit
+	function WorldDefinition:make_unit(data, ...)
+		local unit_id = data.unit_id
+
+		if go_die_in_a_fire[unit_id] then
+			return -- would you kindly fuck off with your under map details
+		elseif bastard[unit_id] then
+			over[unit_id] = true -- innit it saves a portal shape, i'm smort
+		end
+
+		return make_unit_orig(self, data, ...)
+	end
 
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
@@ -5053,14 +5487,6 @@ elseif level == 'bph' then
 						width = 6000,
 					},
 					[2] = {
-						depth = 3000,
-						height = 1000,
-						position = Vector3(858.963, -6602.17, 571.853),
-						rotation = Rotation(0, 0, 0),
-						type = box,
-						width = 3000,
-					},
-					[3] = {
 						depth = 2000,
 						height = 1300,
 						position = Vector3(-4296.42, -13936.8, 371.622),
@@ -5146,12 +5572,12 @@ elseif level == 'bph' then
 		return create_orig(self, layer, offset)
 	end
 
-elseif level == 'branchbank' or level == 'branchbank_cash' or level == 'branchbank_deposit' or level == 'branchbank_gold' or level == 'branchbank_gold_prof' or level == 'branchbank_prof' or level == 'firestarter_3' then
+elseif level == 'branchbank' or level == 'branchbank_cash' or level == 'branchbank_deposit' or level == 'branchbank_gold' or level == 'branchbank_gold_prof' or level == 'branchbank_prof' or level == 'firestarter_3' then -- the fuck is this shit
 
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
-			self._definition.portal.unit_groups.back_hall.shapes[1].width = 2300
+			self._definition.portal.unit_groups.back_hall.shapes[1].width = 2300 -- fixes a case of pop-in
 		end
 
 		return create_orig(self, layer, offset)
@@ -5170,13 +5596,15 @@ elseif level == 'brb' then
 		or name == "units/pd2_dlc_brb/architecture/brb_int/brb_bank_ceiling_tile/brb_bank_ceiling_tile"
 		or name == "units/pd2_dlc_cane/props/cne_prop_santa_lollypop/cne_prop_santa_lollypop"
 		then return end
+		
+		-- could you kindly fuck off with your really overdetailed props
 
 		return make_unit_orig(self, data, ...)
 	end
 
 elseif level == 'dah' then
 
-	-- God this is absolutely abysmal for visual errors, it's going to take a long time to fix everything.
+	-- cause overkill ain't gonna fix this shit i'm going to waste my time doing it
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
@@ -5420,6 +5848,314 @@ elseif level == 'dah' then
 			self._definition.portal.unit_groups.front_center.ids[702427] = true
 			self._definition.portal.unit_groups.front_center.ids[702466] = true
 			self._definition.portal.unit_groups.front_center.ids[702510] = true
+
+			self._definition.portal.unit_groups.stairs_right.ids[101384] = true
+			self._definition.portal.unit_groups.stairs_right.ids[102341] = true
+			self._definition.portal.unit_groups.stairs_right.ids[102342] = true
+			self._definition.portal.unit_groups.stairs_right.ids[102343] = true
+			self._definition.portal.unit_groups.stairs_right.ids[102344] = true
+			self._definition.portal.unit_groups.stairs_right.ids[102759] = true
+			self._definition.portal.unit_groups.stairs_right.ids[102761] = true
+			self._definition.portal.unit_groups.stairs_right.ids[102790] = true
+			self._definition.portal.unit_groups.stairs_right.ids[102802] = true
+			self._definition.portal.unit_groups.stairs_right.ids[102806] = true
+			self._definition.portal.unit_groups.stairs_right.ids[102955] = true
+			self._definition.portal.unit_groups.stairs_right.ids[102964] = true
+			self._definition.portal.unit_groups.stairs_right.ids[102978] = true
+			self._definition.portal.unit_groups.stairs_right.ids[103017] = true
+			self._definition.portal.unit_groups.stairs_right.ids[103781] = true
+			self._definition.portal.unit_groups.stairs_right.ids[103784] = true
+			self._definition.portal.unit_groups.stairs_right.ids[103790] = true
+			self._definition.portal.unit_groups.stairs_right.ids[103792] = true
+			self._definition.portal.unit_groups.stairs_right.ids[103796] = true
+			self._definition.portal.unit_groups.stairs_right.ids[103800] = true
+			self._definition.portal.unit_groups.stairs_right.ids[103805] = true
+			self._definition.portal.unit_groups.stairs_right.ids[103810] = true
+			self._definition.portal.unit_groups.stairs_right.ids[104498] = true
+			self._definition.portal.unit_groups.stairs_right.ids[104501] = true
+			self._definition.portal.unit_groups.stairs_right.ids[104504] = true
+			self._definition.portal.unit_groups.stairs_right.ids[104524] = true
+			self._definition.portal.unit_groups.stairs_right.ids[104525] = true
+			self._definition.portal.unit_groups.stairs_right.ids[104771] = true
+			self._definition.portal.unit_groups.stairs_right.ids[104772] = true
+			self._definition.portal.unit_groups.stairs_right.ids[104773] = true
+			self._definition.portal.unit_groups.stairs_right.ids[104774] = true
+			self._definition.portal.unit_groups.stairs_right.ids[104775] = true
+			self._definition.portal.unit_groups.stairs_right.ids[104776] = true
+			self._definition.portal.unit_groups.stairs_right.ids[104777] = true
+			self._definition.portal.unit_groups.stairs_right.ids[104778] = true
+			self._definition.portal.unit_groups.stairs_right.ids[501033] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700058] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700091] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700096] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700101] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700116] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700128] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700142] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700149] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700182] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700193] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700209] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700213] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700230] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700235] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700238] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700240] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700251] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700253] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700259] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700282] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700291] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700305] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700317] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700339] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700362] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700369] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700470] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700503] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700508] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700620] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700627] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700628] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700654] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700689] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700691] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700713] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700730] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700751] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700753] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700754] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700760] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700767] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700782] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700786] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700817] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700826] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700829] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700835] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700836] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700843] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700847] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700866] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700870] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700872] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700875] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700878] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700881] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700886] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700889] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700893] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700896] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700899] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700905] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700908] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700910] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700911] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700918] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700919] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700921] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700931] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700934] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700941] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700944] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700946] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700948] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700949] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700952] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700964] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700965] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700968] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700969] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700970] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700979] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700980] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700991] = true
+			self._definition.portal.unit_groups.stairs_right.ids[700996] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701005] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701007] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701015] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701017] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701018] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701027] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701031] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701035] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701039] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701044] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701045] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701054] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701055] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701058] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701063] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701068] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701071] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701087] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701093] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701095] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701100] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701106] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701107] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701123] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701152] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701154] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701156] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701182] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701198] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701230] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701246] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701324] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701345] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701351] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701368] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701372] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701385] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701386] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701389] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701393] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701397] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701402] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701428] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701442] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701445] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701461] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701500] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701542] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701544] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701547] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701550] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701551] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701555] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701556] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701558] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701561] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701564] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701567] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701568] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701575] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701578] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701581] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701583] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701584] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701586] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701596] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701597] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701598] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701605] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701609] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701620] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701651] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701663] = true
+			self._definition.portal.unit_groups.stairs_right.ids[701828] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702154] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702213] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702222] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702223] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702224] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702225] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702226] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702229] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702230] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702231] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702232] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702233] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702234] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702235] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702236] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702237] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702238] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702239] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702240] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702248] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702254] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702261] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702276] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702305] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702310] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702316] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702326] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702348] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702350] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702372] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702378] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702409] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702425] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702488] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702537] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702548] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702554] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702614] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702620] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702623] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702633] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702640] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702650] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702652] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702674] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702679] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702704] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702711] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702718] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702721] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702727] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702741] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702742] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702746] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702748] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702754] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702755] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702760] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702771] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702783] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702791] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702795] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702814] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702830] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702833] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702841] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702853] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702854] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702864] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702869] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702877] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702888] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702894] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702895] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702904] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702913] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702923] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702924] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702930] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702944] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702945] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702946] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702953] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702978] = true
+			self._definition.portal.unit_groups.stairs_right.ids[702983] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703009] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703015] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703020] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703031] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703076] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703079] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703080] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703116] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703117] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703119] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703150] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703153] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703154] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703164] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703172] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703183] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703188] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703189] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703190] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703192] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703200] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703205] = true
+			self._definition.portal.unit_groups.stairs_right.ids[703231] = true
+			self._definition.portal.unit_groups.stairs_right.ids[704221] = true
+			self._definition.portal.unit_groups.stairs_right.ids[704223] = true
+			self._definition.portal.unit_groups.stairs_right.ids[704224] = true
 					
 			self._definition.portal.unit_groups.top.ids[0] = true
 			self._definition.portal.unit_groups.top.ids[100865] = true
@@ -6630,6 +7366,8 @@ elseif level == 'election_day_3' or level == 'election_day_3_skip1' or level == 
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			-- would someone be underqualified or overqualified to be a retard?
+			-- i genuinely do not know the answer to this question
 			self._definition.portal.unit_groups.bdrop_left.ids[100123] = true
 			self._definition.portal.unit_groups.bdrop_left.ids[100129] = true
 			self._definition.portal.unit_groups.bdrop_left.ids[100531] = true
@@ -6762,7 +7500,7 @@ elseif level == 'election_day_3' or level == 'election_day_3_skip1' or level == 
 			self._definition.portal.unit_groups.bdrop_left.ids[103892] = true
 			self._definition.portal.unit_groups.bdrop_left.ids[103893] = true
 
-			-- Pop-in
+			-- pop-in make me angery
 			self._definition.portal.unit_groups.bdrop_left.ids[101988] = nil
 			self._definition.portal.unit_groups.bdrop_left.ids[101989] = nil
 			self._definition.portal.unit_groups.bdrop_left.ids[101990] = nil
@@ -7601,6 +8339,7 @@ elseif level == 'fex' then
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			-- TODO: come up with a comment for this one
 			self._definition.portal.unit_groups.basement = nil -- Optimization Improvements
 			self._definition.portal.unit_groups.boat_entrance = {
 				ids = boat_entrance,
@@ -8560,7 +9299,7 @@ elseif level == 'firestarter_1' then
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
-			self._definition.portal.unit_groups = {}
+			-- i'd like cover nigel farage and boris johnson with that swedish fermented fish shit
 			self._definition.portal.unit_groups.hangar_1 = {
 				ids = hangar_1,
 				shapes = {
@@ -8768,6 +9507,9 @@ elseif level == 'firestarter_2' then
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			-- we didn't start the fire, it was always burning since the world's been turning
+			-- we didn't start the fire, no we didn't light it but we tried to fight it
+			-- pretty damn catchy but i can't remember shit since i heard it non-stop on a gmod ttt server a few years ago, good times
 			self._definition.portal.unit_groups.server_room_02.ids[101490] = true
 			self._definition.portal.unit_groups.server_room_02.ids[101221] = true
 			self._definition.portal.unit_groups.server_room_02.ids[101850] = true
@@ -9098,6 +9840,8 @@ elseif level == 'framing_frame_1' or level == 'gallery' then
 		[100855] = true,
 		[100879] = true,
 		[100880] = true,
+		[100882] = true,
+		[100883] = true,
 		[100897] = true,
 		[100923] = true,
 		[100961] = true,
@@ -9399,6 +10143,10 @@ elseif level == 'framing_frame_1' or level == 'gallery' then
 		[103150] = true,
 		[103153] = true,
 		[103154] = true,
+		[103166] = true,
+		[103167] = true,
+		[103168] = true,
+		[103169] = true,
 		[103812] = true,
 		[103813] = true,
 		[103816] = true,
@@ -9611,11 +10359,14 @@ elseif level == 'framing_frame_1' or level == 'gallery' then
 		[100818] = true,
 		[100820] = true,
 		[100821] = true,
+		[100847] = true,
 		[100849] = true,
 		[100850] = true,
 		[100855] = true,
 		[100858] = true,
+		[100876] = true,
 		[100877] = true,
+		[100878] = true,
 		[100881] = true,
 		[100882] = true,
 		[100883] = true,
@@ -9867,6 +10618,7 @@ elseif level == 'framing_frame_1' or level == 'gallery' then
 		[100686] = true,
 		[100687] = true,
 		[100738] = true,
+		[100739] = true,
 		[100746] = true,
 		[100747] = true,
 		[100748] = true,
@@ -9881,6 +10633,7 @@ elseif level == 'framing_frame_1' or level == 'gallery' then
 		[100848] = true,
 		[100858] = true,
 		[100876] = true,
+		[100877] = true,
 		[100878] = true,
 		[100911] = true,
 		[100937] = true,
@@ -9945,6 +10698,10 @@ elseif level == 'framing_frame_1' or level == 'gallery' then
 		[103139] = true,
 		[103143] = true,
 		[103144] = true,
+		[103163] = true,
+		[103165] = true,
+		[103166] = true,
+		[103169] = true,
 		[103177] = true,
 		[103178] = true,
 		[103179] = true,
@@ -10073,6 +10830,7 @@ elseif level == 'framing_frame_1' or level == 'gallery' then
 		[100846] = true,
 		[100847] = true,
 		[100848] = true,
+		[100876] = true,
 		[100878] = true,
 		[100911] = true,
 		[101053] = true,
@@ -10126,7 +10884,7 @@ elseif level == 'framing_frame_1' or level == 'gallery' then
 		local unit_id = data.unit_id
 		
 		if hall_a[unit_id] or hall_b[unit_id] or hall_c[unit_id] or hall_d[unit_id] or hall_e[unit_id] or gen_sec_room_01[unit_id] then
-			roof[unit_id] = true
+			roof[unit_id] = true -- saves a portal shape for each of the halls
 		end
 
 		return make_unit_orig(self, data, ...)
@@ -10238,7 +10996,7 @@ elseif level == 'framing_frame_1' or level == 'gallery' then
 						position = Vector3(-2453.86, -2523.49, 474.69),
 						rotation = Rotation(0, 0, 0),
 						type = box,
-						width = 4500,
+						width = 5200,
 					}
 				}
 			}
@@ -11598,6 +12356,7 @@ elseif level == 'framing_frame_3' then
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			-- rare opinion, this heist loud is my favourite level in the game
 			self._definition.portal.unit_groups = {}
 			self._definition.portal.unit_groups.balcony = {
 				ids = this,
@@ -13661,6 +14420,7 @@ elseif level == 'friend' then
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			-- shit but better than the crap setup that vanilla has
 			self._definition.portal.unit_groups = {}
 			self._definition.portal.unit_groups.bony_tontana = {
 				ids = bony_tontana,
@@ -16284,6 +17044,7 @@ elseif level == 'kosugi' then
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			-- 22 portal shapes is way too fucking much, i could shave off a few here for sure
 			self._definition.portal.unit_groups.first_floor = {
 				ids = first_floor,
 				shapes = {
@@ -18292,8 +19053,7 @@ elseif level == 'mia_1' then
 	function WorldDefinition:make_unit(data, ...)
 		local name = data.name
 
-			-- I hate that i have to do this manually for instances
-			-- At least if the unit id changes it'll work fine
+			-- I hate that i have to do lua bullshit to portal instances or log their unit_id, this is more futureproof.
 			if name == "units/payday2/equipment/gen_interactable_spawn_contraband_crate/gen_interactable_spawn_contraband_crate"
 			or name == "units/pd2_dlc1/equipment/gen_interactable_spawn_contraband_crate_2x1x1m/gen_interactable_spawn_contraband_crate_2x1x1m"
 			then
@@ -18306,6 +19066,8 @@ elseif level == 'mia_1' then
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			-- why did you nuke the lighting on this map after it released overkill :(
+			-- it used to look so much better
 			self._definition.portal.unit_groups = {}
 			self._definition.portal.unit_groups.above_ground = {
 				ids = russian,
@@ -21338,6 +22100,8 @@ elseif level == 'red2' then
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
 			self._definition.portal.unit_groups.basement.ids = basement
 		end
+		
+		-- i'm sexy and i know it
 
 		return create_orig(self, layer, offset)
 	end
@@ -24226,7 +24990,70 @@ elseif level == 'tag' then
 	local training_evidence = {}
 	local training_room_1 = {}
 	local training_room_2 = {}
-
+	local excluded = {
+		[100125] = true,
+		[100618] = true,
+		[100897] = true,
+		[101073] = true,
+		[101619] = true,
+		[135608] = true,
+		[200236] = true,
+		[200238] = true,
+		[200240] = true,
+		[400000] = true,
+		[400031] = true,
+		[400144] = true,
+		[400287] = true,
+		[400295] = true,
+		[400412] = true,
+		[400456] = true,
+		[400473] = true,
+		[400527] = true,
+		[400594] = true,
+		[400595] = true,
+		[400599] = true,
+		[400601] = true,
+		[400602] = true,
+		[400639] = true,
+		[400640] = true,
+		[400653] = true,
+		[400654] = true,
+		[400659] = true,
+		[400660] = true,
+		[400682] = true,
+		[400694] = true,
+		[400709] = true,
+		[400797] = true,
+		[400863] = true,
+		[401164] = true,
+		[401171] = true,
+		[401252] = true,
+		[401353] = true,
+		[401354] = true,
+		[401355] = true,
+		[401413] = true,
+		[401521] = true,
+		[401522] = true,
+		[401523] = true,
+		[401597] = true,
+		[401618] = true,
+		[401683] = true,
+		[401845] = true,
+		[402092] = true,
+		[402093] = true,
+		[402094] = true,
+		[402095] = true,
+		[402096] = true,
+		[402097] = true,
+		[402118] = true,
+		[402119] = true,
+		[402164] = true,
+		[402173] = true,
+		[402519] = true,
+		[402532] = true,
+		[402547] = true,
+	}
+		
 	local make_unit_orig = WorldDefinition.make_unit
 	function WorldDefinition:make_unit(data, ...)
 		local instance = data.instance
@@ -24234,74 +25061,12 @@ elseif level == 'tag' then
 		local unit_id = data.unit_id
 		local pos = data.position
 		local x, y, z = pos.x, pos.y, pos.z	
-		local excluded = {
-			[100125] = true,
-			[100618] = true,
-			[100897] = true,
-			[101073] = true,
-			[101619] = true,
-			[135608] = true,
-			[200236] = true,
-			[200238] = true,
-			[200240] = true,
-			[400000] = true,
-			[400031] = true,
-			[400144] = true,
-			[400287] = true,
-			[400295] = true,
-			[400412] = true,
-			[400456] = true,
-			[400473] = true,
-			[400527] = true,
-			[400594] = true,
-			[400595] = true,
-			[400599] = true,
-			[400601] = true,
-			[400602] = true,
-			[400639] = true,
-			[400640] = true,
-			[400653] = true,
-			[400654] = true,
-			[400659] = true,
-			[400660] = true,
-			[400682] = true,
-			[400694] = true,
-			[400709] = true,
-			[400797] = true,
-			[400863] = true,
-			[401164] = true,
-			[401171] = true,
-			[401252] = true,
-			[401353] = true,
-			[401354] = true,
-			[401355] = true,
-			[401413] = true,
-			[401521] = true,
-			[401522] = true,
-			[401523] = true,
-			[401597] = true,
-			[401618] = true,
-			[401683] = true,
-			[401845] = true,
-			[402092] = true,
-			[402093] = true,
-			[402094] = true,
-			[402095] = true,
-			[402096] = true,
-			[402097] = true,
-			[402118] = true,
-			[402119] = true,
-			[402164] = true,
-			[402173] = true,
-			[402519] = true,
-			[402532] = true,
-			[402547] = true,
-		}
 	
 		if excluded[unit_id] or name:sub(1, 15) == 'units/dev_tools' or name:sub(1, 17) == 'core/units/light_' or name:sub(1, 13) == 'units/lights/' or name:find('/dev/') or name:find('occluder') or name == 'units/payday2/characters/fps_mover/fps_mover' then
 			return make_unit_orig(self, data, ...)
 		end
 
+		-- instance bullshit, why can't the editor add instances to portals
 		if unit_id then
 			if instance == 'tag_evidence_002' or instance == 'tag_toilet_001' then
 				evidence_2[unit_id] = true
@@ -24331,7 +25096,8 @@ elseif level == 'tag' then
 				office_4[unit_id] = true
 			end
 		end
-		
+
+		-- portal away any details that aren't covered by existing portals within the starting area
 		if x >= 825 and x <= 5000 and y >= -100 and y <= 3500 and z >= 200 and z <= 5000 then
 			if not basement[unit_id]
 			and not bottom_floor[unit_id]
@@ -24357,6 +25123,7 @@ elseif level == 'tag' then
 			end
 		end
 
+		-- portal away any details that aren't covered by existing portals within the second area
 		if x >= -3500 and x <= 801 and y >= -5000 and y <= 5000 and z >= 200 and z <= 5000 
 		or x >= -3500 and x <= 2100 and y >= -5000 and y <= -1000 and z >= 200 and z <= 5000
 		then
@@ -28258,6 +29025,7 @@ elseif level == 'vit' then
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			-- white house? more like shite house haha funni bri'ish man
 			self._definition.portal.unit_groups = {}
 			self._definition.portal.unit_groups.inside_first_floor = {
 				ids = i,
@@ -28975,6 +29743,7 @@ elseif level == 'welcome_to_the_jungle_2' then
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			-- whoever posts "i'm a fucking retard" on the mod page first gets pinned
 			self._definition.portal.unit_groups = {}
 			self._definition.portal.unit_groups.basement = {
 				ids = basement,
@@ -29507,6 +30276,7 @@ elseif level == 'wwh' then
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
+			-- i am legally required to tell you that i do not give a shit
 			self._definition.portal.unit_groups = {}
 			self._definition.portal.unit_groups.boat_area = {
 				ids = boat_area,
