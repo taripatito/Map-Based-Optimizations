@@ -11,6 +11,10 @@
 		{
 			"hook_id" : "core/lib/utils/dev/editor/coreworlddefinition",
 			"script_path" : "coreworlddefinition.lua"
+		},
+		{
+			"hook_id" : "core/lib/managers/mission/coremissionmanager",
+			"script_path" : "coremissionmanager.lua"
 		}
 	],
 	"updates" : [

@@ -310,7 +310,7 @@ elseif level == 'arm_und' then
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
-			-- if you think i made this mod for people with low end pcs, i don't actually give a single crap
+			-- if you think i made this mod for people with low end pcs, i don't fucking care
 			-- i made this shit so i could get 144 fps on a good pc
 			self._definition.portal.unit_groups = {}
 			self._definition.portal.unit_groups.sideroom_left = {
@@ -9299,7 +9299,7 @@ elseif level == 'firestarter_1' then
 	local create_orig = WorldDefinition.create
 	function WorldDefinition:create(layer, offset)
 		if (layer == 'portal' or layer == 'all') and self._definition.portal then
-			-- i'd like cover nigel farage and boris johnson with that swedish fermented fish shit
+			-- i'd like to cover nigel farage and boris johnson with that swedish fermented fish shit
 			self._definition.portal.unit_groups.hangar_1 = {
 				ids = hangar_1,
 				shapes = {
