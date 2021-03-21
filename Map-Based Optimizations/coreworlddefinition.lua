@@ -6,6 +6,7 @@
 core:module('CoreWorldDefinition')
 
 local level = Global.level_data and Global.level_data.level_id or ''
+local Celer = _G.Celer
 
 if level ~= 'firestarter_1' and level ~= 'friend' and level ~= 'brb' and level ~= 'dah' and _G.Celer and _G.Celer.settings and _G.Celer.settings['map_change_' .. level] then
 
@@ -145,14 +146,22 @@ elseif level == 'arm_und' then
 		[300140] = true,
 	}
 	local sideroom_right = {
+		[35] = true,
+		[38] = true,
 		[100162] = true,
+		[100163] = true,
+		[100164] = true,
 		[100165] = true,
+		[100168] = true,
 		[100225] = true,
 		[100237] = true,
 		[100325] = true,
+		[100470] = true,
 		[100510] = true,
 		[100511] = true,
 		[100512] = true,
+		[100513] = true,
+		[100607] = true,
 		[100608] = true,
 		[100639] = true,
 		[100641] = true,
@@ -163,14 +172,16 @@ elseif level == 'arm_und' then
 		[100648] = true,
 		[100649] = true,
 		[100650] = true,
+		[100653] = true,
 		[100655] = true,
 		[100656] = true,
 		[100657] = true,
 		[100658] = true,
 		[100659] = true,
-		[100662] = true,
+		[100660] = true,
 		[100667] = true,
 		[100672] = true,
+		[100674] = true,
 		[100682] = true,
 		[100688] = true,
 		[100689] = true,
@@ -180,42 +191,71 @@ elseif level == 'arm_und' then
 		[100698] = true,
 		[100700] = true,
 		[100701] = true,
+		[100702] = true,
 		[100703] = true,
+		[100705] = true,
 		[100706] = true,
 		[100708] = true,
 		[100712] = true,
 		[100717] = true,
+		[100718] = true,
 		[100719] = true,
 		[100721] = true,
 		[100722] = true,
+		[100723] = true,
 		[100728] = true,
 		[100731] = true,
+		[100732] = true,
 		[100733] = true,
 		[100734] = true,
 		[100735] = true,
 		[100737] = true,
 		[100740] = true,
+		[100742] = true,
+		[100743] = true,
+		[100744] = true,
 		[100747] = true,
+		[100749] = true,
+		[100750] = true,
+		[100754] = true,
 		[100758] = true,
 		[100760] = true,
+		[100762] = true,
 		[100764] = true,
+		[100765] = true,
+		[100766] = true,
 		[100767] = true,
+		[100768] = true,
 		[100769] = true,
+		[100770] = true,
 		[100776] = true,
+		[100777] = true,
 		[100778] = true,
 		[100784] = true,
+		[100785] = true,
 		[100786] = true,
 		[100787] = true,
 		[100789] = true,
+		[100792] = true,
 		[100793] = true,
+		[100794] = true,
+		[100795] = true,
 		[100796] = true,
 		[100797] = true,
+		[100798] = true,
+		[100799] = true,
 		[100800] = true,
+		[100801] = true,
 		[100805] = true,
+		[100806] = true,
 		[100807] = true,
 		[100808] = true,
 		[100809] = true,
+		[100810] = true,
 		[100811] = true,
+		[100812] = true,
+		[100813] = true,
+		[100814] = true,
 		[100815] = true,
 		[100817] = true,
 		[100818] = true,
@@ -226,33 +266,85 @@ elseif level == 'arm_und' then
 		[100825] = true,
 		[100826] = true,
 		[100827] = true,
+		[100828] = true,
 		[100830] = true,
 		[100832] = true,
 		[100833] = true,
+		[100834] = true,
 		[100836] = true,
+		[100837] = true,
 		[100838] = true,
 		[100839] = true,
 		[100840] = true,
+		[100841] = true,
 		[100842] = true,
+		[100843] = true,
 		[100844] = true,
+		[100845] = true,
 		[100846] = true,
+		[100847] = true,
+		[100848] = true,
+		[100849] = true,
+		[100850] = true,
+		[100851] = true,
 		[100853] = true,
 		[100854] = true,
+		[100855] = true,
+		[100856] = true,
 		[100858] = true,
 		[100859] = true,
+		[100860] = true,
+		[100861] = true,
+		[100862] = true,
 		[100863] = true,
 		[100864] = true,
 		[100865] = true,
 		[100866] = true,
 		[100867] = true,
+		[100868] = true,
+		[100869] = true,
 		[100870] = true,
 		[100871] = true,
+		[100873] = true,
+		[100875] = true,
+		[100876] = true,
+		[100877] = true,
+		[100878] = true,
 		[100879] = true,
+		[100880] = true,
 		[100881] = true,
 		[100882] = true,
+		[100883] = true,
 		[100884] = true,
 		[100885] = true,
+		[100886] = true,
+		[100887] = true,
+		[100888] = true,
+		[100889] = true,
+		[100890] = true,
+		[100891] = true,
+		[100892] = true,
+		[100893] = true,
+		[100894] = true,
+		[100896] = true,
 		[100897] = true,
+		[100898] = true,
+		[100902] = true,
+		[100903] = true,
+		[100908] = true,
+		[100909] = true,
+		[100910] = true,
+		[100911] = true,
+		[100912] = true,
+		[100914] = true,
+		[100915] = true,
+		[100916] = true,
+		[100917] = true,
+		[100918] = true,
+		[100919] = true,
+		[100920] = true,
+		[100921] = true,
+		[100922] = true,
 		[100925] = true,
 		[100926] = true,
 		[100927] = true,
@@ -264,16 +356,22 @@ elseif level == 'arm_und' then
 		[100935] = true,
 		[100936] = true,
 		[100937] = true,
+		[100938] = true,
+		[100940] = true,
 		[100942] = true,
 		[100943] = true,
 		[100944] = true,
+		[100945] = true,
 		[100947] = true,
 		[100948] = true,
 		[100949] = true,
 		[100950] = true,
+		[100954] = true,
 		[100956] = true,
+		[100963] = true,
 		[100965] = true,
 		[100966] = true,
+		[100967] = true,
 		[100968] = true,
 		[100969] = true,
 		[100983] = true,
@@ -281,21 +379,35 @@ elseif level == 'arm_und' then
 		[100985] = true,
 		[100986] = true,
 		[100988] = true,
+		[101011] = true,
 		[101209] = true,
 		[101211] = true,
 		[101212] = true,
 		[101213] = true,
+		[300006] = true,
+		[300089] = true,
+		[300090] = true,
+		[300091] = true,
 		[300092] = true,
 		[300093] = true,
+		[300094] = true,
 		[300095] = true,
 		[300096] = true,
 		[300097] = true,
+		[300098] = true,
 		[300103] = true,
+		[300104] = true,
+		[300105] = true,
 		[300106] = true,
 		[300107] = true,
 		[300108] = true,
+		[300109] = true,
+		[300110] = true,
+		[300111] = true,
 		[300112] = true,
+		[300113] = true,
 		[300114] = true,
+		[300133] = true,
 		[300135] = true,
 		[300136] = true,
 		[300146] = true,
@@ -351,6 +463,24 @@ elseif level == 'arm_und' then
 
 		return create_orig(self, layer, offset)
 	end
+	
+	if _G.Celer then
+		Celer:spawn_occluder('32x16', Vector3(3340, 2430, -700), Rotation(90, 0, 0), true)
+
+		Celer:spawn_occluder('32x16', Vector3(3340, -3800, -700), Rotation(90, 0, 0), true)
+		
+		Celer:spawn_occluder('32x16', Vector3(-2150, -4500, -700), Rotation(90, 0, 0))
+
+		Celer:spawn_occluder('32x16', Vector3(-1900, 1750, -700), Rotation(90, 0, 0))
+		
+		Celer:spawn_occluder('24x16', Vector3(-2300, 1720, -700), Rotation(0, 0, 0), true)
+		Celer:spawn_occluder('24x16', Vector3(800, 1700, -700), Rotation(0, 0, 0))
+		Celer:spawn_occluder('24x16', Vector3(800, 1700, -700), Rotation(0, 0, 0), true)
+
+		Celer:spawn_occluder('24x16', Vector3(-2300, -650, -700), Rotation(0, 0, 0))
+		Celer:spawn_occluder('24x16', Vector3(-2300, -650, -700), Rotation(0, 0, 0), true)
+		Celer:spawn_occluder('24x16', Vector3(900, -650, -700), Rotation(0, 0, 0))
+	end 
 
 elseif level == 'big' then
 	local big = {
@@ -7721,7 +7851,67 @@ elseif level == 'election_day_3' or level == 'election_day_3_skip1' or level == 
 
 		return create_orig(self, layer, offset)
 	end
+elseif level == 'escape_garage' then
+	-- TdlQ, this was so confusing to figure out
+
+	if _G.Celer then
+		-- Top floor
+		Celer:spawn_occluder('32x16', Vector3(-1650, -900, 420), Rotation(0, -90, 0))
+		Celer:spawn_occluder('32x16', Vector3(-1650, -900, 420), Rotation(0, -90, 0), true)
+		
+		Celer:spawn_occluder('32x32', Vector3(1550, -3300, 420), Rotation(0, -90, 0), true)
+
+		Celer:spawn_occluder('32x32', Vector3(-3700, 700, 420), Rotation(0, -90, 0))
+		Celer:spawn_occluder('32x32', Vector3(-3700, 700, 420), Rotation(0, -90, 0), true)
+		
+		Celer:spawn_occluder('32x32', Vector3(-500, 1550, 420), Rotation(0, -90, 0))
+		Celer:spawn_occluder('32x32', Vector3(-500, 1550, 420), Rotation(0, -90, 0), true)
+		
+		-- Middle floor
+		Celer:spawn_occluder('32x16', Vector3(-1650, -900, 40), Rotation(0, -90, 0))
+		Celer:spawn_occluder('32x16', Vector3(-1650, -900, 40), Rotation(0, -90, 0), true)
+
+		Celer:spawn_occluder('32x32', Vector3(-3700, 100, 40), Rotation(0, -90, 0))
+		Celer:spawn_occluder('32x32', Vector3(-3700, 100, 40), Rotation(0, -90, 0), true)
+		
+		Celer:spawn_occluder('32x16', Vector3(-1300, 1550, 40), Rotation(0, -90, 0))
+		Celer:spawn_occluder('32x16', Vector3(-1300, 1550, 40), Rotation(0, -90, 0), true)
+		
+		Celer:spawn_occluder('32x32', Vector3(1900, -1600, 40), Rotation(0, -90, 0))
+
+		Celer:spawn_occluder('32x32', Vector3(1900, -1600, 40), Rotation(0, -90, 0))
+	end 
+
+elseif level == 'escape_street' then
+
+	if _G.Celer then
+		Celer:spawn_occluder('10x8', Vector3(1100, -1020, -400), Rotation(90, 0, 0))
+		Celer:spawn_occluder('10x8', Vector3(1100, -1020, -400), Rotation(90, 0, 0), true)
+		
+		Celer:spawn_occluder('16x8', Vector3(240, -1670, -400), Rotation(0, 0, 0))
+		Celer:spawn_occluder('16x8', Vector3(240, -1670, -400), Rotation(0, 0, 0), true)
+		
+		Celer:spawn_occluder('16x8', Vector3(1850, -1680, 395), Rotation(90, -90, 0))
+		Celer:spawn_occluder('16x8', Vector3(1850, -1680, 395), Rotation(90, -90, 0), true)
+
+		Celer:spawn_occluder('8x8', Vector3(1050, -1680, 395), Rotation(90, -90, 0), true)
+		
+		Celer:spawn_occluder('16x8', Vector3(1850, 700, 395), Rotation(180, -90, 0), true)
+		
+		Celer:spawn_occluder('32x16', Vector3(-1600, -2500, -800), Rotation(90, 0, 0))
+		Celer:spawn_occluder('32x16', Vector3(-1600, -2500, -800), Rotation(90, 0, 0), true)
+	end 
 	
+elseif level == 'family' then
+
+	if _G.Celer then
+		Celer:spawn_occluder('18x16', Vector3(800, -1610, -1025), Rotation(0, 0, 0))
+
+		Celer:spawn_occluder('18x16', Vector3(2480, -1150, -100), Rotation(90, 0, 0))
+
+		Celer:spawn_occluder('16x16', Vector3(2500, -3200, -100), Rotation(90, 0, 0))
+	end 
+
 elseif level == 'fex' then	
 	local boat_entrance = {
 		[11] = true,
@@ -22105,6 +22295,18 @@ elseif level == 'red2' then
 
 		return create_orig(self, layer, offset)
 	end
+
+elseif level == 'rvd2' then
+
+	if _G.Celer then
+		Celer:spawn_occluder('24x16', Vector3(1750, 3870, 540), Rotation(-90, -90, 0))
+		Celer:spawn_occluder('24x16', Vector3(1750, 3870, 540), Rotation(-90, -90, 0), true)
+		Celer:spawn_occluder('16x8', Vector3(3300, 4520, 540), Rotation(-90, -90, 0))
+		Celer:spawn_occluder('16x8', Vector3(3300, 4520, 540), Rotation(-90, -90, 0), true)
+		Celer:spawn_occluder('16x8', Vector3(3300, 3100, 540), Rotation(-90, -90, 0))
+		Celer:spawn_occluder('16x8', Vector3(3300, 3100, 540), Rotation(-90, -90, 0), true)
+		-- TODO: Custom occluder size so it isn't six planes
+	end 
 
 elseif level == 'sah' then
 	-- Thankfully this shit is automated and easy :)
