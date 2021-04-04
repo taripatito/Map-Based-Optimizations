@@ -22303,8 +22303,8 @@ elseif level == 'rvd2' then
 		Celer:spawn_occluder('24x16', Vector3(1750, 3870, 540), Rotation(-90, -90, 0), true)
 		Celer:spawn_occluder('16x8', Vector3(3300, 4520, 540), Rotation(-90, -90, 0))
 		Celer:spawn_occluder('16x8', Vector3(3300, 4520, 540), Rotation(-90, -90, 0), true)
-		Celer:spawn_occluder('16x8', Vector3(3300, 3100, 540), Rotation(-90, -90, 0))
-		Celer:spawn_occluder('16x8', Vector3(3300, 3100, 540), Rotation(-90, -90, 0), true)
+		Celer:spawn_occluder('16x8', Vector3(2900, 3100, 540), Rotation(-90, -90, 0))
+		Celer:spawn_occluder('16x8', Vector3(2900, 3100, 540), Rotation(-90, -90, 0), true)
 		-- TODO: Custom occluder size so it isn't six planes
 	end 
 
