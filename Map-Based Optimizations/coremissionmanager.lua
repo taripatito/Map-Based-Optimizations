@@ -2,13 +2,12 @@ core:module('CoreMissionManager')
 core:import('CoreTable')
 
 local level = Global.level_data and Global.level_data.level_id or ''
-local _add_script_orig = MissionManager._add_script
 
 -- Manipulating level scripts via lua to optimize maps is just the way i roll
 -- Gotta beat TdlQ's optimizations somehow ;)
 
 if level == 'big' then
-	function MissionManager:_add_script(data)
+	Hooks:PreHook(MissionManager, "_add_script", "map_optimizations_add_script", function(self, data)
 		table.insert(data.elements, {
 			class = 'ElementUnloadStatic',
 			id = 100004,
@@ -656,7 +655,5 @@ if level == 'big' then
 				})
 			end
 		end
-		
-		_add_script_orig(self, data)
-	end
+	end)
 end
