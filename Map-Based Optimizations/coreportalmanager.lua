@@ -1,7 +1,5 @@
 core:module('CorePortalManager')
 
-local table_remove = table.remove
-
 function PortalManager:render()
 	local timerwall = TimerManager:wall()
 	local t = timerwall:time()
@@ -25,6 +23,5 @@ function PortalManager:render()
 		end
 	end
 
-	while table_remove(self._check_positions) do
-	end
+	self._check_positions = {}
 end
