@@ -9,12 +9,16 @@
 	"color" : "0 0 1",
 	"hooks" : [
 		{
-			"hook_id" : "core/lib/utils/dev/editor/coreworlddefinition",
-			"script_path" : "coreworlddefinition.lua"
-		},
-		{
 			"hook_id" : "core/lib/managers/mission/coremissionmanager",
 			"script_path" : "coremissionmanager.lua"
+		},
+		{
+			"hook_id" : "core/lib/managers/coreportalmanager",
+			"script_path" : "coreportalmanager.lua"
+		},
+		{
+			"hook_id" : "core/lib/utils/dev/editor/coreworlddefinition",
+			"script_path" : "coreworlddefinition.lua"
 		}
 	],
 	"updates" : [
