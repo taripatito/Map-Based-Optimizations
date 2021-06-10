@@ -1,6 +1,6 @@
 {
 	"MBO_options" : "Map-Based Optimizations",
-	"MBO_options_desc"  : "Configure Map-Based Optimizations settings \nCeler's edits will take priority over Map-Based Optimizations if both are used.",
+	"MBO_options_desc"  : "Configure Map-Based Optimizations settings. \nCeler's edits will take priority over Map-Based Optimizations if both are used.",
 	
 	"MBO_standard_desc"  : "Optimization",
 	"MBO_standard_fixes_desc"  : "Portal Fixes",
@@ -40,5 +40,5 @@
 	"MBO_big_unload_details_desc" : "Unload useless details outside the playable area. \nIt is highly recommended to leave this on.",
 	
 	"MBO_improved_portals" : "Reworked Portals"
-	"MBO_improved_portals_desc" : "Reworked portal fade-out speed of models to be both significantly faster and no longer affected by framerate. \nIt is highly recommended to leave this on."
+	"MBO_improved_portals_desc" : "Reworked fade-out speed of models to be both significantly faster and no longer affected by framerate. \nIt is highly recommended to leave this on."
 }

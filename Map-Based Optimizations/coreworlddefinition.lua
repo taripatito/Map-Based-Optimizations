@@ -1,6 +1,7 @@
 core:module('CoreWorldDefinition')
 
 local level = Global.level_data and Global.level_data.level_id or ''
+level = level:gsub('_skip1', ''):gsub('_skip2', ''):gsub('_night$', ''):gsub('_day$', '') -- bugger off please
 local Celer = _G.Celer
 
 if not _G.MBO.settings[level .. '_optimization'] then

@@ -11,6 +11,8 @@ _G.MBO = _G.MBO or {
 		brb_optimization = true,
 		dah_optimization = true,
 		election_day_3_optimization = true,
+		election_day_3_skip1_optimization = election_day_3_optimization,
+		election_day_3_skip2_optimization = election_day_3_optimization,
 		escape_garage_optimization = true,
 		escape_street_optimization = true,
 		family_optimization = true,
@@ -64,6 +66,8 @@ core:module('CoreMissionManager')
 core:import('CoreTable')
 
 local level = Global.level_data and Global.level_data.level_id or ''
+level = level:gsub('_skip1', ''):gsub('_skip2', ''):gsub('_night$', ''):gsub('_day$', '') -- bugger off please
+
 
 -- Manipulating level scripts via lua to optimize maps is just the way i roll
 -- Gotta beat TdlQ's optimizations somehow ;)
