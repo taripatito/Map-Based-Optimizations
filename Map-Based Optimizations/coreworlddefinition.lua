@@ -3,8 +3,6 @@ core:module('CoreWorldDefinition')
 local level = Global.level_data and Global.level_data.level_id or ''
 local Celer = _G.Celer
 
-log(tostring(_G.MBO.settings[level .. '_optimization']))
-
 if not _G.MBO.settings[level .. '_optimization'] then
 elseif level ~= 'firestarter_1' and level ~= 'friend' and level ~= 'brb' and level ~= 'dah' and _G.Celer and _G.Celer.settings and _G.Celer.settings['map_change_' .. level] then
 elseif level == 'arm_und' then
