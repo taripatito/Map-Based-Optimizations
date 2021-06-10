@@ -1,0 +1,265 @@
+{
+	"menu_id" : "MBO_options_menu",
+	"parent_menu_id" : "blt_options",
+	"title" : "MBO_options",
+	"description" : "MBO_options_desc",
+	"back_callback" : "callback_options_closed",
+	"items" : [
+		{
+			"type" : "toggle",
+			"id" : "big_unload_details",
+			"title" : "MBO_big_unload_details",
+			"description" : "MBO_big_unload_details_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "big_unload_details"
+		},
+		{
+			"type" : "toggle",
+			"id" : "improved_portals",
+			"title" : "MBO_improved_portals",
+			"description" : "MBO_improved_portals_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "improved_portals"
+		},
+		{
+			"type" : "toggle",
+			"id" : "arm_und_optimization",
+			"title" : "MBO_arm_und_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "arm_und_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "big_optimization",
+			"title" : "MBO_big_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "big_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "branchbank_optimization",
+			"title" : "MBO_branchbank_optimization",
+			"description" : "MBO_standard_fixes_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "branchbank_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "brb_optimization",
+			"title" : "MBO_brb_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "brb_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "dah_optimization",
+			"title" : "MBO_dah_optimization",
+			"description" : "MBO_standard_fixes_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "dah_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "election_day_3_optimization",
+			"title" : "MBO_election_day_3_optimization",
+			"description" : "MBO_standard_fixes_portals_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "election_day_3_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "escape_garage_optimization",
+			"title" : "MBO_escape_garage_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "escape_garage_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "escape_street_optimization",
+			"title" : "MBO_escape_street_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "escape_street_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "family_optimization",
+			"title" : "MBO_family_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "family_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "fex_optimization",
+			"title" : "MBO_fex_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "fex_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "firestarter_1_optimization",
+			"title" : "MBO_firestarter_1_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "firestarter_1_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "firestarter_2_optimization",
+			"title" : "MBO_firestarter_2_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "firestarter_2_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "framing_frame_1_optimization",
+			"title" : "MBO_framing_frame_1_optimization",
+			"description" : "MBO_standard_fixes_portals_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "framing_frame_1_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "framing_frame_2_optimization",
+			"title" : "MBO_framing_frame_2_optimization",
+			"description" : "MBO_standard_fixes_portals_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "framing_frame_2_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "framing_frame_3_optimization",
+			"title" : "MBO_framing_frame_3_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "framing_frame_3_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "friend_optimization",
+			"title" : "MBO_friend_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "friend_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "gallery_optimization",
+			"title" : "MBO_gallery_optimization",
+			"description" : "MBO_standard_fixes_portals_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "gallery_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "kosugi_optimization",
+			"title" : "MBO_kosugi_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "kosugi_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "mia_1_optimization",
+			"title" : "MBO_mia_1_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "mia_1_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "nightclub_optimization",
+			"title" : "MBO_nightclub_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "nightclub_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "nmh_optimization",
+			"title" : "MBO_nmh_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "nmh_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "pal_optimization",
+			"title" : "MBO_pal_optimization",
+			"description" : "MBO_standard_fixes_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "pal_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "pex_optimization",
+			"title" : "MBO_pex_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "pex_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "red2_optimization",
+			"title" : "MBO_red2_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "red2_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "rvd2_optimization",
+			"title" : "MBO_rvd2_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "rvd2_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "sah_optimization",
+			"title" : "MBO_sah_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "sah_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "tag_optimization",
+			"title" : "MBO_tag_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "tag_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "vit_optimization",
+			"title" : "MBO_vit_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "vit_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "welcome_to_the_jungle_2_optimization",
+			"title" : "MBO_welcome_to_the_jungle_2_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "welcome_to_the_jungle_2_optimization"
+		},
+		{
+			"type" : "toggle",
+			"id" : "wwh_optimization",
+			"title" : "MBO_wwh_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "wwh_optimization"
+		}
+	]
+}

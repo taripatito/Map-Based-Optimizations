@@ -1,3 +1,65 @@
+_G.MBO = _G.MBO or {
+	save_path = SavePath .. 'Map_Based_Optimizations.txt',
+	loc_path = ModPath .. 'loc/english.txt',
+	options_path = ModPath .. 'menu/options.txt',
+	settings = {
+		big_unload_details = true,
+		improved_portals = true,
+		arm_und_optimization = true,
+		big_optimization = true,
+		branchbank_optimization = true,
+		brb_optimization = true,
+		dah_optimization = true,
+		election_day_3_optimization = true,
+		escape_garage_optimization = true,
+		escape_street_optimization = true,
+		family_optimization = true,
+		fex_optimization = true,
+		firestarter_1_optimization = true,
+		firestarter_2_optimization = true,
+		framing_frame_1_optimization = true,
+		framing_frame_2_optimization = true,
+		framing_frame_3_optimization = true,
+		friend_optimization = true,
+		gallery_optimization = true,
+		kosugi_optimization = true,
+		mia_1_optimization = true,
+		nightclub_optimization = true,
+		nmh_optimization = true,
+		pal_optimization = true,
+		pex_optimization = true,
+		red2_optimization = true,
+		rvd2_optimization = true,
+		sah_optimization = true,
+		tag_optimization = true,
+		vit_optimization = true,
+		welcome_to_the_jungle_2_optimization = true,
+		wwh_optimization = true,
+	}
+}
+
+function MBO:load()
+	local file = io.open(self.save_path, 'r')
+	if file then
+		for k, v in pairs(json.decode(file:read('*all'))) do
+			self.settings[k] = v
+		end
+		file:close()
+	else
+		MBO:save()
+	end
+end
+
+function MBO:save()
+	local file = io.open(self.save_path, 'w+')
+	if file then
+		file:write(json.encode(self.settings))
+		file:close()
+	end
+end
+
+MBO:load()
+
 core:module('CoreMissionManager')
 core:import('CoreTable')
 
@@ -6,7 +68,8 @@ local level = Global.level_data and Global.level_data.level_id or ''
 -- Manipulating level scripts via lua to optimize maps is just the way i roll
 -- Gotta beat TdlQ's optimizations somehow ;)
 
-if level == 'big' then
+if not _G.MBO.settings[level .. '_unload_details'] then
+elseif level == 'big' then
 	Hooks:PreHook(MissionManager, "_add_script", "map_optimizations_add_script", function(self, data)
 		table.insert(data.elements, {
 			class = 'ElementUnloadStatic',

@@ -1,15 +1,12 @@
--- i'm seriously considering cancelling my current plans for optimizing maps due to a loss of motivation and some recent issues with a few members of the community
--- if anyone is willing to take over the maintenance of the mod and future additions to the mod contact me through discord and i'll tell you how to translate portals from your optimized maps to lua
--- it's a difficult decision but this mod is simply too time intensive for my current circumstances, i don't feel the effort i'm putting in is worth it for the end results, i will continue to maintain it until further notice
--- RedFlame#3868
-
 core:module('CoreWorldDefinition')
 
 local level = Global.level_data and Global.level_data.level_id or ''
 local Celer = _G.Celer
 
-if level ~= 'firestarter_1' and level ~= 'friend' and level ~= 'brb' and level ~= 'dah' and _G.Celer and _G.Celer.settings and _G.Celer.settings['map_change_' .. level] then
+log(tostring(_G.MBO.settings[level .. '_optimization']))
 
+if not _G.MBO.settings[level .. '_optimization'] then
+elseif level ~= 'firestarter_1' and level ~= 'friend' and level ~= 'brb' and level ~= 'dah' and _G.Celer and _G.Celer.settings and _G.Celer.settings['map_change_' .. level] then
 elseif level == 'arm_und' then
 	local sideroom_left = {
 		[100990] = true,
