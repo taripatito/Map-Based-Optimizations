@@ -82,7 +82,7 @@ function PortalManager:remove_unit_group(name)
 	local groups = self._new_unit_groups
 	for i = 1, #groups do
 		if groups[i]._name == name then
-			table_remove(unit_groups, i)
+			table_remove(groups, i)
 			break
 		end
 	end
