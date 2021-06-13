@@ -3,16 +3,8 @@
 	"parent_menu_id" : "blt_options",
 	"title" : "MBO_options",
 	"description" : "MBO_options_desc",
-	"back_callback" : "callback_options_closed",
+	"back_callback" : "MBO_callback_options_closed",
 	"items" : [
-		{
-			"type" : "toggle",
-			"id" : "big_unload_details",
-			"title" : "MBO_big_unload_details",
-			"description" : "MBO_big_unload_details_desc",
-			"callback" : "MBO_check_clbk",
-			"value" : "big_unload_details"
-		},
 		{
 			"type" : "toggle",
 			"id" : "improved_portals",
@@ -20,6 +12,22 @@
 			"description" : "MBO_improved_portals_desc",
 			"callback" : "MBO_check_clbk",
 			"value" : "improved_portals"
+		},
+		{
+			"type" : "toggle",
+			"id" : "big_unload_details",
+			"title" : "MBO_big_unload_details",
+			"description" : "MBO_unload_details_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "big_unload_details"
+		},
+		{
+			"type" : "toggle",
+			"id" : "fex_unload_details",
+			"title" : "MBO_fex_unload_details",
+			"description" : "MBO_unload_details_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "fex_unload_details"
 		},
 		{
 			"type" : "toggle",

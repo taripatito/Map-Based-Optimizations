@@ -1,10 +1,11 @@
 {
 	"MBO_options" : "Map-Based Optimizations",
-	"MBO_options_desc"  : "Configure Map-Based Optimizations settings. \nCeler's edits will take priority over Map-Based Optimizations if both are used.",
+	"MBO_options_desc"  : "Configure Map-Based Optimizations settings. \nCeler's optimizations will take priority over Map-Based Optimizations.",
 	
 	"MBO_standard_desc"  : "Optimization",
 	"MBO_standard_fixes_desc"  : "Portal Fixes",
 	"MBO_standard_fixes_portals_desc"  : "Optimization and portal fixes",
+	"MBO_unload_details_desc" : "Unload useless details outside the playable area. \nIt is highly recommended to leave this on.",	
 	
 	"MBO_arm_und_optimization" : "$heist_arm_und",
 	"MBO_big_optimization" : "$heist_big",
@@ -36,8 +37,9 @@
 	"MBO_vit_optimization" : "$heist_vit",
 	"MBO_welcome_to_the_jungle_2_optimization" : "$heist_welcome_to_the_jungle: $heist_welcome_to_the_jungle_2_hl",
 	"MBO_wwh_optimization" : "$heist_wwh",
+	
 	"MBO_big_unload_details" : "$heist_big: Unload redundant details",
-	"MBO_big_unload_details_desc" : "Unload useless details outside the playable area. \nIt is highly recommended to leave this on.",
+	"MBO_fex_unload_details" : "$heist_fex: Unload redundant details",
 	
 	"MBO_improved_portals" : "Reworked Portals"
 	"MBO_improved_portals_desc" : "Reworked fade-out speed of models to be both significantly faster and no longer affected by framerate. \nIt is highly recommended to leave this on."
