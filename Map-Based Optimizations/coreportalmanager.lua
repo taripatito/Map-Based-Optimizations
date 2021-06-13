@@ -1,3 +1,7 @@
+if not _G.MBO.settings.improved_portals then
+	return
+end
+
 local alive_g = alive
 local ipairs_g = ipairs
 local next_g = next
