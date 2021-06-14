@@ -2,13 +2,13 @@ if not _G.MBO.settings.improved_portals then
 	return
 end
 
+core:module('CorePortalManager')
+
 local alive_g = alive
 local ipairs_g = ipairs
 local next_g = next
 local table_remove = table.remove
 local type_g = type
-
-core:module('CorePortalManager')
 
 Hooks:PostHook(PortalManager, "init", "map_optimizations_init", function(self)
 	self._buffer = 0
@@ -24,30 +24,29 @@ Hooks:PostHook(PortalManager, "clear_unit_groups", "map_optimizations_clear_unit
 end)
 
 function PortalManager:render()
-	local timerwall = TimerManager:wall()
-	local t = timerwall:time()
-	local dt = timerwall:delta_time()
-	local check_positions = managers.portal:check_positions()
+	local dt = TimerManager:wall():delta_time()
+	local check_positions = self:check_positions()
 
 	local shapes = self._portal_shapes
 	for i = 1, #shapes do
-		shapes[i]:update(t, dt, check_positions)
+		shapes[i]:update(check_positions) -- not sure why they pass t and dt to these functions, they don't use it
 	end
 
 	local groups = self._new_unit_groups
 	for i = 1, #groups do
-		groups[i]:update(t, dt, check_positions)
+		groups[i]:update(check_positions) -- not sure why they pass t and dt to these functions, they don't use it
 	end
 
 	self._buffer = self._buffer + dt * 1000 -- hide one unit for every ms that has passed since the last frame
 
+	local hide_list = self._hide_list
 	for _ = 1, self._buffer do
-		local unit_id, unit = next_g(self._hide_list)
+		local unit_id, unit = next_g(hide_list)
 		
 		if alive_g(unit) then
 			unit:set_visible(false)
 			
-			self._hide_list[unit_id] = nil
+			hide_list[unit_id] = nil
 		end
 		
 		self._buffer = self._buffer - 1
@@ -57,19 +56,17 @@ function PortalManager:render()
 end
 
 function PortalManager:check_positions()
-	if #self._check_positions > 0 then
-		return self._check_positions
-	end
+	local check_pos = self._check_positions
 
 	for _, vp in ipairs_g(managers.viewport:all_really_active_viewports()) do
 		local camera = vp:camera()
 
 		if alive_g(camera) and vp:is_rendering_scene("World") then
-			self._check_positions[#self._check_positions + 1] = camera:position()
+			check_pos[#check_pos + 1] = camera:position()
 		end
 	end
 
-	return self._check_positions
+	return check_pos
 end
 
 function PortalManager:add_unit_group(name)
@@ -92,7 +89,7 @@ function PortalManager:remove_unit_group(name)
 	end
 end
 
-function PortalShape:update(time, rel_time, check_positions)
+function PortalShape:update(check_positions)
 	local is_inside = false
 
 	for i = 1, #check_positions do
@@ -105,7 +102,7 @@ function PortalShape:update(time, rel_time, check_positions)
 
 	if self._is_inside ~= is_inside then
 		self._is_inside = is_inside
-		local diff = self._is_inside and 1 or -1
+		local diff = is_inside and 1 or -1
 		
 		self:_change_units_visibility(diff)	
 	end
@@ -120,6 +117,24 @@ function PortalShape:show_all()
 	end
 end
 
+function PortalShape:inside(pos)
+	local is_inside = self._polygon:inside(pos)
+
+	local _min = self._min
+	local _max = self._max
+	if is_inside and _min and _max then
+		local z = pos.z
+
+		if _min < z and z < _max then
+			return true
+		else
+			return false
+		end
+	end
+
+	return is_inside
+end
+
 function PortalUnitGroup:inside(pos)
 	local shapes = self._shapes
 	for i = 1, #shapes do
@@ -131,7 +146,7 @@ function PortalUnitGroup:inside(pos)
 	return false
 end
 
-function PortalUnitGroup:update(t, dt, check_positions)
+function PortalUnitGroup:update(check_positions)
 	local is_inside = false
 
 	for i = 1, #check_positions do
@@ -144,7 +159,7 @@ function PortalUnitGroup:update(t, dt, check_positions)
 
 	if self._is_inside ~= is_inside then
 		self._is_inside = is_inside
-		local diff = self._is_inside and 1 or -1
+		local diff = is_inside and 1 or -1
 
 		self:_change_units_visibility(diff)
 	end

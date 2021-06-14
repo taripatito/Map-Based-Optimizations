@@ -4,6 +4,7 @@ _G.MBO = _G.MBO or {
 	options_path = ModPath .. 'menu/options.txt',
 	settings = {
 		improved_portals = true,
+		remove_occluder_limit = true,
 		big_unload_details = true,
 		fex_unload_details = true,
 		arm_und_optimization = true,

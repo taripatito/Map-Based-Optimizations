@@ -15,6 +15,14 @@
 		},
 		{
 			"type" : "toggle",
+			"id" : "remove_occluder_limit",
+			"title" : "MBO_remove_active_occluder_limit",
+			"description" : "MBO_remove_active_occluder_limit_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "remove_occluder_limit"
+		},
+		{
+			"type" : "toggle",
 			"id" : "big_unload_details",
 			"title" : "MBO_big_unload_details",
 			"description" : "MBO_unload_details_desc",

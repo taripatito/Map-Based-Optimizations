@@ -43,4 +43,7 @@
 	
 	"MBO_improved_portals" : "Reworked Portals"
 	"MBO_improved_portals_desc" : "Reworked fade-out speed of models to be both significantly faster and no longer affected by framerate. \nIt is highly recommended to leave this on."
+	
+	"MBO_remove_active_occluder_limit" : "Remove Active Occluder Limit"
+	"MBO_remove_active_occluder_limit_desc" : "Removes the 5 active occluder limit, resulting in better performance. \nIt is highly recommended to leave this on."
 }
