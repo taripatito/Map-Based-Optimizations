@@ -72,57 +72,31 @@ function MBO:create_occluder_unit(pos, rot)
 
 	local dyn_resource_package = managers.dyn_resource.DYN_RESOURCES_PACKAGE	
 	if not managers.dyn_resource:has_resource(Idstring('material_config'), Idstring('units/payday2/mockup/occluder_plane'), dyn_resource_package) then	
-		if BLT.AssetManager then
-			BLT.AssetManager:CreateEntry(
-				Idstring('units/payday2/mockup/occluder_plane'),
-				Idstring('material_config'),
-				self.mod_path .. 'occluders/occluder_plane.material_config'
-			)
-		else
-			DB:create_entry(
-				Idstring('material_config'),
-				Idstring('units/payday2/mockup/occluder_plane'),
-				self.mod_path .. 'occluders/occluder_plane.material_config'
-			)
-		end
+		BLT.AssetManager:CreateEntry(
+			Idstring('units/payday2/mockup/occluder_plane'),
+			Idstring('material_config'),
+			self.mod_path .. 'occluders/occluder_plane.material_config'
+		)
 		managers.dyn_resource:load(Idstring('material_config'), Idstring('units/payday2/mockup/occluder_plane'), dyn_resource_package)
 	end
 
 	local level = Global.level_data and Global.level_data.level_id
 	local occluder_path = Idstring('units/payday2/mockup/occluder_' .. level)
-	if BLT.AssetManager then
-		BLT.AssetManager:CreateEntry(
-			occluder_path,
-			Idstring('model'),
-			self.mod_path .. 'occluders/occluder_' .. level .. '.model'
-		)
-		BLT.AssetManager:CreateEntry(
-			occluder_path,
-			Idstring('unit'),
-			self.mod_path .. 'occluders/occluder_' .. level .. '.unit'
-		)
-		BLT.AssetManager:CreateEntry(
-			occluder_path,
-			Idstring('object'),
-			self.mod_path .. 'occluders/occluder_' .. level .. '.object'
-		)
-	else
-		DB:create_entry(
-			Idstring('model'),
-			occluder_path,
-			self.mod_path .. 'occluders/occluder_' .. level .. '.model'
-		)
-		DB:create_entry(
-			Idstring('unit'),
-			occluder_path,
-			self.mod_path .. 'occluders/occluder_' .. level .. '.unit'
-		)
-		DB:create_entry(
-			Idstring('object'),
-			occluder_path,
-			self.mod_path .. 'occluders/occluder_' .. level .. '.object'
-		)
-	end
+	BLT.AssetManager:CreateEntry(
+		occluder_path,
+		Idstring('model'),
+		self.mod_path .. 'occluders/occluder_' .. level .. '.model'
+	)
+	BLT.AssetManager:CreateEntry(
+		occluder_path,
+		Idstring('unit'),
+		self.mod_path .. 'occluders/occluder_' .. level .. '.unit'
+	)
+	BLT.AssetManager:CreateEntry(
+		occluder_path,
+		Idstring('object'),
+		self.mod_path .. 'occluders/occluder_' .. level .. '.object'
+	)
 	
 	managers.dyn_resource:load(Idstring('model'), occluder_path, dyn_resource_package)
 	--managers.dyn_resource:load(Idstring('object'), occluder_path, dyn_resource_package)
