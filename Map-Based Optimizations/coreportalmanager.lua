@@ -1,4 +1,4 @@
-if not _G.MBO.settings.improved_portals then
+if not MBO.settings.improved_portals then
 	return
 end
 

@@ -33,7 +33,7 @@
 		<occluder name="oc_plane_28" />
 	</occluders>
 	
-	<graphics>
+	<!--graphics>
 		<object enabled="true" name="oc_plane_01" />
 		<object enabled="true" name="oc_plane_02" />
 		<object enabled="true" name="oc_plane_03" />
@@ -62,5 +62,5 @@
 		<object enabled="true" name="oc_plane_26" />
 		<object enabled="true" name="oc_plane_27" />
 		<object enabled="true" name="oc_plane_28" />
-	</graphics>
+	</graphics-->
 </dynamic_object> 

@@ -1,3 +1,7 @@
+if Celer then
+	return
+end
+
 local alive_g = alive
 
 function _OcclusionManager:remove_occlusion(unit)

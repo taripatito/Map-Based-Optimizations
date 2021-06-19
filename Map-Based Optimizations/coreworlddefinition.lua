@@ -3,14 +3,10 @@ core:module('CoreWorldDefinition')
 local level = Global.level_data and Global.level_data.level_id or ''
 level = level:gsub('_skip1$', ''):gsub('_skip2$', ''):gsub('_night$', ''):gsub('_day$', '') -- bugger off please
 local Celer = _G.Celer
-
 local MBO = _G.MBO
-if level ~= '' and MBO then
-	MBO:create_occluder_unit()
-end
 
-if not _G.MBO.settings[level .. '_optimization'] then
-elseif level ~= 'firestarter_1' and level ~= 'friend' and level ~= 'brb' and level ~= 'dah' and _G.Celer and _G.Celer.settings and _G.Celer.settings['map_change_' .. level] then
+if not MBO.settings[level .. '_optimization'] then
+elseif level ~= 'firestarter_1' and level ~= 'friend' and level ~= 'brb' and level ~= 'dah' and Celer and Celer.settings and Celer.settings['map_change_' .. level] then
 elseif level == 'arm_und' then
 	local sideroom_left = {
 		[100990] = true,
@@ -465,7 +461,7 @@ elseif level == 'arm_und' then
 		return create_orig(self, layer, offset)
 	end
 	
-	if _G.Celer then
+	if Celer then
 		Celer:spawn_occluder('32x16', Vector3(3340, 2430, -700), Rotation(90, 0, 0), true)
 
 		Celer:spawn_occluder('32x16', Vector3(3340, -3800, -700), Rotation(90, 0, 0), true)
@@ -7855,7 +7851,7 @@ elseif level == 'election_day_3' or level == 'election_day_3_skip1' or level == 
 elseif level == 'escape_garage' then
 	-- TdlQ, this was so confusing to figure out
 
-	if _G.Celer then
+	if Celer then
 		-- Top floor
 		Celer:spawn_occluder('32x16', Vector3(-1650, -900, 420), Rotation(0, -90, 0))
 		Celer:spawn_occluder('32x16', Vector3(-1650, -900, 420), Rotation(0, -90, 0), true)
@@ -7885,7 +7881,7 @@ elseif level == 'escape_garage' then
 
 elseif level == 'escape_street' then
 
-	if _G.Celer then
+	if Celer then
 		Celer:spawn_occluder('10x8', Vector3(1100, -1020, -400), Rotation(90, 0, 0))
 		Celer:spawn_occluder('10x8', Vector3(1100, -1020, -400), Rotation(90, 0, 0), true)
 		
@@ -7905,7 +7901,7 @@ elseif level == 'escape_street' then
 	
 elseif level == 'family' then
 
-	if _G.Celer then
+	if Celer then
 		Celer:spawn_occluder('18x16', Vector3(800, -1610, -1025), Rotation(0, 0, 0))
 
 		Celer:spawn_occluder('18x16', Vector3(2480, -1150, -100), Rotation(90, 0, 0))
@@ -17362,7 +17358,7 @@ elseif level == 'kosugi' then
 		return create_orig(self, layer, offset)
 	end
 elseif level == 'mallcrasher' then
- -----------
+	MBO:create_occluder_unit()
 elseif level == 'mia_1' then
 	local russian = {
 		[100000] = true,
@@ -22234,7 +22230,7 @@ elseif level == 'red2' then
 
 elseif level == 'rvd2' then
 
-	if _G.Celer then
+	if Celer then
 		Celer:spawn_occluder('24x16', Vector3(1750, 3870, 540), Rotation(-90, -90, 0))
 		Celer:spawn_occluder('24x16', Vector3(1750, 3870, 540), Rotation(-90, -90, 0), true)
 		Celer:spawn_occluder('16x8', Vector3(3300, 4520, 540), Rotation(-90, -90, 0))

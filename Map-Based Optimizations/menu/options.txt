@@ -183,6 +183,14 @@
 		},
 		{
 			"type" : "toggle",
+			"id" : "mallcrasher_optimization",
+			"title" : "MBO_mallcrasher_optimization",
+			"description" : "MBO_standard_desc",
+			"callback" : "MBO_check_clbk",
+			"value" : "mallcrasher_optimization"
+		},
+		{
+			"type" : "toggle",
 			"id" : "mia_1_optimization",
 			"title" : "MBO_mia_1_optimization",
 			"description" : "MBO_standard_desc",

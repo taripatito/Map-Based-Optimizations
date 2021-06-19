@@ -26,6 +26,7 @@ _G.MBO = _G.MBO or {
 		friend_optimization = true,
 		gallery_optimization = true,
 		kosugi_optimization = true,
+		mallcrasher_optimization = true,
 		mia_1_optimization = true,
 		nightclub_optimization = true,
 		nmh_optimization = true,
@@ -112,11 +113,12 @@ core:import('CoreTable')
 
 local level = Global.level_data and Global.level_data.level_id or ''
 level = level:gsub('_skip1$', ''):gsub('_skip2$', ''):gsub('_night$', ''):gsub('_day$', '') -- bugger off please
+local MBO = _G.MBO
 
 -- Manipulating level scripts via lua to optimize maps is just the way i roll
 -- Gotta beat TdlQ's optimizations somehow ;)
 
-if not _G.MBO.settings[level .. '_unload_details'] then
+if not MBO.settings[level .. '_unload_details'] then
 elseif level == 'big' then
 	Hooks:PreHook(MissionManager, "_add_script", "map_optimizations_add_script", function(self, data)
 		table.insert(data.elements, {

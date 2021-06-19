@@ -25,6 +25,7 @@
 	"MBO_friend_optimization" : "$heist_friend",
 	"MBO_gallery_optimization" : "$heist_gallery",
 	"MBO_kosugi_optimization" : "$heist_kosugi",
+	"MBO_mallcrasher_optimization" : "$heist_mallcrasher",
 	"MBO_mia_1_optimization" : "$heist_mia: $heist_mia_1_hl",
 	"MBO_nightclub_optimization" : "$heist_nightclub",
 	"MBO_nmh_optimization" : "$heist_nmh",
