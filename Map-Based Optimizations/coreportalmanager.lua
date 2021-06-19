@@ -71,7 +71,7 @@ end
 function PortalManager:add_unit_group(name)
 	local group = PortalUnitGroup:new(name)
 	self._unit_groups[name] = group
-	self._new_unit_groups[#self._new_unit_groups + 1] = group
+	self._new_unit_groups[#self._new_unit_groups + 1] = group -- Replace a pairs in render() with a simple for loop
 
 	return group
 end
