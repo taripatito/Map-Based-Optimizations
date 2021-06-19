@@ -37,10 +37,9 @@ function PortalManager:render()
 		groups[i]:update(check_positions) -- not sure why they pass t and dt to these functions, they don't use it
 	end
 
-	self._buffer = self._buffer + dt * 1000 -- hide one unit for every ms that has passed since the last frame
-
+	local buffer = self._buffer + dt * 1000 -- hide one unit for every ms that has passed since the last frame
 	local hide_list = self._hide_list
-	for _ = 1, self._buffer do
+	for _ = 1, buffer do
 		local unit_id, unit = next_g(hide_list)
 		
 		if alive_g(unit) then
@@ -49,14 +48,14 @@ function PortalManager:render()
 			hide_list[unit_id] = nil
 		end
 		
-		self._buffer = self._buffer - 1
+		buffer = buffer - 1
 	end
-
-	self._check_positions = {}
+	
+	self._buffer = buffer
 end
 
 function PortalManager:check_positions()
-	local check_pos = self._check_positions
+	local check_pos = {}
 
 	for _, vp in ipairs_g(managers.viewport:all_really_active_viewports()) do
 		local camera = vp:camera()
@@ -125,11 +124,7 @@ function PortalShape:inside(pos)
 	if is_inside and _min and _max then
 		local z = pos.z
 
-		if _min < z and z < _max then
-			return true
-		else
-			return false
-		end
+		return _min < z and z < _max
 	end
 
 	return is_inside
@@ -159,9 +154,8 @@ function PortalUnitGroup:update(check_positions)
 
 	if self._is_inside ~= is_inside then
 		self._is_inside = is_inside
-		local diff = is_inside and 1 or -1
 
-		self:_change_units_visibility(diff)
+		self:_change_units_visibility(is_inside and 1 or -1)
 	end
 end
 

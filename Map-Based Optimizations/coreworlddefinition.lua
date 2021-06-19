@@ -4,6 +4,11 @@ local level = Global.level_data and Global.level_data.level_id or ''
 level = level:gsub('_skip1$', ''):gsub('_skip2$', ''):gsub('_night$', ''):gsub('_day$', '') -- bugger off please
 local Celer = _G.Celer
 
+local MBO = _G.MBO
+if level ~= '' and MBO then
+	MBO:create_occluder_unit()
+end
+
 if not _G.MBO.settings[level .. '_optimization'] then
 elseif level ~= 'firestarter_1' and level ~= 'friend' and level ~= 'brb' and level ~= 'dah' and _G.Celer and _G.Celer.settings and _G.Celer.settings['map_change_' .. level] then
 elseif level == 'arm_und' then
@@ -17356,7 +17361,8 @@ elseif level == 'kosugi' then
 
 		return create_orig(self, layer, offset)
 	end
-
+elseif level == 'mallcrasher' then
+ -----------
 elseif level == 'mia_1' then
 	local russian = {
 		[100000] = true,

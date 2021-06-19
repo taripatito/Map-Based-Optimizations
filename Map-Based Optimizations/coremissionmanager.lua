@@ -1,4 +1,5 @@
 _G.MBO = _G.MBO or {
+	mod_path = ModPath,
 	save_path = SavePath .. 'Map_Based_Optimizations.txt',
 	loc_path = ModPath .. 'loc/english.txt',
 	options_path = ModPath .. 'menu/options.txt',
@@ -60,13 +61,57 @@ function MBO:save()
 	end
 end
 
+function MBO:create_occluder_unit(pos, rot)
+	if not managers.dyn_resource then
+		DelayedCalls:Add('delay_occluder_unit_load', 0, function()
+			self:create_occluder_unit()
+		end)
+		return
+	end	
+
+	local dyn_resource_package = managers.dyn_resource.DYN_RESOURCES_PACKAGE	
+	if not managers.dyn_resource:has_resource(Idstring('material_config'), Idstring('units/payday2/mockup/occluder_plane'), dyn_resource_package) then	
+		DB:create_entry(
+			Idstring('material_config'),
+			Idstring('units/payday2/mockup/occluder_plane'),
+			self.mod_path .. 'occluders/occluder_plane.material_config'
+		)
+		managers.dyn_resource:load(Idstring('material_config'), Idstring('units/payday2/mockup/occluder_plane'), dyn_resource_package)
+	end
+
+	local level = Global.level_data and Global.level_data.level_id or ''
+	local occluder_path = Idstring('units/payday2/mockup/occluder_' .. level)
+	
+	DB:create_entry(
+		Idstring('model'),
+		occluder_path,
+		self.mod_path .. 'occluders/occluder_' .. level .. '.model'
+	)
+	DB:create_entry(
+		Idstring('unit'),
+		occluder_path,
+		self.mod_path .. 'occluders/occluder_' .. level .. '.unit'
+	)
+	DB:create_entry(
+		Idstring('object'),
+		occluder_path,
+		self.mod_path .. 'occluders/occluder_' .. level .. '.object'
+	)
+	
+	managers.dyn_resource:load(Idstring('model'), occluder_path, dyn_resource_package)
+	--managers.dyn_resource:load(Idstring('object'), occluder_path, dyn_resource_package)
+	managers.dyn_resource:load(Idstring('unit'), occluder_path, dyn_resource_package)
+
+	safe_spawn_unit('units/payday2/mockup/occluder_' .. level, pos or Vector3(0, 0, 0), rot or Rotation(0, 90, 0))
+end
+
 MBO:load()
 
 core:module('CoreMissionManager')
 core:import('CoreTable')
 
 local level = Global.level_data and Global.level_data.level_id or ''
-level = level:gsub('_skip1', ''):gsub('_skip2', ''):gsub('_night$', ''):gsub('_day$', '') -- bugger off please
+level = level:gsub('_skip1$', ''):gsub('_skip2$', ''):gsub('_night$', ''):gsub('_day$', '') -- bugger off please
 
 -- Manipulating level scripts via lua to optimize maps is just the way i roll
 -- Gotta beat TdlQ's optimizations somehow ;)
@@ -913,7 +958,8 @@ elseif level == 'fex' then
 			if element.id == 102022 and element.editor_name == 'point_preplanning_002' then
 				table.insert(element.values.on_executed, {
 					delay = 0,
-					id = 199000
+					id = 199000,
+					alternative = 'any'
 				})
 			end
 		end
