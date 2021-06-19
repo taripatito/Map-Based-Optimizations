@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/mockup/occluder_plane" orientation_object="rp_occluder_arm_und" />
+
+	<occluders>
+		<occluder name="oc_plane_01" />
+		<occluder name="oc_plane_02" />
+		<occluder name="oc_plane_03" />
+		<occluder name="oc_plane_04" />
+		<occluder name="oc_plane_05" />
+		<occluder name="oc_plane_06" />
+		<occluder name="oc_plane_07" />
+		<occluder name="oc_plane_08" />
+		<occluder name="oc_plane_09" />
+		<occluder name="oc_plane_10" />
+		<occluder name="oc_plane_11" />
+		<occluder name="oc_plane_12" />
+		<occluder name="oc_plane_13" />
+		<occluder name="oc_plane_14" />
+		<occluder name="oc_plane_15" />
+		<occluder name="oc_plane_16" />
+		<occluder name="oc_plane_17" />
+		<occluder name="oc_plane_18" />
+		<occluder name="oc_plane_19" />
+		<occluder name="oc_plane_20" />
+		<occluder name="oc_plane_21" />
+		<occluder name="oc_plane_22" />
+		<occluder name="oc_plane_23" />
+		<occluder name="oc_plane_24" />
+		<occluder name="oc_plane_25" />
+		<occluder name="oc_plane_26" />
+		<occluder name="oc_plane_27" />
+		<occluder name="oc_plane_28" />
+	</occluders>
+	
+	<!--graphics>
+		<object enabled="true" name="oc_plane_01" />
+		<object enabled="true" name="oc_plane_02" />
+		<object enabled="true" name="oc_plane_03" />
+		<object enabled="true" name="oc_plane_04" />
+		<object enabled="true" name="oc_plane_05" />
+		<object enabled="true" name="oc_plane_06" />
+		<object enabled="true" name="oc_plane_07" />
+		<object enabled="true" name="oc_plane_08" />
+		<object enabled="true" name="oc_plane_09" />
+		<object enabled="true" name="oc_plane_10" />
+		<object enabled="true" name="oc_plane_11" />
+		<object enabled="true" name="oc_plane_12" />
+		<object enabled="true" name="oc_plane_13" />
+		<object enabled="true" name="oc_plane_14" />
+		<object enabled="true" name="oc_plane_15" />
+		<object enabled="true" name="oc_plane_16" />
+		<object enabled="true" name="oc_plane_17" />
+		<object enabled="true" name="oc_plane_18" />
+		<object enabled="true" name="oc_plane_19" />
+		<object enabled="true" name="oc_plane_20" />
+		<object enabled="true" name="oc_plane_21" />
+		<object enabled="true" name="oc_plane_22" />
+		<object enabled="true" name="oc_plane_23" />
+		<object enabled="true" name="oc_plane_24" />
+		<object enabled="true" name="oc_plane_25" />
+		<object enabled="true" name="oc_plane_26" />
+		<object enabled="true" name="oc_plane_27" />
+		<object enabled="true" name="oc_plane_28" />
+	</graphics-->
+</dynamic_object> 

@@ -461,23 +461,7 @@ elseif level == 'arm_und' then
 		return create_orig(self, layer, offset)
 	end
 	
-	if Celer then
-		Celer:spawn_occluder('32x16', Vector3(3340, 2430, -700), Rotation(90, 0, 0), true)
-
-		Celer:spawn_occluder('32x16', Vector3(3340, -3800, -700), Rotation(90, 0, 0), true)
-		
-		Celer:spawn_occluder('32x16', Vector3(-2150, -4500, -700), Rotation(90, 0, 0))
-
-		Celer:spawn_occluder('32x16', Vector3(-1900, 1750, -700), Rotation(90, 0, 0))
-		
-		Celer:spawn_occluder('24x16', Vector3(-2300, 1720, -700), Rotation(0, 0, 0), true)
-		Celer:spawn_occluder('24x16', Vector3(800, 1700, -700), Rotation(0, 0, 0))
-		Celer:spawn_occluder('24x16', Vector3(800, 1700, -700), Rotation(0, 0, 0), true)
-
-		Celer:spawn_occluder('24x16', Vector3(-2300, -650, -700), Rotation(0, 0, 0))
-		Celer:spawn_occluder('24x16', Vector3(-2300, -650, -700), Rotation(0, 0, 0), true)
-		Celer:spawn_occluder('24x16', Vector3(900, -650, -700), Rotation(0, 0, 0))
-	end 
+	MBO:create_occluder_unit()
 
 elseif level == 'big' then
 	local big = {
