@@ -34,6 +34,7 @@ _G.MBO = _G.MBO or {
 		pex_optimization = true,
 		red2_optimization = true,
 		rvd2_optimization = true,
+		sand_optimization = true,
 		sah_optimization = true,
 		tag_optimization = true,
 		vit_optimization = true,

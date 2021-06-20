@@ -22224,6 +22224,17 @@ elseif level == 'rvd2' then
 		-- TODO: Custom occluder size so it isn't six planes
 	end 
 
+elseif level == 'sand' then
+	local make_unit_orig = WorldDefinition.make_unit
+	function WorldDefinition:make_unit(data, ...)
+		local unit_id = data.unit_id
+
+		if unit_id == 500555 then
+			return -- Two massive road units in the same place, really?
+		end
+
+		return make_unit_orig(self, data, ...)
+	end
 elseif level == 'sah' then
 	-- Thankfully this shit is automated and easy :)
 	local twat = {

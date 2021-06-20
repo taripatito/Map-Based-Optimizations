@@ -247,6 +247,14 @@
 		},
 		{
 			"type" : "toggle",
+			"id" : "sand_optimization",
+			"title" : "MBO_sand_optimization",
+			"description" : "MBO_please_let_this_be_temporary_overkill",
+			"callback" : "MBO_check_clbk",
+			"value" : "sand_optimization"
+		},
+		{
+			"type" : "toggle",
 			"id" : "sah_optimization",
 			"title" : "MBO_sah_optimization",
 			"description" : "MBO_standard_desc",

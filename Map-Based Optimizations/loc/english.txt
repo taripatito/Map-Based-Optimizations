@@ -5,7 +5,9 @@
 	"MBO_standard_desc"  : "Optimization",
 	"MBO_standard_fixes_desc"  : "Portal Fixes",
 	"MBO_standard_fixes_portals_desc"  : "Optimization and portal fixes",
-	"MBO_unload_details_desc" : "Unload useless details outside the playable area. \nIt is highly recommended to leave this on.",	
+	"MBO_unload_details_desc" : "Unload useless details outside the playable area. \nIt is highly recommended to leave this on.",
+	
+	"MBO_please_let_this_be_temporary_overkill" : "Removes a redundant massive road model. \nIt is highly recommended to leave this on.",	
 	
 	"MBO_arm_und_optimization" : "$heist_arm_und",
 	"MBO_big_optimization" : "$heist_big",
@@ -33,6 +35,7 @@
 	"MBO_pex_optimization" : "$heist_pex",
 	"MBO_red2_optimization" : "$heist_red2",
 	"MBO_rvd2_optimization" : "$heist_rvd: $heist_rvd2_hl",
+	"MBO_sand_optimization" : "$heist_sand",
 	"MBO_sah_optimization" : "$heist_sah",
 	"MBO_tag_optimization" : "$heist_tag",
 	"MBO_vit_optimization" : "$heist_vit",
