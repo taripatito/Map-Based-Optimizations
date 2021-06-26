@@ -22229,8 +22229,8 @@ elseif level == 'sand' then
 	function WorldDefinition:make_unit(data, ...)
 		local unit_id = data.unit_id
 
-		if unit_id == 500555 then
-			return -- Two massive road units in the same place, really?
+		if unit_id == 500555 or unit_id == 100880 then
+			return -- accidentally duplicated units, one group of containers and a massive road unit
 		end
 
 		return make_unit_orig(self, data, ...)
