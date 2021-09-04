@@ -2,7 +2,7 @@
 	"name" : "Map-Based Optimizations",
 	"description" : "Improves and adds portals to maps to increase framerate",
 	"author" : "RedFlame",
-	"contact" : "Discord: RedFlame#3868",
+	"contact" : "Discord: RedFlame#3870",
 	"version" : "14",
 	"priority" : "-1",
 	"blt_version" : 2,
